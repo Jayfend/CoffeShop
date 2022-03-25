@@ -545,7 +545,10 @@ ol li:before {
   top: 0;
   left: 0;
 }
-.tm-side-menu li { list-style: none; }
+.tm-side-menu li {
+    list-style: none;
+ 
+}
 .tm-side-menu li a {
   color: #7c6a51;
   padding: 7px;

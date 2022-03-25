@@ -1817,6 +1817,7 @@
     <Content Include="Areas\Admin\Assets\vendor\jquery\jquery.slim.min.js" />
     <Content Include="Assets\css\bootstrap.min.css" />
     <Content Include="Assets\css\font-awesome.min.css" />
+    <Content Include="Assets\css\my-customize.css" />
     <Content Include="Assets\css\templatemo-style.css" />
     <Content Include="Assets\fonts\fontawesome-webfont.svg" />
     <Content Include="Assets\img\1.jpg" />
