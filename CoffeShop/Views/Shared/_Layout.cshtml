@@ -16,6 +16,8 @@
     <link href="/Assets/css/templatemo-style.css" rel="stylesheet">
     <link href="/Assets/css/my-customize.css" rel="stylesheet">
     <link rel="/Assets/shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+    <link href="~/Assets/css/fontawesome-free-5.15.4-web/css/all.min.css" rel="stylesheet">
+
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -47,10 +49,163 @@
                     </div>
                     <nav class="tm-nav">
                         <ul id="tm-top-header-button">
-                            <li><a href="/Home/Index"class="@ViewBag.Home" id="Home">Home</a></li>
+                            <li><a href="/Home/Index" class="@ViewBag.Home" id="Home">Home</a></li>
                             <li><a href="/TodaySpecials/Index" class="@ViewBag.TodaySpecials" id="Special">Today Special</a></li>
-                            <li><a href="/Menu/Index"class="@ViewBag.Menu" id="Menu">Menu</a></li>
+                            <li><a href="/Menu/Index" class="@ViewBag.Menu" id="Menu">Menu</a></li>
                             <li><a href="/Contact/Index" class="@ViewBag.Contact" id="Contact">Contact</a></li>
+                            <li>
+                                <div class="header__cart-wrap">
+                                    <i class="header__cart-icon fas fa-shopping-cart"></i>
+                                    <span class="header__cart-notice">3</span>
+                                    <!-- header__cart-list--no-cart -->
+                                    <div class="header__cart-list">
+                                        <img src="~/Assets/img/no-cart.png" alt="" class="header__cart-list--no-cart-img">
+                                        <span class="header__cart-list-no-cart-msg">Chưa có sản phẩm</span>
+                                        <h4 class="header__cart-heading">Sản phẩm đã thêm</h4>
+                                            <ul class="header__cart-list-item">
+                                                <li class="header__cart-item">
+                                                    <img src="https://wiki19.com/wp-content/uploads/2019/12/thumbnail-1896.jpg" alt=""
+                                                         class="header__cart-img">
+                                                    <div class="header__cart-item-info">
+                                                        <div class="header__cart-item-head">
+                                                            <h5 class="header__cart-item-name">Mật vụ Susan 0175</h5>
+                                                            <div class="header__cart-item-price-wrap">
+                                                                <span class="header__cart-item-price">17.500.000đ</span>
+                                                              
+                                                            </div>
+                                                        </div>
+                                                        <div class="header__cart-item-body">
+                                                            <span class="header__cart-item-description">Phân loại: Bạc</span>
+                                                            <span class="header__cart-item-remove">Xóa</span>
+                                                        </div>
+                                                    </div>
+                                                   
+                                                </li>
+                                                <li class="header__cart-item">
+                                                    <img src="https://wiki19.com/wp-content/uploads/2019/12/thumbnail-1896.jpg" alt=""
+                                                         class="header__cart-img">
+                                                    <div class="header__cart-item-info">
+                                                        <div class="header__cart-item-head">
+                                                            <h5 class="header__cart-item-name">Mật vụ Susan 0175</h5>
+                                                            <div class="header__cart-item-price-wrap">
+                                                                <span class="header__cart-item-price">17.500.000đ</span>
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="header__cart-item-body">
+                                                            <span class="header__cart-item-description">Phân loại: Bạc</span>
+                                                            <span class="header__cart-item-remove">Xóa</span>
+                                                        </div>
+                                                    </div>
+
+                                                </li>
+                                                <li class="header__cart-item">
+                                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTb1uL0fVkNJhZTqsg4FFot5N4w-UJ9js7FLw&usqp=CAU"
+                                                         alt="" class="header__cart-img">
+                                                    <div class="header__cart-item-info">
+                                                        <div class="header__cart-item-head">
+                                                            <h5 class="header__cart-item-name">Grand Theft Auto V</h5>
+                                                            <div class="header__cart-item-price-wrap">
+                                                                <span class="header__cart-item-price">1.000.000đ</span>
+                                                                
+                                                            </div>
+                                                        </div>
+                                                        <div class="header__cart-item-body">
+                                                            <span class="header__cart-item-description">Phân loại: Bạc</span>
+                                                            <span class="header__cart-item-remove">Xóa</span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="header__cart-item">
+                                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTb1uL0fVkNJhZTqsg4FFot5N4w-UJ9js7FLw&usqp=CAU"
+                                                         alt="" class="header__cart-img">
+                                                    <div class="header__cart-item-info">
+                                                        <div class="header__cart-item-head">
+                                                            <h5 class="header__cart-item-name">Grand Theft Auto V</h5>
+                                                            <div class="header__cart-item-price-wrap">
+                                                                <span class="header__cart-item-price">1.000.000đ</span>
+                                                                
+                                                            </div>
+                                                        </div>
+                                                        <div class="header__cart-item-body">
+                                                            <span class="header__cart-item-description">Phân loại: Bạc</span>
+                                                            <span class="header__cart-item-remove">Xóa</span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="header__cart-item">
+                                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTb1uL0fVkNJhZTqsg4FFot5N4w-UJ9js7FLw&usqp=CAU"
+                                                         alt="" class="header__cart-img">
+                                                    <div class="header__cart-item-info">
+                                                        <div class="header__cart-item-head">
+                                                            <h5 class="header__cart-item-name">Grand Theft Auto V</h5>
+                                                            <div class="header__cart-item-price-wrap">
+                                                                <span class="header__cart-item-price">1.000.000đ</span>
+                                                               
+                                                            </div>
+                                                        </div>
+                                                        <div class="header__cart-item-body">
+                                                            <span class="header__cart-item-description">Phân loại: Bạc</span>
+                                                            <span class="header__cart-item-remove">Xóa</span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="header__cart-item">
+                                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTb1uL0fVkNJhZTqsg4FFot5N4w-UJ9js7FLw&usqp=CAU"
+                                                         alt="" class="header__cart-img">
+                                                    <div class="header__cart-item-info">
+                                                        <div class="header__cart-item-head">
+                                                            <h5 class="header__cart-item-name">Grand Theft Auto V</h5>
+                                                            <div class="header__cart-item-price-wrap">
+                                                                <span class="header__cart-item-price">1.000.000đ</span>
+                                                              
+                                                            </div>
+                                                        </div>
+                                                        <div class="header__cart-item-body">
+                                                            <span class="header__cart-item-description">Phân loại: Bạc</span>
+                                                            <span class="header__cart-item-remove">Xóa</span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="header__cart-item">
+                                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTb1uL0fVkNJhZTqsg4FFot5N4w-UJ9js7FLw&usqp=CAU"
+                                                         alt="" class="header__cart-img">
+                                                    <div class="header__cart-item-info">
+                                                        <div class="header__cart-item-head">
+                                                            <h5 class="header__cart-item-name">Grand Theft Auto V</h5>
+                                                            <div class="header__cart-item-price-wrap">
+                                                                <span class="header__cart-item-price">1.000.000đ</span>
+                                                                
+                                                            </div>
+                                                        </div>
+                                                        <div class="header__cart-item-body">
+                                                            <span class="header__cart-item-description">Phân loại: Bạc</span>
+                                                            <span class="header__cart-item-remove">Xóa</span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="header__cart-item">
+                                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTb1uL0fVkNJhZTqsg4FFot5N4w-UJ9js7FLw&usqp=CAU"
+                                                         alt="" class="header__cart-img">
+                                                    <div class="header__cart-item-info">
+                                                        <div class="header__cart-item-head">
+                                                            <h5 class="header__cart-item-name">Grand Theft Auto V</h5>
+                                                            <div class="header__cart-item-price-wrap">
+                                                                <span class="header__cart-item-price">1.000.000đ</span>
+                                                                
+                                                            </div>
+                                                        </div>
+                                                        <div class="header__cart-item-body">
+                                                            <span class="header__cart-item-description">Phân loại: Bạc</span>
+                                                            <span class="header__cart-item-remove">Xóa</span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                            <a href="#" class="header__cart-view-cart btn btn--primary">Xem Giỏ Hàng</a>
+                                    </div>
+                                </div>
+                            </li>
                         </ul>
                     </nav>
                 </div>
