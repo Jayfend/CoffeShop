@@ -2,3 +2,226 @@
     list-style: none;
     padding: 3px;
 }
+/* Cart */
+/*.header__cart {
+    text-align: center;
+    z-index: 3;
+}*/
+
+.header__cart-list::after {
+    cursor: pointer;
+    content: "";
+    position: absolute;
+    right: 3px;
+    top: -26px;
+    border-width: 16px 20px;
+    border-style: solid;
+    border-color: transparent transparent #c79c60 transparent;
+}
+
+.header__cart-wrap {
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    padding: 10px 12px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+    .header__cart-wrap:hover .header__cart-list {
+        display: block;
+    }
+
+.header__cart-icon {
+    color: #C79C60;
+    font-size: 23.4px;
+}
+
+.header__cart-list {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 1px;
+    background-color: #FDFDFD;
+    width: 310px;
+    border-radius: 5px;
+    box-shadow: 0 1px 50px 0 rgb(0, 0, 0, 0.2);
+    animation: fadeIn ease-in 0.2s;
+    cursor: default;
+    display: none;
+}
+
+.header__cart-list--no-cart-img {
+    width: 54%;
+    display: none;
+}
+
+.header__cart-list--no-cart .header__cart-list--no-cart-img,
+.header__cart-list--no-cart .header__cart-list-no-cart-msg {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.header__cart-list--no-cart {
+    padding: 24px 0;
+}
+
+.header__search-input-wrap {
+    flex: 1;
+    height: 100%;
+    position: relative;
+}
+
+.header__cart-list-no-cart-msg {
+    display: none;
+    font-size: 10px;
+    margin-top: 14px;
+    color: var(--text-color);
+}
+
+.header__cart-notice {
+    position: absolute;
+    padding: 0px 8px;
+    font-size: 11.4px;
+    color: black;
+    background-color: #c79c60;
+    line-height: 22.4px;
+    border-radius: 10px;
+    border: 2px solid black;
+    top: -1px;
+    right: -7px;
+}
+
+.header__cart-heading {
+    text-align: left;
+    padding: 8px 0 8px 12px;
+    font-size: 13px;
+    color: black;
+    font-weight: 500;
+    border-radius: 5px 5px 0 0;
+    background-color: #c79c60;
+    margin: 0;
+}
+
+.header__cart-list-item {
+    padding-left: 0;
+    list-style: none;
+    height: 56vh;
+    overflow-y: auto;
+}
+
+.header__cart-item {
+    display: flex;
+    align-items: center;
+    width: 100%
+}
+
+    .header__cart-item:hover {
+        background-color: #F8F8F8;
+    }
+
+.header__cart-img {
+    width: 42px;
+    height: 42px;
+    margin: 12px;
+    border: 1px solid #E8E8E8;
+}
+
+.header__cart-item-info {
+    width: 100%;
+    margin-right: 12px;
+}
+
+.header__cart-item-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.header__cart-item-name {
+    font-size: 16.4px;
+    font-weight: 500;
+    color: var(--text-color);
+    margin: 0;
+    max-width: 100px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.header__cart-item-price {
+    font-size: 12.4px;
+    font-weight: 400;
+    color: #c79c60;
+}
+
+.header__cart-item-multiply {
+    font-size: 14.4px;
+    margin: 0 4px;
+    color: #757575;
+}
+
+.header__cart-item-qnt {
+    color: #757575;
+    font-size: 19.2px;
+}
+
+.header__cart-item-body {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header__cart-item-description {
+    color: #757575;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.header__cart-item-remove {
+    color: var(--text-color);
+    font-size: 10.4px;
+}
+
+    .header__cart-item-remove:hover {
+        color: #c79c60;
+        cursor: pointer;
+    }
+
+.header__cart-view-cart {
+    float: right;
+    margin: 0 12px 12px;
+    color: black;
+}
+
+.header__cart-view-cart:hover{
+        background-color: black;
+        cursor: pointer;
+       
+    }
+
+.btn {
+    min-width: 90px;
+    height: 34px;
+    text-decoration: none;
+    border: none;
+    border-radius: 3px;
+    font-size: 15px;
+    padding: 0 12px;
+    color: var(--text-color);
+    outline: none;
+    background-color: var(--white-color);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 16px;
+}
+
+    .btn.btn--primary {
+        color: black;
+        background-color: #c79c60;
+    }
+.btn:hover{
+    background-color: black;
+    color: white;
+}
