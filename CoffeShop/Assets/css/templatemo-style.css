@@ -623,16 +623,16 @@ ol li:before {
   text-align: justify;
 }
 .tm-product-price-link {
-  border: 2px solid rgb(174,174,174);
-  border-radius: 50%;
-  width: 85px;
-  height: 85px;
-  -webkit-transition: all 0.3s ease;
-          transition: all 0.3s ease;
-  text-align: center;
-  padding-top: 7px;
-  font-size: 40px;
-  color: rgb(174,174,174);
+    border: 2px solid rgb(174,174,174);
+    border-radius: 50%;
+    width: 85px;
+    height: 85px;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    text-align: center;
+    padding: 20px 0 0 1px;
+    font-size: 25px;
+    color: rgb(174,174,174);
 }
 .tm-product {
   cursor: pointer;
@@ -645,10 +645,10 @@ ol li:before {
 }
 .tm-product:hover .tm-product-title { color: #c79c60; }
 .tm-product-price-currency {
-  font-size: 20px;
-  position: absolute;
-  top: 24px;
-  left: 22px;
+    font-size: 13px;
+    position: absolute;
+    top: 24px;
+    right: 16px;
 }
 .form-control {
   border-color: #c79c60;

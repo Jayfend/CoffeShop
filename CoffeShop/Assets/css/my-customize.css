@@ -108,12 +108,14 @@
     list-style: none;
     height: 56vh;
     overflow-y: auto;
+    
 }
 
 .header__cart-item {
     display: flex;
     align-items: center;
-    width: 100%
+    width: 100%;
+    border-bottom: 1px solid #c79c60;
 }
 
     .header__cart-item:hover {
