@@ -122,9 +122,11 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AdminController.cs" />
+    <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MenuController.cs" />
+    <Compile Include="Controllers\PaymentController.cs" />
     <Compile Include="Controllers\TodaySpecialsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -1816,6 +1818,7 @@
     <Content Include="Areas\Admin\Assets\vendor\jquery\jquery.slim.js" />
     <Content Include="Areas\Admin\Assets\vendor\jquery\jquery.slim.min.js" />
     <Content Include="Assets\css\bootstrap.min.css" />
+    <Content Include="Assets\css\Cart.css" />
     <Content Include="Assets\css\font-awesome.min.css" />
     <Content Include="Assets\css\fontawesome-free-5.15.4-web\attribution.js" />
     <Content Include="Assets\css\fontawesome-free-5.15.4-web\css\all.css" />
@@ -3465,11 +3468,13 @@
     <Content Include="Assets\css\fontawesome-free-5.15.4-web\webfonts\fa-regular-400.svg" />
     <Content Include="Assets\css\fontawesome-free-5.15.4-web\webfonts\fa-solid-900.svg" />
     <Content Include="Assets\css\my-customize.css" />
+    <Content Include="Assets\css\Payment.css" />
     <Content Include="Assets\css\templatemo-style.css" />
     <Content Include="Assets\fonts\fontawesome-webfont.svg" />
     <Content Include="Assets\img\1.jpg" />
     <Content Include="Assets\img\favicon.ico" />
     <Content Include="Assets\img\header-line.png" />
+    <Content Include="Assets\img\image.jpg" />
     <Content Include="Assets\img\light.png" />
     <Content Include="Assets\img\logo.png" />
     <Content Include="Assets\img\menu-1.jpg" />
@@ -3492,6 +3497,7 @@
     <Content Include="Assets\img\special-4.jpg" />
     <Content Include="Assets\img\table-set.png" />
     <Content Include="Assets\img\tm-brown-button.png" />
+    <Content Include="Assets\img\tstranchau.jpg" />
     <Content Include="Assets\img\vertical-menu-bg.png" />
     <Content Include="Assets\js\jquery-1.11.2.min.js" />
     <Content Include="Assets\js\templatemo-script.js" />
@@ -3767,6 +3773,8 @@
     <Content Include="Views\TodaySpecials\Index.cshtml" />
     <Content Include="Views\Menu\Index.cshtml" />
     <Content Include="Views\Contact\Index.cshtml" />
+    <Content Include="Views\Cart\Index.cshtml" />
+    <Content Include="Views\Payment\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

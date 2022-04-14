@@ -16,6 +16,8 @@
     <link href="/Assets/css/templatemo-style.css" rel="stylesheet">
     <link href="/Assets/css/my-customize.css" rel="stylesheet">
     <link rel="/Assets/shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="~/Assets/css/Cart.css">
+    <link rel="stylesheet" href="~/Assets/css/Payment.css">
     @*<link href="~/Assets/css/fontawesome-free-5.15.4-web/css/all.min.css" rel="stylesheet">*@
 
 
@@ -53,34 +55,34 @@
                             <li><a href="/TodaySpecials/Index" class="@ViewBag.TodaySpecials" id="Special">Today Special</a></li>
                             <li><a href="/Menu/Index" class="@ViewBag.Menu" id="Menu">Menu</a></li>
                             <li><a href="/Contact/Index" class="@ViewBag.Contact" id="Contact">Contact</a></li>
-                             <div class="header__cart-wrap">
-                                    <i class="header__cart-icon fa fa-shopping-cart"></i>
-                                    <span class="header__cart-notice">3</span>
-                                    <!-- header__cart-list--no-cart -->
-                                    <div class="header__cart-list">
-                                        <img src="~/Assets/img/no-cart.png" alt="" class="header__cart-list--no-cart-img">
-                                        <span class="header__cart-list-no-cart-msg">Chưa có sản phẩm</span>
-                                        <h4 class="header__cart-heading">Sản phẩm đã thêm</h4>
-                                        <ul class="header__cart-list-item">
-                                            <li class="header__cart-item">
-                                                <img src="https://wiki19.com/wp-content/uploads/2019/12/thumbnail-1896.jpg" alt=""
-                                                     class="header__cart-img">
-                                                <div class="header__cart-item-info">
-                                                    <div class="header__cart-item-head">
-                                                        <h5 class="header__cart-item-name">Mật vụ Susan 0175</h5>
-                                                        <div class="header__cart-item-price-wrap">
-                                                            <span class="header__cart-item-price">17.500.000đ</span>
+                            <div class="header__cart-wrap">
+                                <i class="header__cart-icon fa fa-shopping-cart"></i>
+                                <span class="header__cart-notice">3</span>
+                                <!-- header__cart-list--no-cart -->
+                                <div class="header__cart-list">
+                                    <img src="~/Assets/img/no-cart.png" alt="" class="header__cart-list--no-cart-img">
+                                    <span class="header__cart-list-no-cart-msg">Chưa có sản phẩm</span>
+                                    <h4 class="header__cart-heading">Sản phẩm đã thêm</h4>
+                                    <ul class="header__cart-list-item">
+                                        <li class="header__cart-item">
+                                            <img src="~/Assets/img/menu-1.jpg" alt=""
+                                                 class="header__cart-img">
+                                            <div class="header__cart-item-info">
+                                                <div class="header__cart-item-head">
+                                                    <h5 class="header__cart-item-name">Trà sữa trân châu đường đen </h5>
+                                                    <div class="header__cart-item-price-wrap">
+                                                        <span class="header__cart-item-price">17.500đ</span>
 
-                                                        </div>
-                                                    </div>
-                                                    <div class="header__cart-item-body">
-                                                        <span class="header__cart-item-description">Phân loại: Bạc</span>
-                                                        <span class="header__cart-item-remove">Xóa</span>
                                                     </div>
                                                 </div>
+                                                <div class="header__cart-item-body">
+                                                    <span class="header__cart-item-description">Phân loại: Đồ uống</span>
+                                                    <span class="header__cart-item-remove">Xóa</span>
+                                                </div>
+                                            </div>
 
-                                            </li>
-                                            @*<li class="header__cart-item">
+                                        </li>
+                                        @*<li class="header__cart-item">
                                                 <img src="https://wiki19.com/wp-content/uploads/2019/12/thumbnail-1896.jpg" alt=""
                                                      class="header__cart-img">
                                                 <div class="header__cart-item-info">
@@ -217,10 +219,10 @@
                                                     </div>
                                                 </div>
                                             </li>*@
-                                        </ul>
-                                            <a href="#" class="header__cart-view-cart btn btn--primary">Xem Giỏ Hàng</a>
-                                    </div>
+                                    </ul>
+                                    <a href="/Cart/Index" class="header__cart-view-cart btn btn--primary">Xem Giỏ Hàng</a>
                                 </div>
+                            </div>
                         </ul>
                     </nav>
                 </div>
@@ -271,7 +273,9 @@
     </footer> <!-- Footer content-->
     <!-- JS -->
     <script type="text/javascript" src="/Assets/js/jquery-1.11.2.min.js"></script>      <!-- jQuery -->
-    <script type="text/javascript" src="/Assets/js/templatemo-script.js"></script>      <!-- Templatemo Script -->
+    <script type="text/javascript" src="/Assets/js/templatemo-script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script><!-- Templatemo Script -->
     @RenderSection("scripts", required: false);
 </body>
 </html>
