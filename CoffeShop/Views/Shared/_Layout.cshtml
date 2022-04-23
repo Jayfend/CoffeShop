@@ -250,25 +250,38 @@
                             </div>
                         </ul>
                     </nav>
-                    <div class="header__navbar-item header__navbar-user">
-                        <img src="https://thuthuatnhanh.com/wp-content/uploads/2021/02/Anh-avatar-bua-cute-dep-390x390.jpg"
-                             alt="" class="header__navbar-user-img">
-                        <span class="header__navbar-user-name">Luân Nguyễn</span>
-                        <ul class="header__navbar-user-menu">
-                            <li class="header__navbar-user-item">
-                                <a href="">Tài Khoản của tôi</a>
-                            </li>
-                            <li class="header__navbar-user-item">
-                                <a href="">Địa chỉ</a>
-                            </li>
-                            <li class="header__navbar-user-item">
-                                <a href="">Đơn mua</a>
-                            </li>
-                            <li class="header__navbar-user-item header__navbar-user-item--separate">
-                                <a href="">Đăng xuất</a>
-                            </li>
-                        </ul>
-                    </div>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+
+                        <div class="header__navbar-item header__navbar-user">
+                            <img src="https://thuthuatnhanh.com/wp-content/uploads/2021/02/Anh-avatar-bua-cute-dep-390x390.jpg"
+                                 alt="" class="header__navbar-user-img">
+                            <span class="header__navbar-user-name">@User.Identity.Name</span>
+                            <ul class="header__navbar-user-menu">
+                                <li class="header__navbar-user-item">
+                                    <a href="">Tài Khoản của tôi</a>
+                                </li>
+                                <li class="header__navbar-user-item">
+                                    <a href="">Địa chỉ</a>
+                                </li>
+                                <li class="header__navbar-user-item">
+                                    <a href="">Đơn mua</a>
+                                </li>
+                                <li class="header__navbar-user-item header__navbar-user-item--separate">
+                                    <a href="/Login/Logout">Đăng xuất</a>
+                                </li>
+                            </ul>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="header__navbar-item header__navbar-user">
+                            <img src="https://banner2.cleanpng.com/20180402/bje/kisspng-computer-icons-avatar-login-user-avatar-5ac207e69ecd41.2588125315226654466505.jpg"
+                                 alt="" class="header__navbar-user-img">
+                            <a href="/Login/Index" class="header__navbar-user-name">Đăng Nhập</a>
+                        </div>
+                    }
+
                 </div>
             </div>
         </div>
