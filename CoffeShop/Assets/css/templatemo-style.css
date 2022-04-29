@@ -373,7 +373,11 @@ ul {
   margin-top: 30px;  
   margin-bottom: 80px;
 }
-.tm-popular-item-img { margin-left: 3px; }
+.tm-popular-item-img { 
+    margin-left: 3px;
+    height: 166px;
+    width: 286px;
+}
 .tm-popular-items-container {
   display: -webkit-box;
   display: -webkit-flex;
@@ -426,6 +430,7 @@ ul {
   font-size: 34px;
   margin-top: 0;
   margin-bottom: 0;
+  min-height: 104px;    
 }
 .tm-popular-item-hr {
   margin-top: 0;
@@ -621,6 +626,8 @@ ol li:before {
 .tm-product-description {
   margin-bottom: 0;
   text-align: justify;
+  min-width: 400px;
+  font-size:13px;
 }
 .tm-product-price-link {
     border: 2px solid rgb(174,174,174);
