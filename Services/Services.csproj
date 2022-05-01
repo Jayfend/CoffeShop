@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AddProduct.cs" />
+    <Compile Include="CartService.cs" />
     <Compile Include="GetProduct.cs" />
     <Compile Include="GetProductSpecial.cs" />
     <Compile Include="Login.cs" />

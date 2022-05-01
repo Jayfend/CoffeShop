@@ -17,18 +17,18 @@ namespace Services
 
             _Database = new CoffeShopDbContext();
         }
-        public bool UserLogin(AccountViewModel user)
+        public UserResponse UserLogin(AccountViewModel user)
         {
-            user.Password=Encryptor.MD5Hash(user.Password);
-            var check = _Database.Accounts.FirstOrDefault(s => s.UserName.Equals(user.UserName) && s.Password.Equals(user.Password));
-            if(check != null)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            user.Password = Encryptor.MD5Hash(user.Password);
+            var response =_Database.Accounts.Where(s => s.UserName.Equals(user.UserName) && s.Password.Equals(user.Password))
+               .Select(s => new UserResponse()
+               { UserName = s.UserName,
+                   UserType = s.UserType,
+                   AccountID=s.AccountID
+               })
+               .FirstOrDefault();
+            return response;
+            
         }
     }
 }

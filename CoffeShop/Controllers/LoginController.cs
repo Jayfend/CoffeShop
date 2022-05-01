@@ -54,12 +54,14 @@ namespace CoffeShop.Controllers
                 return View("Index");
             }
             if (ModelState.IsValid)
-            {
-                if (login.UserLogin(account))
+            { var response = login.UserLogin(account);
+                if (response!=null)
                 {
                     var identity = new ClaimsIdentity(
                      new[] {
-                    new Claim(ClaimTypes.Name, account.UserName),
+                    new Claim(ClaimTypes.Name, response.UserName),
+                    new Claim(ClaimTypes.NameIdentifier, response.AccountID.ToString()),
+                    new Claim(ClaimTypes.Role,response.UserType)
                   
                     
                     },

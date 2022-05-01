@@ -61,7 +61,7 @@
                                 <li><a href="?categoryID=8">Iced coffee</a></li>
                                 <li><a href="?categoryID=9">Instant coffee</a></li>
                                 <li><a href="?categoryID=10">Mocha</a></li>
-                                <li><a href="?categoryID=11">black coffee</a></li>
+                                <li><a href="?categoryID=11">Black coffee</a></li>
                             </ul>
                         </nav>
                         <img src="/Assets/img/vertical-menu-bg.png" alt="Menu bg" class="tm-side-menu-bg">
@@ -73,16 +73,27 @@
                     {
                         string base64String = Convert.ToBase64String(item.Image, 0, item.Image.Length);
                         <div class="tm-product">
-                            <img src="data:image/jpg;base64,@base64String" alt="Product">
+                            
+                            <img src="data:image/jpg;base64,@base64String" class="tm-product-img" alt="Product">
+                            
+                           
                             <div class="tm-product-text">
                                 <h3 class="tm-product-title">@item.ProductName</h3>
                                 <p class="tm-product-description">@item.Description</p>
                             </div>
                             <div class="tm-product-price">
-                                <a href="#" class="tm-product-price-link tm-handwriting-font"><span class="tm-product-price-currency">₫</span>@item.Price</a>
+                                @if (User.Identity.IsAuthenticated)
+                                {
+                                    <a href="/Menu/UpdateToCart?ProductId=@item.ProductId" class="tm-product-price-link tm-handwriting-font"><span class="tm-product-price-currency">₫</span>@item.Price</a>
+                                }
+                                else
+                                {
+                                    <a href="/Login/Index" class="tm-product-price-link tm-handwriting-font"><span class="tm-product-price-currency">₫</span>@item.Price</a>
+                                }
+
                             </div>
                         </div>
-                       
+
                     }
 
                 </div>

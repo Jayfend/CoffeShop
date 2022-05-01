@@ -6,15 +6,15 @@ using System.Web;
 using System.Web.Mvc;
 
 namespace CoffeShop.Controllers
-{
-    public class TodaySpecialsController : Controller
+{   [AllowAnonymous]
+    public class TodaySpecialsController : BaseController
     {
         // GET: TodaySpecials
+        [HttpGet]
         public ActionResult Index()
         {
             GetProductSpecial getproductspecial = new GetProductSpecial();
             var ProductList = getproductspecial.GetProductViewModel();
-            ProductList.Sort((x, y) => DateTime.Compare(x.CreatedDate, y.CreatedDate));
             var firstsixitems= ProductList.Take(6).ToList();
             ViewBag.TodaySpecials = "active";
             return View(firstsixitems);

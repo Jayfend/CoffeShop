@@ -54,41 +54,25 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Account.cs" />
-    <Compile Include="Migrations\202204251558167_OrderTableAdded.cs" />
-    <Compile Include="Migrations\202204251558167_OrderTableAdded.designer.cs">
-      <DependentUpon>202204251558167_OrderTableAdded.cs</DependentUpon>
+    <Compile Include="Migrations\202205010427458_AllTableAdded.cs" />
+    <Compile Include="Migrations\202205010427458_AllTableAdded.designer.cs">
+      <DependentUpon>202205010427458_AllTableAdded.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202204270301096_ImagAttributeeAdded.cs" />
-    <Compile Include="Migrations\202204270301096_ImagAttributeeAdded.designer.cs">
-      <DependentUpon>202204270301096_ImagAttributeeAdded.cs</DependentUpon>
+    <Compile Include="Migrations\202205010507176_OrderUpdate.cs" />
+    <Compile Include="Migrations\202205010507176_OrderUpdate.designer.cs">
+      <DependentUpon>202205010507176_OrderUpdate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202204270314352_ProductRequiredUpdate.cs" />
-    <Compile Include="Migrations\202204270314352_ProductRequiredUpdate.designer.cs">
-      <DependentUpon>202204270314352_ProductRequiredUpdate.cs</DependentUpon>
+    <Compile Include="Migrations\202205010532527_TotalPriceRemoved.cs" />
+    <Compile Include="Migrations\202205010532527_TotalPriceRemoved.designer.cs">
+      <DependentUpon>202205010532527_TotalPriceRemoved.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202204270400376_ProductChange.cs" />
-    <Compile Include="Migrations\202204270400376_ProductChange.designer.cs">
-      <DependentUpon>202204270400376_ProductChange.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202204280554496_CreatedDateUpdated.cs" />
-    <Compile Include="Migrations\202204280554496_CreatedDateUpdated.designer.cs">
-      <DependentUpon>202204280554496_CreatedDateUpdated.cs</DependentUpon>
+    <Compile Include="Migrations\202205010534371_AddressPhoneRemoved.cs" />
+    <Compile Include="Migrations\202205010534371_AddressPhoneRemoved.designer.cs">
+      <DependentUpon>202205010534371_AddressPhoneRemoved.cs</DependentUpon>
     </Compile>
     <Compile Include="Order.cs" />
-    <Compile Include="Migrations\202204251553572_OrderItemTableAdded.cs" />
-    <Compile Include="Migrations\202204251553572_OrderItemTableAdded.designer.cs">
-      <DependentUpon>202204251553572_OrderItemTableAdded.cs</DependentUpon>
-    </Compile>
     <Compile Include="OrderItem.cs" />
     <Compile Include="CoffeShopDbContext.cs" />
-    <Compile Include="Migrations\202204170843228_AccountTableAdded.cs" />
-    <Compile Include="Migrations\202204170843228_AccountTableAdded.designer.cs">
-      <DependentUpon>202204170843228_AccountTableAdded.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202204251450581_ProductTableAdded.cs" />
-    <Compile Include="Migrations\202204251450581_ProductTableAdded.designer.cs">
-      <DependentUpon>202204251450581_ProductTableAdded.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -104,29 +88,17 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202204170843228_AccountTableAdded.resx">
-      <DependentUpon>202204170843228_AccountTableAdded.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202205010427458_AllTableAdded.resx">
+      <DependentUpon>202205010427458_AllTableAdded.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202204251450581_ProductTableAdded.resx">
-      <DependentUpon>202204251450581_ProductTableAdded.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202205010507176_OrderUpdate.resx">
+      <DependentUpon>202205010507176_OrderUpdate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202204251553572_OrderItemTableAdded.resx">
-      <DependentUpon>202204251553572_OrderItemTableAdded.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202205010532527_TotalPriceRemoved.resx">
+      <DependentUpon>202205010532527_TotalPriceRemoved.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202204251558167_OrderTableAdded.resx">
-      <DependentUpon>202204251558167_OrderTableAdded.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202204270301096_ImagAttributeeAdded.resx">
-      <DependentUpon>202204270301096_ImagAttributeeAdded.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202204270314352_ProductRequiredUpdate.resx">
-      <DependentUpon>202204270314352_ProductRequiredUpdate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202204270400376_ProductChange.resx">
-      <DependentUpon>202204270400376_ProductChange.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202204280554496_CreatedDateUpdated.resx">
-      <DependentUpon>202204280554496_CreatedDateUpdated.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202205010534371_AddressPhoneRemoved.resx">
+      <DependentUpon>202205010534371_AddressPhoneRemoved.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

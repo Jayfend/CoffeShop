@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace CoffeShop.Controllers
 {
-    public class PaymentController : Controller
+    public class PaymentController : BaseController
     {
         // GET: Payment
         public ActionResult Index()

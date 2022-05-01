@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace CoffeShop.Areas.Admin.Controllers
 {
+    [Authorize(Roles ="Admin")]
     public class AdminHomeController : Controller
     {
         // GET: Admin/AdminHome
