@@ -159,14 +159,16 @@
 }
 
 .header__cart-item-multiply {
-    font-size: 14.4px;
+    font-size: 6.4px;
     margin: 0 4px;
     color: #757575;
+    color: #c79c60;
 }
 
 .header__cart-item-qnt {
     color: #757575;
-    font-size: 19.2px;
+    font-size: 11.2px;
+    color: #c79c60;
 }
 
 .header__cart-item-body {
@@ -325,4 +327,9 @@
 
 .header__navbar-user-item a:hover {
     background-color: #fafafa;
+}
+.tm-product-img {
+    width: 136px;
+    height: 136px;
+    object-fit: cover;
 }

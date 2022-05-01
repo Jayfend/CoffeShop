@@ -59,194 +59,89 @@
                                 <i class="header__cart-icon fa fa-shopping-cart"></i>
                                 <span class="header__cart-notice">3</span>
                                 <!-- header__cart-list--no-cart -->
+                                @if (@ViewBag.Cart == null || @ViewBag.Cart.Count==0) {
+                                <div class="header__cart-list header__cart-list--no-cart">
+                                <img src="~/Assets/img/no-cart.png" alt="" class="header__cart-list--no-cart-img">
+                                <span class="header__cart-list-no-cart-msg">Chưa có sản phẩm</span>
+                                  </div>
+                                }
+                                else {
                                 <div class="header__cart-list">
                                     <img src="~/Assets/img/no-cart.png" alt="" class="header__cart-list--no-cart-img">
                                     <span class="header__cart-list-no-cart-msg">Chưa có sản phẩm</span>
+
                                     <h4 class="header__cart-heading">Sản phẩm đã thêm</h4>
                                     <ul class="header__cart-list-item">
-                                        <li class="header__cart-item">
-                                            <img src="~/Assets/img/menu-1.jpg" alt=""
-                                                 class="header__cart-img">
-                                            <div class="header__cart-item-info">
-                                                <div class="header__cart-item-head">
-                                                    <h5 class="header__cart-item-name">Trà sữa trân châu đường đen </h5>
-                                                    <div class="header__cart-item-price-wrap">
-                                                        <span class="header__cart-item-price">17.500đ</span>
+                                        @foreach (var item in ViewBag.Cart)
+                                        {
+                                            string base64String = Convert.ToBase64String(item.img, 0, item.img.Length);
+                                            <li class="header__cart-item">
+                                                <img src="data:image/jpg;base64,@base64String" alt=""
+                                                     class="header__cart-img">
+                                                <div class="header__cart-item-info">
+                                                    <div class="header__cart-item-head">
+                                                        <h5 class="header__cart-item-name">@item.ProductName</h5>
+                                                        <div class="header__cart-item-price-wrap">
+                                                            <span class="header__cart-item-price">@item.Price</span>
+                                                            <span class="header__cart-item-multiply">x</span>
+                                                            <span class="header__cart-item-qnt">@item.Quantity</span>
 
+                                                        </div>
+                                                    </div>
+                                                    <div class="header__cart-item-body">
+                                                        @switch (item.ProductCategoryID)
+                                                        {
+                                                            case 1:
+                                                                <span class="header__cart-item-description">Phân loại: Affogato</span>
+                                                                break;
+                                                            case 2:
+                                                    <span class="header__cart-item-description">Phân loại: Caffè Americano</span>
+                                                                break;
+                                                            case 3:
+                                                    <span class="header__cart-item-description">Phân loại: Caffè latte</span>
+                                                                break;
+                                                            case 4:
+                                                    <span class="header__cart-item-description">Phân loại: Coffee milk</span>
+                                                                break;
+                                                            case 5:
+                                                    <span class="header__cart-item-description">Phân loại: Café mocha</span>
+                                                                break;
+                                                            case 6:
+                                                    <span class="header__cart-item-description">Phân loại: Cappuccino</span>
+                                                                break;
+                                                            case 7:
+                                                    <span class="header__cart-item-description">Phân loại:Espresso</span>
+                                                                break;
+                                                            case 8:
+                                                    <span class="header__cart-item-description">Phân loại:Iced coffee</span>
+                                                                break;
+                                                            case 9:
+                                                    <span class="header__cart-item-description">Phân loại: Instant coffee</span>
+                                                                break;
+                                                            case 10:
+                                                    <span class="header__cart-item-description">Phân loại: Mocha</span>
+                                                                break;
+                                                            case 11:
+                                                    <span class="header__cart-item-description">Phân loại: Black coffee</span>
+                                                                break;
+
+                                                        }
+
+
+                                                        <span class="header__cart-item-remove">Xóa</span>
                                                     </div>
                                                 </div>
-                                                <div class="header__cart-item-body">
-                                                    <span class="header__cart-item-description">Phân loại: Đồ uống</span>
-                                                    <span class="header__cart-item-remove">Xóa</span>
-                                                </div>
-                                            </div>
+                                            </li>
+                                        }
 
-                                        </li>
-                                        <li class="header__cart-item">
-                                            <img src="~/Assets/img/menu-1.jpg" alt=""
-                                                 class="header__cart-img">
-                                            <div class="header__cart-item-info">
-                                                <div class="header__cart-item-head">
-                                                    <h5 class="header__cart-item-name">Trà sữa trân châu đường đen </h5>
-                                                    <div class="header__cart-item-price-wrap">
-                                                        <span class="header__cart-item-price">17.500đ</span>
 
-                                                    </div>
-                                                </div>
-                                                <div class="header__cart-item-body">
-                                                    <span class="header__cart-item-description">Phân loại: Đồ uống</span>
-                                                    <span class="header__cart-item-remove">Xóa</span>
-                                                </div>
-                                            </div>
-
-                                        </li>
-                                        <li class="header__cart-item">
-                                            <img src="~/Assets/img/menu-1.jpg" alt=""
-                                                 class="header__cart-img">
-                                            <div class="header__cart-item-info">
-                                                <div class="header__cart-item-head">
-                                                    <h5 class="header__cart-item-name">Trà sữa trân châu đường đen </h5>
-                                                    <div class="header__cart-item-price-wrap">
-                                                        <span class="header__cart-item-price">17.500đ</span>
-
-                                                    </div>
-                                                </div>
-                                                <div class="header__cart-item-body">
-                                                    <span class="header__cart-item-description">Phân loại: Đồ uống</span>
-                                                    <span class="header__cart-item-remove">Xóa</span>
-                                                </div>
-                                            </div>
-
-                                        </li>
-                                        <li class="header__cart-item">
-                                            <img src="~/Assets/img/menu-1.jpg" alt=""
-                                                 class="header__cart-img">
-                                            <div class="header__cart-item-info">
-                                                <div class="header__cart-item-head">
-                                                    <h5 class="header__cart-item-name">Trà sữa trân châu đường đen </h5>
-                                                    <div class="header__cart-item-price-wrap">
-                                                        <span class="header__cart-item-price">17.500đ</span>
-
-                                                    </div>
-                                                </div>
-                                                <div class="header__cart-item-body">
-                                                    <span class="header__cart-item-description">Phân loại: Đồ uống</span>
-                                                    <span class="header__cart-item-remove">Xóa</span>
-                                                </div>
-                                            </div>
-
-                                        </li>
-                                        <li class="header__cart-item">
-                                            <img src="~/Assets/img/menu-1.jpg" alt=""
-                                                 class="header__cart-img">
-                                            <div class="header__cart-item-info">
-                                                <div class="header__cart-item-head">
-                                                    <h5 class="header__cart-item-name">Trà sữa trân châu đường đen </h5>
-                                                    <div class="header__cart-item-price-wrap">
-                                                        <span class="header__cart-item-price">17.500đ</span>
-
-                                                    </div>
-                                                </div>
-                                                <div class="header__cart-item-body">
-                                                    <span class="header__cart-item-description">Phân loại: Đồ uống</span>
-                                                    <span class="header__cart-item-remove">Xóa</span>
-                                                </div>
-                                            </div>
-
-                                        </li>
-                                        <li class="header__cart-item">
-                                            <img src="~/Assets/img/menu-1.jpg" alt=""
-                                                 class="header__cart-img">
-                                            <div class="header__cart-item-info">
-                                                <div class="header__cart-item-head">
-                                                    <h5 class="header__cart-item-name">Trà sữa trân châu đường đen </h5>
-                                                    <div class="header__cart-item-price-wrap">
-                                                        <span class="header__cart-item-price">17.500đ</span>
-
-                                                    </div>
-                                                </div>
-                                                <div class="header__cart-item-body">
-                                                    <span class="header__cart-item-description">Phân loại: Đồ uống</span>
-                                                    <span class="header__cart-item-remove">Xóa</span>
-                                                </div>
-                                            </div>
-
-                                        </li>
-                                        <li class="header__cart-item">
-                                            <img src="~/Assets/img/menu-1.jpg" alt=""
-                                                 class="header__cart-img">
-                                            <div class="header__cart-item-info">
-                                                <div class="header__cart-item-head">
-                                                    <h5 class="header__cart-item-name">Trà sữa trân châu đường đen </h5>
-                                                    <div class="header__cart-item-price-wrap">
-                                                        <span class="header__cart-item-price">17.500đ</span>
-
-                                                    </div>
-                                                </div>
-                                                <div class="header__cart-item-body">
-                                                    <span class="header__cart-item-description">Phân loại: Đồ uống</span>
-                                                    <span class="header__cart-item-remove">Xóa</span>
-                                                </div>
-                                            </div>
-
-                                        </li>
-                                        <li class="header__cart-item">
-                                            <img src="~/Assets/img/menu-1.jpg" alt=""
-                                                 class="header__cart-img">
-                                            <div class="header__cart-item-info">
-                                                <div class="header__cart-item-head">
-                                                    <h5 class="header__cart-item-name">Trà sữa trân châu đường đen </h5>
-                                                    <div class="header__cart-item-price-wrap">
-                                                        <span class="header__cart-item-price">17.500đ</span>
-
-                                                    </div>
-                                                </div>
-                                                <div class="header__cart-item-body">
-                                                    <span class="header__cart-item-description">Phân loại: Đồ uống</span>
-                                                    <span class="header__cart-item-remove">Xóa</span>
-                                                </div>
-                                            </div>
-
-                                        </li>
-                                        <li class="header__cart-item">
-                                            <img src="~/Assets/img/menu-1.jpg" alt=""
-                                                 class="header__cart-img">
-                                            <div class="header__cart-item-info">
-                                                <div class="header__cart-item-head">
-                                                    <h5 class="header__cart-item-name">Trà sữa trân châu đường đen </h5>
-                                                    <div class="header__cart-item-price-wrap">
-                                                        <span class="header__cart-item-price">17.500đ</span>
-
-                                                    </div>
-                                                </div>
-                                                <div class="header__cart-item-body">
-                                                    <span class="header__cart-item-description">Phân loại: Đồ uống</span>
-                                                    <span class="header__cart-item-remove">Xóa</span>
-                                                </div>
-                                            </div>
-
-                                        </li>
-                                        <li class="header__cart-item">
-                                            <img src="~/Assets/img/menu-1.jpg" alt=""
-                                                 class="header__cart-img">
-                                            <div class="header__cart-item-info">
-                                                <div class="header__cart-item-head">
-                                                    <h5 class="header__cart-item-name">Trà sữa trân châu đường đen </h5>
-                                                    <div class="header__cart-item-price-wrap">
-                                                        <span class="header__cart-item-price">17.500đ</span>
-
-                                                    </div>
-                                                </div>
-                                                <div class="header__cart-item-body">
-                                                    <span class="header__cart-item-description">Phân loại: Đồ uống</span>
-                                                    <span class="header__cart-item-remove">Xóa</span>
-                                                </div>
-                                            </div>
-
-                                        </li>
                                     </ul>
                                     <a href="/Cart/Index" class="header__cart-view-cart btn btn--primary">Xem Giỏ Hàng</a>
                                 </div>
+                                    }
+
+
+
                             </div>
                         </ul>
                     </nav>
@@ -274,7 +169,7 @@
                         </div>
                     }
                     else
-                    {
+                                                        {
                         <div class="header__navbar-item header__navbar-user">
                             <img src="https://banner2.cleanpng.com/20180402/bje/kisspng-computer-icons-avatar-login-user-avatar-5ac207e69ecd41.2588125315226654466505.jpg"
                                  alt="" class="header__navbar-user-img">

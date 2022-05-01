@@ -18,11 +18,6 @@ namespace CoffeShopDatabase
         [Required]
         [MaxLength(10)]
         public string Status { get; set; }
-        [Required]
-        public double TotalPrice { get; set;}
-        [Required]
-        public int PhoneNumber { get; set; }
-        [Required]
-        public string Address { get; set; }
+        
     }
 }

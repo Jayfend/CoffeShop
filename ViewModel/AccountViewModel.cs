@@ -23,5 +23,6 @@ namespace ViewModel
     
         [ScaffoldColumn(false)]
         public string ReturnUrl { get; set; }
+       
     }
 }

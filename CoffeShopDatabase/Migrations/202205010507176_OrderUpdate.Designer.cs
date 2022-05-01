@@ -7,13 +7,13 @@ namespace CoffeShopDatabase.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class ProductTableAdded : IMigrationMetadata
+    public sealed partial class OrderUpdate : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(ProductTableAdded));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(OrderUpdate));
         
         string IMigrationMetadata.Id
         {
-            get { return "202204251450581_ProductTableAdded"; }
+            get { return "202205010507176_OrderUpdate"; }
         }
         
         string IMigrationMetadata.Source

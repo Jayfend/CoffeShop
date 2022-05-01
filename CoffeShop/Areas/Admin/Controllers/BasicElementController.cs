@@ -28,7 +28,7 @@ namespace CoffeShop.Areas.Admin.Controllers
                 if (addnewproduct.AddProductToDb(product))
                 {
                     ViewBag.success = "Add Product Successful";
-                    return View("Index");
+                    return RedirectToAction("Index");
                 }
                 else
                 {

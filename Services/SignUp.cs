@@ -23,7 +23,13 @@ namespace Services
             var check=_Database.Accounts.FirstOrDefault(s=>s.UserName== user.UserName || s.Email==user.Email);
             if (check == null)
             {
-                Account account = new Account() { UserName = user.UserName, Password = Encryptor.MD5Hash(user.Password), Email = user.Email };
+                Account account = new Account()
+                {
+                    UserName = user.UserName,
+                    Password = Encryptor.MD5Hash(user.Password),
+                    Email = user.Email,
+                    UserType = "Guest"
+                };
                 _Database.Accounts.Add(account);
                 _Database.SaveChanges();
                 return true;

@@ -9,9 +9,11 @@ using System.Threading.Tasks;
 namespace CoffeShopDatabase
 {
     public class OrderItem
-    { 
-        [Key]
+    {   [Key]
+        public int OrderItemId { get; set; }
         public int OrderId { get; set; }
+        [ForeignKey("OrderId")]
+        public Order Order { get; set; }
         [Required]
         public int ProductId { get; set; }
         

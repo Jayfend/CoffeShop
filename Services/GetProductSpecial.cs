@@ -19,7 +19,7 @@ namespace Services
         public List<ProductViewModel> GetProductViewModel()
         {
 
-            return _Database.Products.Select(x => new ProductViewModel()
+            return _Database.Products.OrderByDescending(x=>x.CreatedDate).Select(x => new ProductViewModel()
             {
                 ProductId = x.ProductId,
                 ProductName = x.ProductName,

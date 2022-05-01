@@ -3,16 +3,16 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class ProductChange : DbMigration
+    public partial class TotalPriceRemoved : DbMigration
     {
         public override void Up()
         {
-            AlterColumn("dbo.Products", "Discount", c => c.Double(nullable: false));
+            DropColumn("dbo.Orders", "TotalPrice");
         }
         
         public override void Down()
         {
-            AlterColumn("dbo.Products", "Discount", c => c.Single(nullable: false));
+            AddColumn("dbo.Orders", "TotalPrice", c => c.Double(nullable: false));
         }
     }
 }
