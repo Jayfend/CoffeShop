@@ -14,5 +14,6 @@ namespace ViewModel
         public byte[]  img { get; set; }
         public int ProductCategoryID { get; set; }
         public int Quantity { get; set; }
+        public int OrderItemId { get; set; }
     }
 }

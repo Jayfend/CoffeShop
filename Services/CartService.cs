@@ -80,10 +80,25 @@ namespace Services
                      ProductCategoryID = s.Product.ProductCategoryId,
                      img=s.Product.Image,
                     Price=s.Product.Price,
-                    Quantity=s.Quantity
+                    Quantity=s.Quantity,
+                    OrderItemId=s.OrderItemId
                  })
                .ToList();
             return orderitems;
+        }
+        public bool DeleteCartItem(int OrderItemId,int AccountId)
+        {
+            var orderitem = _Database.OrderItems.FirstOrDefault(s => s.OrderItemId == OrderItemId&&s.Order.AccountID==AccountId);
+            if(orderitem != null)
+            {
+                _Database.OrderItems.Remove(orderitem);
+                _Database.SaveChanges();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
     

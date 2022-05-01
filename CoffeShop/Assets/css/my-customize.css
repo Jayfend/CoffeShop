@@ -18,6 +18,16 @@
     border-style: solid;
     border-color: transparent transparent #c79c60 transparent;
 }
+.header__cart-list.header__cart-list--no-cart::after {
+    cursor: pointer;
+    content: "";
+    position: absolute;
+    right: 3px;
+    top: -26px;
+    border-width: 16px 20px;
+    border-style: solid;
+    border-color: transparent transparent white transparent;
+}
 
 .header__cart-wrap {
     text-align: center;
@@ -184,12 +194,14 @@
 }
 
 .header__cart-item-remove {
-    color: var(--text-color);
+    color: var(--text-color)!important;
     font-size: 10.4px;
+    padding: 3px !important;
+
 }
 
     .header__cart-item-remove:hover {
-        color: #c79c60;
+        color: #c79c60 !important;
         cursor: pointer;
     }
 
