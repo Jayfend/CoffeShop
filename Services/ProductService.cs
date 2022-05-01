@@ -89,5 +89,19 @@ namespace Services
             }).ToList();
 
         }
+        public bool DeleteProduct(int ProductId)
+        {
+            var Product = _Database.Products.FirstOrDefault(s => s.ProductId==ProductId);
+            if (Product != null)
+            {
+                _Database.Products.Remove(Product);
+                _Database.SaveChanges();
+                return true; ;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

@@ -27,5 +27,20 @@ namespace CoffeShop.Controllers
             }
             
         }
+        public ActionResult DeleteItem(int OrderItemId)
+        {
+            var claims = ClaimsPrincipal.Current.Identities.First().Claims.ToList();
+
+            //Filter specific claim    
+            var AccountID = claims?.FirstOrDefault(x => x.Type.Equals(ClaimTypes.NameIdentifier, StringComparison.OrdinalIgnoreCase))?.Value;
+            CartService cartService = new CartService();
+            if(cartService.DeleteCartItem(OrderItemId, int.Parse(AccountID)))
+            {
+                return RedirectToAction("Index","Menu");
+            }
+            
+            return View();
+        }
+        
     }
 }

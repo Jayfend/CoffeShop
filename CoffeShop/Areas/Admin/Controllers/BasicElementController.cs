@@ -41,6 +41,18 @@ namespace CoffeShop.Areas.Admin.Controllers
                
             return View();
         }
+        public ActionResult DeleteProduct(int ProductId)
+        {   ProductService productService = new ProductService();
+            if (productService.DeleteProduct(ProductId))
+            {
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return RedirectToAction("Index");
+            }
+            return View();
+        }
         public byte[] ConvertToBytes(HttpPostedFileBase image)
         {
             byte[] imageBytes = null;

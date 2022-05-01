@@ -57,7 +57,7 @@
                             <li><a href="/Contact/Index" class="@ViewBag.Contact" id="Contact">Contact</a></li>
                             <div class="header__cart-wrap">
                                 <i class="header__cart-icon fa fa-shopping-cart"></i>
-                                <span class="header__cart-notice">3</span>
+                                <span class="header__cart-notice">@ViewBag.Cart.Count</span>
                                 <!-- header__cart-list--no-cart -->
                                 @if (@ViewBag.Cart == null || @ViewBag.Cart.Count==0) {
                                 <div class="header__cart-list header__cart-list--no-cart">
@@ -127,7 +127,7 @@
                                                         }
 
 
-                                                        <span class="header__cart-item-remove">Xóa</span>
+                                                        <a href="/Base/DeleteItem?OrderItemId=@item.OrderItemId " class="header__cart-item-remove">Xóa</a>
                                                     </div>
                                                 </div>
                                             </li>

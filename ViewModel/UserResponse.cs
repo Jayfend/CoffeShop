@@ -11,6 +11,8 @@ namespace ViewModel
         public int AccountID { get; set; }
         public string UserName { get; set; }
         public string UserType { get; set; }
+       
+
         
     }
 }
