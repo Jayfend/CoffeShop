@@ -14,14 +14,14 @@ namespace CoffeShop.Controllers
         // GET: Menu
         public ActionResult Index(int categoryID = 1)
         {  
-            GetProduct getproduct = new GetProduct();
+            ProductService getproduct = new ProductService();
             ViewBag.Menu = "active";
             var ProductList = getproduct.GetProductViewModel(categoryID);
             return View(ProductList);
         }
         public ActionResult UpdateToCart(int ProductId)
         {
-            if (User.Identity.IsAuthenticated)
+            if (System.Web.HttpContext.Current.User != null && System.Web.HttpContext.Current.User.Identity.IsAuthenticated)
             {
                 var claims = ClaimsPrincipal.Current.Identities.First().Claims.ToList();
 

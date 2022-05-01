@@ -22,7 +22,7 @@ namespace CoffeShop.Areas.Admin.Controllers
         {
             HttpPostedFileBase file = Request.Files["ImageData"];
             product.Image= ConvertToBytes(file);
-            AddProduct addnewproduct = new AddProduct();
+            ProductService addnewproduct = new ProductService();
             if (ModelState.IsValid)
             {
                 if (addnewproduct.AddProductToDb(product))

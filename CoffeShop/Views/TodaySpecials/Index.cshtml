@@ -39,7 +39,15 @@
                             <h3 class="tm-handwriting-font tm-popular-item-title"><span class="tm-handwriting-font bigger-first-letter">@item.ProductName.Substring(0, 1)</span>@item.ProductName.Substring(1, item.ProductName.Length-1)</h3><hr class="tm-popular-item-hr">
                             <p>@item.Description</p>
                             <div class="order-now-container">
-                                <a href="#" class="order-now-link tm-handwriting-font">Order Now</a>
+                                @if (User.Identity.IsAuthenticated)
+                                {
+                                    <a href="/TodaySpecials/UpdateToCart?ProductId=@item.ProductId" class="order-now-link tm-handwriting-font">Order Now</a>
+                                }
+                                else
+                                {
+                                    <a href="/Login/Index" class="order-now-link tm-handwriting-font">Order Now</a>
+                                }
+
                             </div>
                         </div>
                     </div>
