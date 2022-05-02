@@ -11,7 +11,7 @@ namespace ViewModel
         public string ProductName { get; set; }
         public double Price { get; set; }
 
-        public byte[]  img { get; set; }
+        public byte[] img { get; set; }
         public int ProductCategoryID { get; set; }
         public int Quantity { get; set; }
         public int OrderItemId { get; set; }
