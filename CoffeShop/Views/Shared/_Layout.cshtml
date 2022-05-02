@@ -57,9 +57,9 @@
                             <li><a href="/Contact/Index" class="@ViewBag.Contact" id="Contact">Contact</a></li>
                             <div class="header__cart-wrap">
                                 <i class="header__cart-icon fa fa-shopping-cart"></i>
-                                <span class="header__cart-notice">@ViewBag.Cart.Count</span>
+                                <span class="header__cart-notice">@ViewBag.CartCount</span>
                                 <!-- header__cart-list--no-cart -->
-                                @if (@ViewBag.Cart == null || @ViewBag.Cart.Count==0) {
+                                @if (@ViewBag.Cart == null) {
                                 <div class="header__cart-list header__cart-list--no-cart">
                                 <img src="~/Assets/img/no-cart.png" alt="" class="header__cart-list--no-cart-img">
                                 <span class="header__cart-list-no-cart-msg">Chưa có sản phẩm</span>
