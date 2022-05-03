@@ -5,6 +5,7 @@ using System.Linq;
 using System.Security.Claims;
 using System.Web;
 using System.Web.Mvc;
+using ViewModel;
 
 namespace CoffeShop.Controllers
 {   [AllowAnonymous]
@@ -12,7 +13,7 @@ namespace CoffeShop.Controllers
     {   
         public BaseController()
         {
-                
+           
             if (System.Web.HttpContext.Current.User != null && System.Web.HttpContext.Current.User.Identity.IsAuthenticated) {
                 
                 var claims = ClaimsPrincipal.Current.Identities.First().Claims.ToList();
@@ -21,12 +22,13 @@ namespace CoffeShop.Controllers
                 var AccountID = claims?.FirstOrDefault(x => x.Type.Equals(ClaimTypes.NameIdentifier, StringComparison.OrdinalIgnoreCase))?.Value;
                 CartService cartService = new CartService();
                 ViewBag.Cart = cartService.GetCart(int.Parse(AccountID));
-                ViewBag.CartCount = ViewBag.Cart.Count; 
+                //ViewBag.CartCount = ViewBag.Cart.Count; 
             }
             else
             {
-                ViewBag.Cart = null;
-                ViewBag.CartCount = 0;
+                ViewBag.Cart = new List<OrderItemResponse>();
+                
+                //ViewBag.CartCount = 0;
             }
             
         }
