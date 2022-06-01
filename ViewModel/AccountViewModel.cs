@@ -9,8 +9,9 @@ namespace ViewModel
 {
     public class AccountViewModel
     {
-
-        [Required]
+        [Required(ErrorMessage = "Please enter the user name.")]
+        [StringLength(50, ErrorMessage = "The user name must be less than {1} characters.")]
+        
         [Display(Name = "User Name")]
         public string UserName { get; set; }
         [Required]

@@ -12,8 +12,13 @@ namespace CoffeShop.Controllers
     {
         // GET: TodaySpecials
         [HttpGet]
-        public ActionResult Index()
+        public ActionResult Index(string lang="")
         {
+            if (!string.IsNullOrEmpty(lang))
+            {
+                Session["lang"] = lang;
+                return RedirectToAction("Index", "TodaySpecials", new { language = lang });
+            }
             ProductService  productservice = new ProductService();
             var ProductList = productservice.GetProductViewModelSpecial();
             var firstsixitems= ProductList.Take(6).ToList();

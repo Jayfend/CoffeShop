@@ -163,3 +163,7 @@ a{color:inherit;text-decoration:none}
 .foot-lnk{
 	text-align:center;
 }
+.message {
+	font: 600 16px/18px 'Open Sans',sans-serif;
+	font-size: 13px;
+}

@@ -117,10 +117,61 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Target" xml:space="preserve">
-    <value>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</value>
+  <data name="AddedProducts" xml:space="preserve">
+    <value>Added Products</value>
   </data>
-  <data name="DefaultSchema" xml:space="preserve">
-    <value>dbo</value>
+  <data name="Category" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="Checkcart" xml:space="preserve">
+    <value>Check Cart</value>
+  </data>
+  <data name="Contact" xml:space="preserve">
+    <value>Contact</value>
+  </data>
+  <data name="DailyMenu" xml:space="preserve">
+    <value>Daily Menu</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="EmptyCart" xml:space="preserve">
+    <value>There is no product</value>
+  </data>
+  <data name="English" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="Lang" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Log In</value>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>Logout</value>
+  </data>
+  <data name="Menu" xml:space="preserve">
+    <value>Menu</value>
+  </data>
+  <data name="MyProfile" xml:space="preserve">
+    <value>My Profile</value>
+  </data>
+  <data name="Ordernow" xml:space="preserve">
+    <value>Order Now</value>
+  </data>
+  <data name="Orders" xml:space="preserve">
+    <value>Orders</value>
+  </data>
+  <data name="Readmore" xml:space="preserve">
+    <value>READ MORE</value>
+  </data>
+  <data name="TodaySpecials" xml:space="preserve">
+    <value>Today Specials</value>
+  </data>
+  <data name="Vietnamese" xml:space="preserve">
+    <value>Vietnamese</value>
   </data>
 </root>

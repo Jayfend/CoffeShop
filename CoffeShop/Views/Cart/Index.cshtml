@@ -3,7 +3,14 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+ @{ double total = 0;
+     int i = 0;
+     double totalforone = 0;
+     double totaldiscount = 0;
+     double totaldiscountforone = 0;
+     double totalnotdiscount = 0;
+     double totalnotdiscountforone = 0;
+     }
 <div class="page">
     <section class="shopping-cart dark">
         <div class="container">
@@ -12,110 +19,103 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in, mattis vitae leo.</p>
             </div>
             <div class="content">
+                
                 <div class="row">
                     <div class="col-md-12 col-lg-8">
+                        @foreach (var item in ViewBag.Cart)
+                        {
+
+                            string base64String = Convert.ToBase64String(item.img, 0, item.img.Length);
+
                         <div class="items">
                             <div class="product">
                                 <div class="row">
                                     <div class="col-md-3">
-                                        <img class="img-fluid mx-auto d-block image img" src="~/Assets/img/tstranchau.jpg">
+                                        <img class="img-fluid mx-auto d-block image img" src="data:image/jpg;base64,@base64String">
                                     </div>
                                     <div class="col-md-8">
                                         <div class="info">
                                             <div class="row">
                                                 <div class="col-md-5 product-name">
                                                     <div class="product-name">
-                                                        <a href="#">Trà sữa trân châu</a>
+                                                        <a href="#">@item.ProductName</a>
                                                         <div class="product-info">
-                                                            <div>Loại: <span class="value">Đồ uống</span></div>
-                                                            <div>Giảm giá <span class="value">Không</span></div>
+                                                            @switch (item.ProductCategoryID)
+                                                            {
+                                                                case 1:
+                                                                    <div>Loại: <span class="value"> Caffè Americano</span></div>
+                                                                    break;
+                                                                case 2:<div>Loại: <span class="value"> Caffè Americano</span></div>
+                                                                    break;
+                                                                case 3:<div>Loại: <span class="value"> Caffè latte</span></div>
+                                                                    break;
+                                                                case 4:<div>Loại: <span class="value"> Coffee milk</span></div>
+                                                                    break;
+                                                                case 5:<div>Loại: <span class="value"> Café mocha</span></div>
+                                                                    break;
+                                                                case 6:<div>Loại: <span class="value"> Cappuccino</span></div>
+                                                                    break;
+                                                                case 7:<div>Loại: <span class="value"> Espresso</span></div>
+                                                                    break;
+                                                                case 8:<div>Loại: <span class="value"> Iced coffee</span></div>
+                                                                    break;
+                                                                case 9:<div>Loại: <span class="value"> Instant coffee</span></div>
+                                                                    break;
+                                                                case 10:<div>Loại: <span class="value"> Mocha</span></div>
+                                                                    break;
+                                                                case 11:<div>Loại: <span class="value"> Black coffee</span></div>
+                                                                    break;
+                                                            }
+
+                                                            <div>Giảm giá: <span class="value" id="Discount_@i">@item.Discount</span></div>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4 quantity">
-                                                    <label for="quantity">Quantity:</label>
-                                                    <input id="quantity" type="number" value="1" class="form-control quantity-input">
+                                                    <label for="quantity">Quantity</label>
+                                                    
+                                                    <input id="quantity_@i" type="number" min="0" value="@item.Quantity" onchange="calPrice(@i)" class="form-control quantity-input">
                                                 </div>
                                                 <div class="col-md-3 price">
-                                                    <span>20.000₫</span>
+                                                    <span id="Price_@i">@item.Price</span>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="product">
-                                <div class="row">
-                                    <div class="col-md-3">
-                                        <img class="img-fluid mx-auto d-block image img" src="~/Assets/img/tstranchau.jpg">
-                                    </div>
-                                    <div class="col-md-8">
-                                        <div class="info">
-                                            <div class="row">
-                                                <div class="col-md-5 product-name">
-                                                    <div class="product-name">
-                                                        <a href="#">Trà sữa trân châu</a>
-                                                        <div class="product-info">
-                                                            <div>Loại: <span class="value">Đồ uống</span></div>
-                                                            <div>Giảm giá <span class="value">Không</span></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-4 quantity">
-                                                    <label for="quantity">Quantity:</label>
-                                                    <input id="quantity" type="number" value="1" class="form-control quantity-input">
-                                                </div>
-                                                <div class="col-md-3 price">
-                                                    <span>20.000₫</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product">
-                                <div class="row">
-                                    <div class="col-md-3">
-                                        <img class="img-fluid mx-auto d-block image img" src="~/Assets/img/tstranchau.jpg">
-                                    </div>
-                                    <div class="col-md-8">
-                                        <div class="info">
-                                            <div class="row">
-                                                <div class="col-md-5 product-name">
-                                                    <div class="product-name">
-                                                        <a href="#">Trà sữa trân châu</a>
-                                                        <div class="product-info">
-                                                            <div>Loại: <span class="value">Đồ uống</span></div>
-                                                            <div>Giảm giá <span class="value">Không</span></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-4 quantity">
-                                                    <label for="quantity">Quantity:</label>
-                                                    <input id="quantity" type="number" value="1" class="form-control quantity-input">
-                                                </div>
-                                                <div class="col-md-3 price">
-                                                    <span>20.000₫</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+
                         </div>
+                            totalnotdiscount += item.Price * item.Quantity;
+                            totalnotdiscountforone = item.Price * item.Quantity;
+                            totaldiscountforone = (item.Price * item.Discount / 100)*item.Quantity;
+                            totaldiscount += (item.Price * item.Discount / 100) * item.Quantity;
+                            totalforone = (item.Price - (item.Price * item.Discount / 100))*item.Quantity;
+                            total += (item.Price - (item.Price * item.Discount / 100)) * item.Quantity;
+                        <input type="hidden" id="totalitemforone_@i" value=" @totalforone" />
+                        <input type="hidden" id="totaldiscountforone_@i" value="@totaldiscountforone" />
+                        <input type="hidden" id="totalnotdiscountforone_@i" value="@totalnotdiscountforone" />
+                        <input type="hidden" id="OrderItemId_@i" value="@item.OrderItemId"/>
+                            i++;
+                        }
+                        <button type="button" id="SaveBtn" class="btn btn--primary save-btn">Save</button>
+
+                        <input type="hidden" id="totalitem" value="@i" />
                     </div>
                     <div class="col-md-12 col-lg-4">
                         <div class="summary">
                             <h3>Summary</h3>
-                            <div class="summary-item"><span class="text">Subtotal</span><span class="price">36.000₫</span></div>
-                            <div class="summary-item"><span class="text">Discount</span><span class="price">0₫</span></div>
-                            <div class="summary-item"><span class="text">Shipping</span><span class="price">0₫</span></div>
-                            <div class="summary-item"><span class="text">Total</span><span class="price">36.000₫</span></div>
-                           <a href="/Payment/Index" type="button" class="btn btn--primary btn-lg btn-block">Checkout<a/>
+                            <div class="summary-item"><span class="text">Total</span><span id="totalnotdiscount" class="price">@totalnotdiscount</span></div>
+                            <div class="summary-item"><span class="text">Discount</span><span id="totaldiscount" class="price">@totaldiscount</span></div>
+                            <div class="summary-item"><span class="text">Shipping</span><span class="price">Free</span></div>
+                            <div class="summary-item"><span class="text">Total</span><span id="total" class="price">@total</span></div>
+                            <button id="SubmitBtn" class="btn btn--primary btn-lg btn-block">Checkout</button>
                         </div>
                     </div>
                 </div>
+            
             </div>
+                
         </div>
     </section>
 </div>

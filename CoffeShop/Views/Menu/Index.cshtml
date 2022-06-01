@@ -83,7 +83,7 @@
                             </div>
                             <div class="tm-product-price">
                                 @if (User.Identity.IsAuthenticated)
-                                {
+                                {   
                                     <a href="/Menu/UpdateToCart?ProductId=@item.ProductId" class="tm-product-price-link tm-handwriting-font"><span class="tm-product-price-currency">₫</span>@item.Price</a>
                                 }
                                 else
@@ -98,8 +98,7 @@
 
                 </div>
                    
-                
-                
+               
                
             </div>
         </section>

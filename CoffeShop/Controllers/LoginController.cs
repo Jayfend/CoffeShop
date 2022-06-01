@@ -17,6 +17,8 @@ namespace CoffeShop.Controllers
         [HttpGet]
         public ActionResult Index(string returnUrl)
         {
+            ViewBag.IsLogin = true;
+
             var account = new AccountViewModel
             {
                 ReturnUrl = returnUrl
@@ -32,12 +34,14 @@ namespace CoffeShop.Controllers
             {
                 if (signup.Register(account))
                 {
+                    ViewBag.IsLogin = true;
                     return RedirectToAction("Index");
-                    ViewBag.Success = "Register Successfully";
+                    
                 }
                 else
-                {
-                    ViewBag.error = "User name or Email already exist";
+                {   
+                    ModelState.AddModelError(string.Empty,"Username or Email already existed");
+                    ViewBag.IsLogin = false;
                     return View("Index");
                 }
                
@@ -73,7 +77,7 @@ namespace CoffeShop.Controllers
                   
                     return Redirect(GetRedirectUrl(account.ReturnUrl));
                   
-                }
+                }         
               
             }
             

@@ -1,8 +1,10 @@
 ﻿using Services;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Security.Claims;
+using System.Threading;
 using System.Web;
 using System.Web.Mvc;
 using ViewModel;
@@ -13,7 +15,8 @@ namespace CoffeShop.Controllers
     {   
         public BaseController()
         {
-           
+            
+
             if (System.Web.HttpContext.Current.User != null && System.Web.HttpContext.Current.User.Identity.IsAuthenticated) {
                 
                 var claims = ClaimsPrincipal.Current.Identities.First().Claims.ToList();
@@ -46,6 +49,7 @@ namespace CoffeShop.Controllers
             
             return View();
         }
-        
+       
+       
     }
 }

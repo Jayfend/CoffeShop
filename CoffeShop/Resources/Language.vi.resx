@@ -117,10 +117,61 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Target" xml:space="preserve">
-    <value>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</value>
+  <data name="AddedProducts" xml:space="preserve">
+    <value>Sản Phẩm Đã Thêm</value>
   </data>
-  <data name="DefaultSchema" xml:space="preserve">
-    <value>dbo</value>
+  <data name="Category" xml:space="preserve">
+    <value>Phân Loại</value>
+  </data>
+  <data name="Checkcart" xml:space="preserve">
+    <value>Xem Giỏ Hàng</value>
+  </data>
+  <data name="Contact" xml:space="preserve">
+    <value>Liên Hệ</value>
+  </data>
+  <data name="DailyMenu" xml:space="preserve">
+    <value>Menu Hôm Nay</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Xóa</value>
+  </data>
+  <data name="EmptyCart" xml:space="preserve">
+    <value>Không Có Sản Phẩm</value>
+  </data>
+  <data name="English" xml:space="preserve">
+    <value>Tiếng Anh</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Trang Chủ</value>
+  </data>
+  <data name="Lang" xml:space="preserve">
+    <value>Ngôn Ngữ</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Đăng Nhập</value>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>Đăng Xuất</value>
+  </data>
+  <data name="Menu" xml:space="preserve">
+    <value>Menu</value>
+  </data>
+  <data name="MyProfile" xml:space="preserve">
+    <value>Thông Tin Của Tôi</value>
+  </data>
+  <data name="Ordernow" xml:space="preserve">
+    <value>Đặt Ngay</value>
+  </data>
+  <data name="Orders" xml:space="preserve">
+    <value>Giỏ Hàng</value>
+  </data>
+  <data name="Readmore" xml:space="preserve">
+    <value>ĐỌC THÊM</value>
+  </data>
+  <data name="TodaySpecials" xml:space="preserve">
+    <value>Đặc Biệt</value>
+  </data>
+  <data name="Vietnamese" xml:space="preserve">
+    <value>Tiếng Việt</value>
   </data>
 </root>

@@ -101,7 +101,11 @@
             border-bottom: 1px solid #c79c60;
             color: white;
         }
-
+        .shopping-cart .summary .summary-item:last-of-type {
+            padding-bottom: 10px;
+            padding-top: 10px;
+            color: white;
+        }
         .shopping-cart .summary .text {
             font-size: 1em;
             font-weight: 600;
@@ -116,8 +120,9 @@
             margin-top: 20px;
             background-color: #c79c60;
         }
-.img{
+.img {
     width: 140px;
     height: 140px;
     margin-left: 10px;
+    object-fit: cover;
 }
