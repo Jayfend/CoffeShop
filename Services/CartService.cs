@@ -71,6 +71,37 @@ namespace Services
             }
 
         }
+        public bool Checkoutupdate(List<CheckOutViewModel> listitem)
+        {   if (listitem.Count > 0 )
+            {
+                foreach (var item in listitem)
+                {
+                    var orderitem = _Database.OrderItems.FirstOrDefault(s => s.OrderItemId == item.OrderItemId && s.Quantity != item.Quantity);
+                    if (orderitem != null)
+                    {
+                        if (item.Quantity > 0)
+                        {
+                            orderitem.Quantity = item.Quantity;
+                            
+                            
+                        }
+                        else if (item.Quantity == 0)
+                        {
+                            _Database.OrderItems.Remove(orderitem);
+                            
+                         
+                        }
+                    }
+                    
+                }
+                _Database.SaveChanges();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         public List<OrderItemResponse> GetCart(int AccountId)
         {
             var orderitems = _Database.OrderItems.Where(s => s.Order.Status == "Pending" && s.Order.AccountID == AccountId)
@@ -81,7 +112,8 @@ namespace Services
                      img=s.Product.Image,
                     Price=s.Product.Price,
                     Quantity=s.Quantity,
-                    OrderItemId=s.OrderItemId
+                    OrderItemId=s.OrderItemId,
+                    Discount =s.Product.Discount
                  })
                .ToList();
             return orderitems;

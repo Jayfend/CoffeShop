@@ -3,7 +3,9 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+@{ 
+    double total = 0;
+}
 <div class="page payment-page">
     <section class="payment-form dark">
         <div class="container">
@@ -14,31 +16,38 @@
             <form>
                 <div class="products">
                     <h3 class="title">Checkout</h3>
-                    <div class="item">
-                        <span class="price">20.000₫</span>
-                        <p class="item-name">Product 1</p>
-                        <p class="item-description">Discount: No</p>
-                    </div>
-                    <div class="item">
-                        <span class="price">12.000₫</span>
-                        <p class="item-name">Product 2</p>
-                        <p class="item-description">Discount: No</p>
-                    </div>
-                    <div class="total">Total<span class="price">32.000₫</span></div>
+                    @foreach(var item in ViewBag.Cart){
+                <div class="item">
+
+                    <span class="price">@item.Price ₫</span>
+                    <p class="item-name">@item.ProductName</p>
+                    <p class="item-description">Discount: @item.Discount %</p>
+                    <p class="item-description">Quantity: @item.Quantity</p>
+                </div>
+                        total += (item.Price - (item.Price * item.Discount / 100))*item.Quantity;
+                    }
+
+
+                    <div class="total">Total<span id="totalPrice" class="price">@total₫</span></div>
                 </div>
                 <div class="card-details">
                     <h3 class="title">Customer Information</h3>
                     <div class="row">
+                        <div class="form-group col-sm-8">
+                            <label for="card-number">Full Name</label>
+                            <input id="Full-Name" type="text" class="form-control" placeholder="Full Name" aria-label="Card Holder" aria-describedby="basic-addon1">
+                        </div>
                         <div class="form-group col-sm-7">
                             <label for="card-holder">Phone Number</label>
-                            <input id="card-holder" type="text" class="form-control" placeholder="Phone Number" aria-label="Card Holder" aria-describedby="basic-addon1">
-                        </div>              
+                            <input id="Phone-Number" type="text" class="form-control" placeholder="Phone Number" aria-label="Card Holder" aria-describedby="basic-addon1">
+                        </div>
                         <div class="form-group col-sm-8">
                             <label for="card-number">Address</label>
-                            <input id="card-number" type="text" class="form-control" placeholder="Address" aria-label="Card Holder" aria-describedby="basic-addon1">
+                            <input id="Address" type="text" class="form-control" placeholder="Address" aria-label="Card Holder" aria-describedby="basic-addon1">
                         </div>
+
                         <div class="form-group col-sm-12">
-                            <button type="button" class="btn btn--primary btn-block">Proceed</button>
+                            <button id="ProceedBtn" class="btn btn--primary btn-block">Proceed</button>
                         </div>
                     </div>
                 </div>

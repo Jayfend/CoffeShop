@@ -18,6 +18,7 @@
     <link rel="/Assets/shortcut icon" href="img/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="~/Assets/css/Cart.css">
     <link rel="stylesheet" href="~/Assets/css/Payment.css">
+    <link rel="stylesheet" href="~/Assets/css/Profile.css" />
     @*<link href="~/Assets/css/fontawesome-free-5.15.4-web/css/all.min.css" rel="stylesheet">*@
 
 
@@ -51,93 +52,95 @@
                     </div>
                     <nav class="tm-nav">
                         <ul id="tm-top-header-button">
-                            <li><a href="/Home/Index" class="@ViewBag.Home" id="Home">Home</a></li>
-                            <li><a href="/TodaySpecials/Index" class="@ViewBag.TodaySpecials" id="Special">Today Special</a></li>
-                            <li><a href="/Menu/Index" class="@ViewBag.Menu" id="Menu">Menu</a></li>
-                            <li><a href="/Contact/Index" class="@ViewBag.Contact" id="Contact">Contact</a></li>
+                            <li><a href="/Home/Index" class="@ViewBag.Home" id="Home">@CoffeShop.Resources.Language.Home</a></li>
+                            <li><a href="/TodaySpecials/Index" class="@ViewBag.TodaySpecials" id="Special">@CoffeShop.Resources.Language.TodaySpecials</a></li>
+                            <li><a href="/Menu/Index" class="@ViewBag.Menu" id="Menu">@CoffeShop.Resources.Language.Menu</a></li>
+                            <li><a href="/Contact/Index" class="@ViewBag.Contact" id="Contact">@CoffeShop.Resources.Language.Contact</a></li>
                             <div class="header__cart-wrap">
                                 <i class="header__cart-icon fa fa-shopping-cart"></i>
                                 <span class="header__cart-notice">@ViewBag.Cart.Count</span>
                                 <!-- header__cart-list--no-cart -->
-                                @if (@ViewBag.Cart == null || ViewBag.Cart.Count==0){
-                                <div class="header__cart-list header__cart-list--no-cart">
-                                <img src="~/Assets/img/no-cart.png" alt="" class="header__cart-list--no-cart-img">
-                                <span class="header__cart-list-no-cart-msg">Chưa có sản phẩm</span>
-                                  </div>
+                                @if (@ViewBag.Cart == null || ViewBag.Cart.Count == 0)
+                                {
+                                    <div class="header__cart-list header__cart-list--no-cart">
+                                        <img src="~/Assets/img/no-cart.png" alt="" class="header__cart-list--no-cart-img">
+                                        <span class="header__cart-list-no-cart-msg">@CoffeShop.Resources.Language.EmptyCart</span>
+                                    </div>
                                 }
-                                else {
-                                <div class="header__cart-list">
-                                    <img src="~/Assets/img/no-cart.png" alt="" class="header__cart-list--no-cart-img">
-                                    <span class="header__cart-list-no-cart-msg">Chưa có sản phẩm</span>
+                                else
+                                {
+                                    <div class="header__cart-list">
+                                        <img src="~/Assets/img/no-cart.png" alt="" class="header__cart-list--no-cart-img">
+                                        <span class="header__cart-list-no-cart-msg">@CoffeShop.Resources.Language.EmptyCart</span>
 
-                                    <h4 class="header__cart-heading">Sản phẩm đã thêm</h4>
-                                    <ul class="header__cart-list-item">
-                                        @foreach (var item in ViewBag.Cart)
-                                        {
-                                            string base64String = Convert.ToBase64String(item.img, 0, item.img.Length);
-                                            <li class="header__cart-item">
-                                                <img src="data:image/jpg;base64,@base64String" alt=""class="header__cart-img">
-                                                <div class="header__cart-item-info">
-                                                    <div class="header__cart-item-head">
-                                                        <h5 class="header__cart-item-name">@item.ProductName</h5>
-                                                        <div class="header__cart-item-price-wrap">
-                                                            <span class="header__cart-item-price">@item.Price</span>
-                                                            <span class="header__cart-item-multiply">x</span>
-                                                            <span class="header__cart-item-qnt">@item.Quantity</span>
+                                        <h4 class="header__cart-heading">@CoffeShop.Resources.Language.AddedProducts</h4>
+                                        <ul class="header__cart-list-item">
+                                            @foreach (var item in ViewBag.Cart)
+                                            {
+                                                string base64String = Convert.ToBase64String(item.img, 0, item.img.Length);
+                                                <li class="header__cart-item">
+                                                    <img src="data:image/jpg;base64,@base64String" alt="" class="header__cart-img">
+                                                    <div class="header__cart-item-info">
+                                                        <div class="header__cart-item-head">
+                                                            <h5 class="header__cart-item-name">@item.ProductName</h5>
+                                                            <div class="header__cart-item-price-wrap">
+                                                                <span class="header__cart-item-price">@item.Price</span>
+                                                                <span class="header__cart-item-multiply">x</span>
+                                                                <span class="header__cart-item-qnt">@item.Quantity</span>
 
+                                                            </div>
+                                                        </div>
+                                                        <div class="header__cart-item-body">
+                                                            @switch (item.ProductCategoryID)
+                                                            {
+                                                                case 1:
+                                                                    <span class="header__cart-item-description">@CoffeShop.Resources.Language.Category: Affogato</span>
+                                                                    break;
+                                                                case 2:
+                                                        <span class="header__cart-item-description">@CoffeShop.Resources.Language.Category: Caffè Americano</span>
+                                                                    break;
+                                                                case 3:
+                                                        <span class="header__cart-item-description">@CoffeShop.Resources.Language.Category: Caffè latte</span>
+                                                                    break;
+                                                                case 4:
+                                                        <span class="header__cart-item-description">@CoffeShop.Resources.Language.Category: Coffee milk</span>
+                                                                    break;
+                                                                case 5:
+                                                        <span class="header__cart-item-description">@CoffeShop.Resources.Language.Category: Café mocha</span>
+                                                                    break;
+                                                                case 6:
+                                                        <span class="header__cart-item-description">@CoffeShop.Resources.Language.Category: Cappuccino</span>
+                                                                    break;
+                                                                case 7:
+                                                        <span class="header__cart-item-description">@CoffeShop.Resources.Language.Category:Espresso</span>
+                                                                    break;
+                                                                case 8:
+                                                        <span class="header__cart-item-description">@CoffeShop.Resources.Language.Category:Iced coffee</span>
+                                                                    break;
+                                                                case 9:
+                                                        <span class="header__cart-item-description">@CoffeShop.Resources.Language.Category: Instant coffee</span>
+                                                                    break;
+                                                                case 10:
+                                                        <span class="header__cart-item-description">@CoffeShop.Resources.Language.Category: Mocha</span>
+                                                                    break;
+                                                                case 11:
+                                                        <span class="header__cart-item-description">@CoffeShop.Resources.Language.Category: Black coffee</span>
+                                                                    break;
+
+                                                            }
+
+
+                                                        <a href="/Base/DeleteItem?OrderItemId=@item.OrderItemId " class="header__cart-item-remove">@CoffeShop.Resources.Language.Delete</a>
                                                         </div>
                                                     </div>
-                                                    <div class="header__cart-item-body">
-                                                        @switch (item.ProductCategoryID)
-                                                        {
-                                                            case 1:
-                                                                <span class="header__cart-item-description">Phân loại: Affogato</span>
-                                                                break;
-                                                            case 2:
-                                                    <span class="header__cart-item-description">Phân loại: Caffè Americano</span>
-                                                                break;
-                                                            case 3:
-                                                    <span class="header__cart-item-description">Phân loại: Caffè latte</span>
-                                                                break;
-                                                            case 4:
-                                                    <span class="header__cart-item-description">Phân loại: Coffee milk</span>
-                                                                break;
-                                                            case 5:
-                                                    <span class="header__cart-item-description">Phân loại: Café mocha</span>
-                                                                break;
-                                                            case 6:
-                                                    <span class="header__cart-item-description">Phân loại: Cappuccino</span>
-                                                                break;
-                                                            case 7:
-                                                    <span class="header__cart-item-description">Phân loại:Espresso</span>
-                                                                break;
-                                                            case 8:
-                                                    <span class="header__cart-item-description">Phân loại:Iced coffee</span>
-                                                                break;
-                                                            case 9:
-                                                    <span class="header__cart-item-description">Phân loại: Instant coffee</span>
-                                                                break;
-                                                            case 10:
-                                                    <span class="header__cart-item-description">Phân loại: Mocha</span>
-                                                                break;
-                                                            case 11:
-                                                    <span class="header__cart-item-description">Phân loại: Black coffee</span>
-                                                                break;
-
-                                                        }
+                                                </li>
+                                            }
 
 
-                                                        <a href="/Base/DeleteItem?OrderItemId=@item.OrderItemId " class="header__cart-item-remove">Xóa</a>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        }
-
-
-                                    </ul>
-                                    <a href="/Cart/Index" class="header__cart-view-cart btn btn--primary">Xem Giỏ Hàng</a>
-                                </div>
-                                    }
+                                        </ul>
+                                        <a href="/Cart/Index" class="header__cart-view-cart btn btn--primary">@CoffeShop.Resources.Language.Checkcart</a>
+                                    </div>
+                                }
 
 
 
@@ -153,33 +156,38 @@
                             <span class="header__navbar-user-name">@User.Identity.Name</span>
                             <ul class="header__navbar-user-menu">
                                 <li class="header__navbar-user-item">
-                                    <a href="">Tài Khoản của tôi</a>
+                                    <a href="/Profile/Index">@CoffeShop.Resources.Language.MyProfile</a>
                                 </li>
+
                                 <li class="header__navbar-user-item">
-                                    <a href="">Địa chỉ</a>
-                                </li>
-                                <li class="header__navbar-user-item">
-                                    <a href="">Đơn mua</a>
+                                    <a href="Cart/Index">@CoffeShop.Resources.Language.Orders</a>
                                 </li>
                                 <li class="header__navbar-user-item header__navbar-user-item--separate">
-                                    <a href="/Login/Logout">Đăng xuất</a>
+                                    <a href="/Login/Logout">@CoffeShop.Resources.Language.Logout</a>
                                 </li>
                             </ul>
                         </div>
                     }
                     else
-                                                        {
+                    {
                         <div class="header__navbar-item header__navbar-user">
                             <img src="https://banner2.cleanpng.com/20180402/bje/kisspng-computer-icons-avatar-login-user-avatar-5ac207e69ecd41.2588125315226654466505.jpg"
                                  alt="" class="header__navbar-user-img">
-                            <a href="/Login/Index" class="header__navbar-user-name">Đăng Nhập</a>
+                            <a href="/Login/Index" class="header__navbar-user-name">@CoffeShop.Resources.Language.Login</a>
                         </div>
                     }
 
                 </div>
+                
+                    <select class="header__navbar-user-name select-language" onchange="location = this.value;">
+                        <option selected value="">@CoffeShop.Resources.Language.Lang</option>
+                        <option value="?lang=en">@CoffeShop.Resources.Language.English</option>
+                        <option value="?lang=vi">@CoffeShop.Resources.Language.Vietnamese</option>
+                    </select>
+                
             </div>
-        </div>
     </div>
+   </div>
     @RenderBody()
     <footer>
         <div class="tm-black-bg">
@@ -225,6 +233,7 @@
     <!-- JS -->
     <script type="text/javascript" src="/Assets/js/jquery-1.11.2.min.js"></script>      <!-- jQuery -->
     <script type="text/javascript" src="/Assets/js/templatemo-script.js"></script>
+    <script type="text/javascript" src="~/Assets/js/MycustomJs.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script><!-- Templatemo Script -->
     @RenderSection("scripts", required: false);

@@ -54,21 +54,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Account.cs" />
-    <Compile Include="Migrations\202205010427458_AllTableAdded.cs" />
-    <Compile Include="Migrations\202205010427458_AllTableAdded.designer.cs">
-      <DependentUpon>202205010427458_AllTableAdded.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202205010507176_OrderUpdate.cs" />
-    <Compile Include="Migrations\202205010507176_OrderUpdate.designer.cs">
-      <DependentUpon>202205010507176_OrderUpdate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202205010532527_TotalPriceRemoved.cs" />
-    <Compile Include="Migrations\202205010532527_TotalPriceRemoved.designer.cs">
-      <DependentUpon>202205010532527_TotalPriceRemoved.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202205010534371_AddressPhoneRemoved.cs" />
-    <Compile Include="Migrations\202205010534371_AddressPhoneRemoved.designer.cs">
-      <DependentUpon>202205010534371_AddressPhoneRemoved.cs</DependentUpon>
+    <Compile Include="Bill.cs" />
+    <Compile Include="Migrations\202205050635166_AllTableAdded.cs" />
+    <Compile Include="Migrations\202205050635166_AllTableAdded.designer.cs">
+      <DependentUpon>202205050635166_AllTableAdded.cs</DependentUpon>
     </Compile>
     <Compile Include="Order.cs" />
     <Compile Include="OrderItem.cs" />
@@ -88,17 +77,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202205010427458_AllTableAdded.resx">
-      <DependentUpon>202205010427458_AllTableAdded.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202205010507176_OrderUpdate.resx">
-      <DependentUpon>202205010507176_OrderUpdate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202205010532527_TotalPriceRemoved.resx">
-      <DependentUpon>202205010532527_TotalPriceRemoved.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202205010534371_AddressPhoneRemoved.resx">
-      <DependentUpon>202205010534371_AddressPhoneRemoved.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202205050635166_AllTableAdded.resx">
+      <DependentUpon>202205050635166_AllTableAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

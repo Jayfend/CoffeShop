@@ -15,5 +15,6 @@ namespace ViewModel
         public int ProductCategoryID { get; set; }
         public int Quantity { get; set; }
         public int OrderItemId { get; set; }
+        public double Discount { get; set; }
     }
 }

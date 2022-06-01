@@ -43,6 +43,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccountViewModel.cs" />
+    <Compile Include="BillViewModel.cs" />
+    <Compile Include="CheckOutViewModel.cs" />
     <Compile Include="OrderItemResponse.cs" />
     <Compile Include="ProductViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

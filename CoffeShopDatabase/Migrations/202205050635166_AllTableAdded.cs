@@ -20,6 +20,34 @@
                 .PrimaryKey(t => t.AccountID);
             
             CreateTable(
+                "dbo.Bills",
+                c => new
+                    {
+                        BillID = c.Int(nullable: false, identity: true),
+                        TotalPrice = c.Double(nullable: false),
+                        OrderId = c.Int(nullable: false),
+                        Purchasedate = c.DateTime(nullable: false),
+                        PhoneNumber = c.String(nullable: false),
+                        Address = c.String(nullable: false),
+                        Name = c.String(nullable: false),
+                    })
+                .PrimaryKey(t => t.BillID)
+                .ForeignKey("dbo.Orders", t => t.OrderId, cascadeDelete: true)
+                .Index(t => t.OrderId);
+            
+            CreateTable(
+                "dbo.Orders",
+                c => new
+                    {
+                        OrderId = c.Int(nullable: false, identity: true),
+                        AccountID = c.Int(nullable: false),
+                        Status = c.String(nullable: false, maxLength: 10),
+                    })
+                .PrimaryKey(t => t.OrderId)
+                .ForeignKey("dbo.Accounts", t => t.AccountID, cascadeDelete: true)
+                .Index(t => t.AccountID);
+            
+            CreateTable(
                 "dbo.OrderItems",
                 c => new
                     {
@@ -33,18 +61,6 @@
                 .ForeignKey("dbo.Products", t => t.ProductId, cascadeDelete: true)
                 .Index(t => t.OrderId)
                 .Index(t => t.ProductId);
-            
-            CreateTable(
-                "dbo.Orders",
-                c => new
-                    {
-                        OrderId = c.Int(nullable: false, identity: true),
-                        Status = c.String(nullable: false, maxLength: 10),
-                        TotalPrice = c.Double(nullable: false),
-                        PhoneNumber = c.Int(nullable: false),
-                        Address = c.String(),
-                    })
-                .PrimaryKey(t => t.OrderId);
             
             CreateTable(
                 "dbo.Products",
@@ -67,11 +83,16 @@
         {
             DropForeignKey("dbo.OrderItems", "ProductId", "dbo.Products");
             DropForeignKey("dbo.OrderItems", "OrderId", "dbo.Orders");
+            DropForeignKey("dbo.Bills", "OrderId", "dbo.Orders");
+            DropForeignKey("dbo.Orders", "AccountID", "dbo.Accounts");
             DropIndex("dbo.OrderItems", new[] { "ProductId" });
             DropIndex("dbo.OrderItems", new[] { "OrderId" });
+            DropIndex("dbo.Orders", new[] { "AccountID" });
+            DropIndex("dbo.Bills", new[] { "OrderId" });
             DropTable("dbo.Products");
-            DropTable("dbo.Orders");
             DropTable("dbo.OrderItems");
+            DropTable("dbo.Orders");
+            DropTable("dbo.Bills");
             DropTable("dbo.Accounts");
         }
     }

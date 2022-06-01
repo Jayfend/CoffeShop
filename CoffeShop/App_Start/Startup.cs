@@ -18,6 +18,7 @@ namespace CoffeShop.App_Start
                 AuthenticationType = "ApplicationCookie",
                 LoginPath = new PathString("/Login/Index")
             });
+
         }
     }
 }

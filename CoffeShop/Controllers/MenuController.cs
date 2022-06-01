@@ -12,8 +12,14 @@ namespace CoffeShop.Controllers
     public class MenuController : BaseController
     {
         // GET: Menu
-        public ActionResult Index(int categoryID = 1)
-        {  
+        public ActionResult Index(int categoryID = 1, string lang="")
+        {
+            if (!string.IsNullOrEmpty(lang))
+            {
+                Session["lang"] = lang;
+                return RedirectToAction("Index", "Menu", new { language = lang });
+            }
+            
             ProductService getproduct = new ProductService();
             ViewBag.Menu = "active";
             var ProductList = getproduct.GetProductViewModel(categoryID);
@@ -37,6 +43,22 @@ namespace CoffeShop.Controllers
             //First get user claims    
             
             return View();
+        }
+        public ActionResult ChangeLanguage(string lang)
+        {
+            if (lang == "en")
+            {
+                ViewBag.English = "selected";
+                ViewBag.Vietnamese = "";
+            }
+            else if (lang == "vi")
+            {
+                ViewBag.English = "";
+                ViewBag.Vietnamese = "selected";
+            }
+            Session["lang"] = lang;
+            return RedirectToAction("Index", "Menu", new { language = lang });
+
         }
     }
 }
