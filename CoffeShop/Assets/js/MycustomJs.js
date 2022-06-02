@@ -138,3 +138,24 @@ $("#SaveBtn").click(function () {
     }
 
 });
+
+function LanguageGet(LanguageAbbrevation) {
+    $.ajax
+        ({
+            type: "GET",
+            url: "Base/Change",
+            data: { LanguageAbbrevation },
+            dataType: "text",
+            success: function (data) {
+                console.log(data);
+                var a =JSON.parse(data);
+                if (a.result === true) {
+                    console.log(data);
+                    location.reload();
+                         
+                }
+
+            }
+
+        });
+}

@@ -12,14 +12,8 @@ namespace CoffeShop.Controllers
     public class MenuController : BaseController
     {
         // GET: Menu
-        public ActionResult Index(int categoryID = 1, string lang="")
+        public ActionResult Index(int categoryID = 1)
         {
-            if (!string.IsNullOrEmpty(lang))
-            {
-                Session["lang"] = lang;
-                return RedirectToAction("Index", "Menu", new { language = lang });
-            }
-            
             ProductService getproduct = new ProductService();
             ViewBag.Menu = "active";
             var ProductList = getproduct.GetProductViewModel(categoryID);

@@ -12,13 +12,9 @@ namespace CoffeShop.Controllers
     public class CartController : BaseController
     {
         // GET: Cart
-        public ActionResult Index(string lang="")
+        public ActionResult Index()
         {
-            if (!string.IsNullOrEmpty(lang))
-            {
-                Session["lang"] = lang;
-                return RedirectToAction("Index", "Menu", new { language = lang });
-            }
+         
             if (System.Web.HttpContext.Current.User != null && System.Web.HttpContext.Current.User.Identity.IsAuthenticated)
             {
                 var claims = ClaimsPrincipal.Current.Identities.First().Claims.ToList();
