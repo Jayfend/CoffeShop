@@ -49,7 +49,20 @@ namespace CoffeShop.Controllers
             
             return View();
         }
-       
-       
+        public JsonResult Change(String LanguageAbbrevation)
+        {
+            if (!string.IsNullOrEmpty(LanguageAbbrevation))
+            {
+                Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture(LanguageAbbrevation);
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo(LanguageAbbrevation);
+            }
+
+            HttpCookie cookie = new HttpCookie(name: "Languages");
+            cookie.Value = LanguageAbbrevation;
+            Response.Cookies.Add(cookie);
+            return Json(new { result = true }, JsonRequestBehavior.AllowGet);
+
+        }
+
     }
 }

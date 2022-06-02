@@ -9,13 +9,9 @@ namespace CoffeShop.Controllers
     public class ContactController : BaseController
     {
         // GET: Contact
-        public ActionResult Index(string lang="")
+        public ActionResult Index()
         {
-            if (!string.IsNullOrEmpty(lang))
-            {
-                Session["lang"] = lang;
-                return RedirectToAction("Index", "Contact", new { language = lang });
-            }
+          
             @ViewBag.Contact = "active";
             return View();
         }

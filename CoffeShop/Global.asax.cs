@@ -19,16 +19,19 @@ namespace CoffeShop
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
-        protected void Application_AcquireRequestState(Object sender, EventArgs e)
+       protected void Application_BeginRequest(object sender,EventArgs e)
         {
-            HttpContext context = HttpContext.Current;
-            var languageSession = "en";
-            if (context != null && context.Session != null)
+            HttpCookie cookie = HttpContext.Current.Request.Cookies["Languages"];
+            if(cookie != null && cookie.Value != null)
             {
-                languageSession = context.Session["lang"] != null ? context.Session["lang"].ToString() : "en";
+                System.Threading.Thread.CurrentThread.CurrentCulture=  new System.Globalization.CultureInfo(cookie.Value);
+                System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(cookie.Value);
             }
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(languageSession);
-            Thread.CurrentThread.CurrentCulture = new CultureInfo(languageSession);
+            else
+            {
+                System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("en");
+                System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en");
+            }
         }
 
     }

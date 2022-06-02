@@ -10,17 +10,11 @@ namespace CoffeShop.Controllers
     public class HomeController : BaseController
     {
        
-        public ActionResult Index(string lang="")
-        {   if(!string.IsNullOrEmpty(lang))
-            {
-                Session["lang"] = lang;
-                return RedirectToAction("Index", "Home", new { language = lang });
-            }
-            else
-            {
+        public ActionResult Index()
+        {  
                 ViewBag.Home = "active";
                 return View();
-            }
+            
             
         }
        

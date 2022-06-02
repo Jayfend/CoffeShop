@@ -357,3 +357,9 @@
     right: 10px;
     top: 24px;
 }
+.header__navbar-user-language {
+    margin-left: 4px;
+    font-size: 14.5px;
+    font-weight: 500;
+    color: #c79c60;
+}
