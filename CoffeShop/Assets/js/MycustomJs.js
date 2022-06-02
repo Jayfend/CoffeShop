@@ -143,7 +143,7 @@ function LanguageGet(LanguageAbbrevation) {
     $.ajax
         ({
             type: "GET",
-            url: "Base/Change",
+            url: "/Base/Change",
             data: { LanguageAbbrevation },
             dataType: "text",
             success: function (data) {

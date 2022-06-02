@@ -165,8 +165,14 @@
   <data name="Orders" xml:space="preserve">
     <value>Giỏ Hàng</value>
   </data>
+  <data name="Popular" xml:space="preserve">
+    <value>Đồ Uống Hot</value>
+  </data>
   <data name="Readmore" xml:space="preserve">
     <value>ĐỌC THÊM</value>
+  </data>
+  <data name="Specials" xml:space="preserve">
+    <value>Đặc Biệt Hôm Nay</value>
   </data>
   <data name="TodaySpecials" xml:space="preserve">
     <value>Đặc Biệt</value>
