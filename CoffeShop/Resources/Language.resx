@@ -165,8 +165,14 @@
   <data name="Orders" xml:space="preserve">
     <value>Orders</value>
   </data>
+  <data name="Popular" xml:space="preserve">
+    <value>Popular Items</value>
+  </data>
   <data name="Readmore" xml:space="preserve">
     <value>READ MORE</value>
+  </data>
+  <data name="Specials" xml:space="preserve">
+    <value>Today's Specials</value>
   </data>
   <data name="TodaySpecials" xml:space="preserve">
     <value>Today Specials</value>

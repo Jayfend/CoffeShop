@@ -363,3 +363,7 @@
     font-weight: 500;
     color: #c79c60;
 }
+.message{
+    color: red;
+    list-style-type: none;
+}

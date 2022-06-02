@@ -205,11 +205,29 @@ namespace CoffeShop.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Popular Items.
+        /// </summary>
+        public static string Popular {
+            get {
+                return ResourceManager.GetString("Popular", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to READ MORE.
         /// </summary>
         public static string Readmore {
             get {
                 return ResourceManager.GetString("Readmore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Today&apos;s Specials.
+        /// </summary>
+        public static string Specials {
+            get {
+                return ResourceManager.GetString("Specials", resourceCulture);
             }
         }
         

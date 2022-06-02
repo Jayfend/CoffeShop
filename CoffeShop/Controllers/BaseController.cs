@@ -49,7 +49,7 @@ namespace CoffeShop.Controllers
             
             return View();
         }
-        public JsonResult Change(String LanguageAbbrevation)
+        public virtual ActionResult Change(String LanguageAbbrevation)
         {
             if (!string.IsNullOrEmpty(LanguageAbbrevation))
             {
