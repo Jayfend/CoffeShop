@@ -31,28 +31,14 @@ namespace CoffeShop.Controllers
                 ;
                 if (updatetocart.UpdateCart(ProductId, int.Parse(AccountID)))
                 {
-                    return RedirectToAction("Index");
+                    ViewBag.Cart = updatetocart.GetCart(int.Parse(AccountID));
+                    return PartialView("_Cart");
                 }
             }
             //First get user claims    
             
             return View();
         }
-        public ActionResult ChangeLanguage(string lang)
-        {
-            if (lang == "en")
-            {
-                ViewBag.English = "selected";
-                ViewBag.Vietnamese = "";
-            }
-            else if (lang == "vi")
-            {
-                ViewBag.English = "";
-                ViewBag.Vietnamese = "selected";
-            }
-            Session["lang"] = lang;
-            return RedirectToAction("Index", "Menu", new { language = lang });
-
-        }
+       
     }
 }

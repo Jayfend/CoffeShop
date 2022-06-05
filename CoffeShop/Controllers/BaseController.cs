@@ -37,6 +37,7 @@ namespace CoffeShop.Controllers
         }
         public ActionResult DeleteItem(int OrderItemId)
         {
+            
             var claims = ClaimsPrincipal.Current.Identities.First().Claims.ToList();
 
             //Filter specific claim    
@@ -44,10 +45,12 @@ namespace CoffeShop.Controllers
             CartService cartService = new CartService();
             if(cartService.DeleteCartItem(OrderItemId, int.Parse(AccountID)))
             {
-                return RedirectToAction("Index","Menu");
+                ViewBag.Cart = cartService.GetCart(int.Parse(AccountID));
+                return PartialView("_Cart");
+               
             }
-            
-            return View();
+
+            return Json(new { result = false }, JsonRequestBehavior.AllowGet);
         }
         public virtual ActionResult Change(String LanguageAbbrevation)
         {

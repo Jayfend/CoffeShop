@@ -159,3 +159,42 @@ function LanguageGet(LanguageAbbrevation) {
 
         });
 }
+function CartDelete(Id) {
+    console.log("clicked");
+    console.log(Id);
+    $.ajax
+        ({
+            type: "GET",
+            url: "/Base/DeleteItem",
+            data: { OrderItemId: Id },
+            dataType: "text",
+            success: function (data) {
+                console.log(data);
+                
+                
+                 $("#Cart").html(data);
+                    
+
+
+            }
+
+        });
+}
+function AddCart(Id) {
+    console.log("clicked");
+    $.ajax
+        ({
+            type: "GET",
+            url: "/Menu/UpdateToCart",
+            data: { ProductId: Id },
+            dataType: "text",
+            success: function (data) {
+
+                $("#Cart").html(data);
+                
+
+
+            }
+
+        });
+}
