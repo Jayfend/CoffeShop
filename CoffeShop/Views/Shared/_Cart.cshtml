@@ -1,0 +1,85 @@
+﻿<i class="header__cart-icon fa fa-shopping-cart"></i>
+<span class="header__cart-notice">@ViewBag.Cart.Count</span>
+<!-- header__cart-list--no-cart -->
+@if (@ViewBag.Cart == null || ViewBag.Cart.Count == 0)
+{
+    <div class="header__cart-list header__cart-list--no-cart">
+        <img src="~/Assets/img/no-cart.png" alt="" class="header__cart-list--no-cart-img">
+        <span class="header__cart-list-no-cart-msg">@CoffeShop.Resources.Language.EmptyCart</span>
+    </div>
+}
+else
+{
+    <div class="header__cart-list">
+        <img src="~/Assets/img/no-cart.png" alt="" class="header__cart-list--no-cart-img">
+        <span class="header__cart-list-no-cart-msg">@CoffeShop.Resources.Language.EmptyCart</span>
+
+        <h4 class="header__cart-heading">@CoffeShop.Resources.Language.AddedProducts</h4>
+        <ul class="header__cart-list-item">
+            @foreach (var item in ViewBag.Cart)
+            {
+                string base64String = Convert.ToBase64String(item.img, 0, item.img.Length);
+                <li class="header__cart-item">
+                    <img src="data:image/jpg;base64,@base64String" alt="" class="header__cart-img">
+                    <div class="header__cart-item-info">
+                        <div class="header__cart-item-head">
+                            <h5 class="header__cart-item-name">@item.ProductName</h5>
+                            <div class="header__cart-item-price-wrap">
+                                <span class="header__cart-item-price">@item.Price</span>
+                                <span class="header__cart-item-multiply">x</span>
+                                <span class="header__cart-item-qnt">@item.Quantity</span>
+
+                            </div>
+                        </div>
+                        <div class="header__cart-item-body">
+                            @switch (item.ProductCategoryID)
+                            {
+                                case 1:
+                                    <span class="header__cart-item-description">@CoffeShop.Resources.Language.Category: Affogato</span>
+                                    break;
+                                case 2:
+                                    <span class="header__cart-item-description">@CoffeShop.Resources.Language.Category: Caffè Americano</span>
+                                    break;
+                                case 3:
+                                    <span class="header__cart-item-description">@CoffeShop.Resources.Language.Category: Caffè latte</span>
+                                    break;
+                                case 4:
+                                    <span class="header__cart-item-description">@CoffeShop.Resources.Language.Category: Coffee milk</span>
+                                    break;
+                                case 5:
+                                    <span class="header__cart-item-description">@CoffeShop.Resources.Language.Category: Café mocha</span>
+                                    break;
+                                case 6:
+                                    <span class="header__cart-item-description">@CoffeShop.Resources.Language.Category: Cappuccino</span>
+                                    break;
+                                case 7:
+                                    <span class="header__cart-item-description">@CoffeShop.Resources.Language.Category:Espresso</span>
+                                    break;
+                                case 8:
+                                    <span class="header__cart-item-description">@CoffeShop.Resources.Language.Category:Iced coffee</span>
+                                    break;
+                                case 9:
+                                    <span class="header__cart-item-description">@CoffeShop.Resources.Language.Category: Instant coffee</span>
+                                    break;
+                                case 10:
+                                    <span class="header__cart-item-description">@CoffeShop.Resources.Language.Category: Mocha</span>
+                                    break;
+                                case 11:
+                                    <span class="header__cart-item-description">@CoffeShop.Resources.Language.Category: Black coffee</span>
+                                    break;
+
+                            }
+
+
+                            <a onclick="CartDelete(@item.OrderItemId)" class="header__cart-item-remove">@CoffeShop.Resources.Language.Delete</a>
+                        </div>
+                    </div>
+                </li>
+            }
+
+
+        </ul>
+        <a href="/Cart/Index" class="header__cart-view-cart btn btn--primary">@CoffeShop.Resources.Language.Checkcart</a>
+    </div>
+}
+
