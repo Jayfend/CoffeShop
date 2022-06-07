@@ -35,14 +35,14 @@ namespace CoffeShop.Controllers
                 if (signup.Register(account))
                 {
                     ViewBag.IsLogin = true;
-                    return RedirectToAction("Index");
-                    
+                    return Json(new { result = true }, JsonRequestBehavior.AllowGet);
+
                 }
                 else
                 {   
-                    ModelState.AddModelError(string.Empty,"Username or Email already existed");
                     ViewBag.IsLogin = false;
-                    return View("Index");
+                    return Json(new { result = false }, JsonRequestBehavior.AllowGet);
+
                 }
                
             }

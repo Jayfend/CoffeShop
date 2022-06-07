@@ -38,10 +38,10 @@
                         <div class="tm-popular-item-description">
                             <h3 class="tm-handwriting-font tm-popular-item-title"><span class="tm-handwriting-font bigger-first-letter">@item.ProductName.Substring(0, 1)</span>@item.ProductName.Substring(1, item.ProductName.Length-1)</h3><hr class="tm-popular-item-hr">
                             <p>@item.Description</p>
-                            <div class="order-now-container">
+                            <div class="order-now-container click-able">
                                 @if (User.Identity.IsAuthenticated)
                                 {
-                                    <a href="/TodaySpecials/UpdateToCart?ProductId=@item.ProductId" class="order-now-link tm-handwriting-font">Order Now</a>
+                                    <a onclick="AddCartTS(@item.ProductId)" class="order-now-link tm-handwriting-font">Order Now</a>
                                 }
                                 else
                                 {

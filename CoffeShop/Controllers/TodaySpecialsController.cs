@@ -21,24 +21,20 @@ namespace CoffeShop.Controllers
             ViewBag.TodaySpecials = "active";
             return View(firstsixitems);
         }
+        [Authorize]
         public ActionResult UpdateToCart(int ProductId)
         {
-            if (System.Web.HttpContext.Current.User != null && System.Web.HttpContext.Current.User.Identity.IsAuthenticated)
-            {
-                var claims = ClaimsPrincipal.Current.Identities.First().Claims.ToList();
 
-                //Filter specific claim    
-                var AccountID = claims?.FirstOrDefault(x => x.Type.Equals(ClaimTypes.NameIdentifier, StringComparison.OrdinalIgnoreCase))?.Value;
-                CartService updatetocart = new CartService();
-                ;
-                if (updatetocart.UpdateCart(ProductId, int.Parse(AccountID)))
-                {
-                    return RedirectToAction("Index");
-                }
-            }
-            //First get user claims    
+            var claims = ClaimsPrincipal.Current.Identities.First().Claims.ToList();
 
-            return View();
+            //Filter specific claim    
+            var AccountID = claims?.FirstOrDefault(x => x.Type.Equals(ClaimTypes.NameIdentifier, StringComparison.OrdinalIgnoreCase))?.Value;
+            CartService updatetocart = new CartService();
+
+            updatetocart.UpdateCart(ProductId, int.Parse(AccountID));
+
+            ViewBag.Cart = updatetocart.GetCart(int.Parse(AccountID));
+            return PartialView("_Cart");
         }
     }
 }
