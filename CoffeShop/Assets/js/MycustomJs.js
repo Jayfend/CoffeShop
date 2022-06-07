@@ -68,9 +68,7 @@ $("#ProceedBtn").click(function () {
     var PhoneNumber = document.getElementById('Phone-Number').value;
     var Address = document.getElementById('Address').value;
     var Name = document.getElementById('Full-Name').value;
-    console.log(totalPrice);
-    console.log(PhoneNumber);
-    console.log(Address);
+   
     var listData = { TotalPrice: totalPrice, PhoneNumber: PhoneNumber, Address: Address, Name: Name };
     console.log(listData);
     if (totalPrice == 0 || PhoneNumber.length === 0 || Address.length === 0 || Name.length === 0) {
@@ -97,16 +95,16 @@ function check() {
     var password = document.getElementById('signup-password').value;
     var repassword = document.getElementById('signup-repassword').value;
     if (password == repassword) {
-       
+
         document.getElementById('confirmpassword-message').style.color = 'green';
-            document.getElementById('confirmpassword-message').innerHTML = 'Password matching';
-            document.getElementById('SignUpBtn').disabled = false;
-        }
+        document.getElementById('confirmpassword-message').innerHTML = 'Password matching';
+        document.getElementById('SignUpBtn').disabled = false;
+    }
     else {
-      
+
         document.getElementById('confirmpassword-message').style.color = 'red';
-            document.getElementById('confirmpassword-message').innerHTML = 'Password not match';
-            document.getElementById('SignUpBtn').disabled = true;
+        document.getElementById('confirmpassword-message').innerHTML = 'Password not match';
+        document.getElementById('SignUpBtn').disabled = true;
     }
 }
 $("#SaveBtn").click(function () {
@@ -198,3 +196,48 @@ function AddCart(Id) {
 
         });
 }
+function AddCartTS(Id) {
+    console.log("clicked");
+    $.ajax
+        ({
+            type: "GET",
+            url: "/TodaySpecials/UpdateToCart",
+            data: { ProductId: Id },
+            dataType: "text",
+            success: function (data) {
+                console.log(data);
+                $("#Cart").html(data);
+
+            }
+
+        });
+}
+function SignUp() {
+    console.log("click");
+    var username = document.getElementById('signup-user').value;
+    var password = document.getElementById('signup-password').value;
+    var repassword = document.getElementById('signup-repassword').value;
+    var email = document.getElementById('signup-mail').value;
+    var accountviewmodel = { UserName: username, Password: password, Email: email, ConfirmPassword: repassword };
+    console.log(accountviewmodel);  
+        $.ajax({
+            type: "POST",
+            url: "/Login/Register",
+            data: { account: accountviewmodel },
+            success: function (data) {
+                console.log(data);
+               
+                if (data.result === true) {
+                    alert("Register Successfully");
+
+                }
+                else {
+                    alert("Email or UserName already existed");
+                }
+            },
+        });
+    
+}
+    
+
+
