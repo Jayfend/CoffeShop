@@ -102,11 +102,14 @@ function check() {
     }
     else {
 
-        document.getElementById('confirmpassword-message').style.color = 'red';
+            document.getElementById('confirmpassword-message').style.color = 'red';
         document.getElementById('confirmpassword-message').innerHTML = 'Password not match';
         document.getElementById('SignUpBtn').disabled = true;
     }
-}
+
+        
+ }
+
 $("#SaveBtn").click(function () {
     console.log("click");
     var totalitem = parseInt(document.getElementById('totalitem').value);
@@ -158,8 +161,6 @@ function LanguageGet(LanguageAbbrevation) {
         });
 }
 function CartDelete(Id) {
-    console.log("clicked");
-    console.log(Id);
     $.ajax
         ({
             type: "GET",
@@ -213,13 +214,18 @@ function AddCartTS(Id) {
         });
 }
 function SignUp() {
+    $('#signupForm').validate();
+    if (!$('#signupForm').valid()) {
+        return;
+    }
     console.log("click");
     var username = document.getElementById('signup-user').value;
     var password = document.getElementById('signup-password').value;
     var repassword = document.getElementById('signup-repassword').value;
     var email = document.getElementById('signup-mail').value;
     var accountviewmodel = { UserName: username, Password: password, Email: email, ConfirmPassword: repassword };
-    console.log(accountviewmodel);  
+    console.log(accountviewmodel);
+    
         $.ajax({
             type: "POST",
             url: "/Login/Register",
@@ -238,6 +244,44 @@ function SignUp() {
         });
     
 }
-    
 
+$(function(){
+    $('#signupForm').submit(function (e) {
+        e.preventDefault();
+    });
+})
+$(function () {
+    $('#signinForm').submit(function (e) {
+        e.preventDefault();
+    });
+})
+function SignIn() {
+    $('#signinForm').validate();
+    if (!$('#signinForm').valid()) {
+        return;
+    }
+    console.log("click");
+    var username = document.getElementById('signin-user').value;
+    var password = document.getElementById('signin-password').value;
+   
+    var loginviewmodel = { UserName: username, Password: password };
+    console.log(loginviewmodel);
 
+    $.ajax({
+        type: "POST",
+        url: "/Login/Login",
+        data: { account: loginviewmodel },
+        success: function (data) {
+            console.log(data);
+
+            if (data.result === true) {
+                window.location.href = data.message;
+
+            }
+            else {
+                alert(data.message);
+            }
+        },
+    });
+
+}

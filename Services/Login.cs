@@ -17,7 +17,7 @@ namespace Services
 
             _Database = new CoffeShopDbContext();
         }
-        public UserResponse UserLogin(AccountViewModel user)
+        public UserResponse UserLogin(LoginViewModel user)
         {
             user.Password = Encryptor.MD5Hash(user.Password);
             var response =_Database.Accounts.Where(s => s.UserName.Equals(user.UserName) && s.Password.Equals(user.Password))
