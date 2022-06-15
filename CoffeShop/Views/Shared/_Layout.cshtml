@@ -7,7 +7,7 @@
     <title>Cafe House</title>
     <!--
     Cafe House Template
-    http://www.templatemo.com/tm-466-cafe-house
+    https://www.templatemo.com/tm-466-cafe-house
     -->
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,600,700' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Damion' rel='stylesheet' type='text/css'>
@@ -60,7 +60,7 @@
 
                                 @{
 
-                                Html.RenderPartial("_Cart");}
+                                    Html.RenderPartial("_Cart");}
 
 
 
@@ -98,16 +98,16 @@
                     }
 
                 </div>
-                
-                    <select class="header__navbar-user-language select-language" onchange="LanguageGet(this.value)">
-                        <option selected value="">@CoffeShop.Resources.Language.Lang</option>
-                        <option value="en">@CoffeShop.Resources.Language.English</option>
-                        <option value="vi">@CoffeShop.Resources.Language.Vietnamese</option>
-                    </select>
-                
+
+                <select class="header__navbar-user-language select-language" onchange="LanguageGet(this.value)">
+                    <option selected value="">@CoffeShop.Resources.Language.Lang</option>
+                    <option value="en">@CoffeShop.Resources.Language.English</option>
+                    <option value="vi">@CoffeShop.Resources.Language.Vietnamese</option>
+                </select>
+
             </div>
+        </div>
     </div>
-   </div>
     @RenderBody()
     <footer>
         <div class="tm-black-bg">
@@ -151,10 +151,12 @@
         </div>
     </footer> <!-- Footer content-->
     <!-- JS -->
-    <script type="text/javascript" src="/Assets/js/jquery-1.11.2.min.js"></script>      <!-- jQuery -->
+    <script type="text/javascript" src="/Assets/js/jquery-1.11.2.min.js"></script>
     <script type="text/javascript" src="/Assets/js/templatemo-script.js"></script>
-    <script type="text/javascript" src="~/Assets/js/MycustomJs.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <script type="text/javascript" src="/Assets/js/MycustomJs.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script><!-- Templatemo Script -->
     @RenderSection("scripts", required: false);
 </body>

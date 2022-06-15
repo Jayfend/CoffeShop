@@ -255,6 +255,11 @@ $(function () {
         e.preventDefault();
     });
 })
+$(function () {
+    $('#contactform').submit(function (e) {
+        e.preventDefault();
+    });
+})
 function SignIn() {
     $('#signinForm').validate();
     if (!$('#signinForm').valid()) {
@@ -280,6 +285,37 @@ function SignIn() {
             }
             else {
                 alert(data.message);
+            }
+        },
+    });
+
+}
+function ContactSend() {
+    $('#contactform').validate();
+    if (!$('#contactform').valid()) {
+        return;
+    }
+    console.log("click");
+    var name = document.getElementById('contact_name').value;
+    var subject = document.getElementById('contact_subject').value;
+    var text = document.getElementById('contact_message').value;
+    var email = document.getElementById('contact_email').value;
+    var contactviewmodel = { Name:name,Email: email,Subject: subject, Message:text };
+    console.log(contactviewmodel);
+
+    $.ajax({
+        type: "POST",
+        url: "/Contact/Reviews",
+        data: { review: contactviewmodel },
+        success: function (data) {
+            if (data.Result == true) {
+                console.log("True");
+ 
+                alert("Your review has been sent");
+
+            }
+            else {
+                alert("Couldn't send your review");
             }
         },
     });

@@ -1,4 +1,5 @@
-﻿@model ViewModel.AccountViewModel
+﻿@model   ViewModel.AccountViewModel
+
 @{
     Layout = null;
 }
@@ -22,17 +23,17 @@
                 <div class="login-form">
                     <div class="sign-in-htm">
                         <form id="signinForm">
-                            
+                            @Html.AntiForgeryToken()
                             <div class="group">
                                 <label for="signin-user" class="label">Username</label>
-                                @Html.TextBoxFor(m => m.UserName, new { @id = "signin-user", @class = "input", @required = "required" })
-                                @Html.ValidationMessageFor(m => m.UserName, "", new { @class = "text-danger" })
+                                @Html.TextBoxFor(m => m.LoginModel.UserName, new { @id = "signin-user", @class = "input", @required = "required" })
+                                @Html.ValidationMessageFor(m => m.LoginModel.UserName, "", new { @class = "text-danger" })
                                 @*<input id="user" type="text" class="input">*@
                             </div>
                             <div class="group">
                                 <label for="signin-password" class="label">Password</label>
-                                @Html.TextBoxFor(m => m.Password, new { @id = "signin-password", @class = "input", @type = "password", @required = "required" })
-                                @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger " })
+                                @Html.TextBoxFor(m => m.LoginModel.Password, new { @id = "signin-password", @class = "input", @type = "password", @required = "required" })
+                                @Html.ValidationMessageFor(m => m.LoginModel.Password, "", new { @class = "text-danger " })
                                 @*<input id="pass" type="password" class="input" data-type="password">*@
                             </div>
                             <div class="group">
@@ -56,29 +57,29 @@
 
                             <div class="group">
                                 <label for="signup-user" class="label">Username</label>
-                                @Html.TextBoxFor(m => m.UserName, new { @id = "signup-user", @type = "text", @class = "input", @required="required"})
+                                @Html.TextBoxFor(m => m.SignupModel.UserName, new { @id = "signup-user", @type = "text", @class = "input", @required="required"})
                                 @*<input id="signup-user" name="Username" type="text" class="input" required>*@
-                                @Html.ValidationMessageFor(m => m.UserName, "", new { @class = "text-danger" })
+                                @Html.ValidationMessageFor(m => m.SignupModel.UserName, "", new { @class = "text-danger" })
                             </div>
                             <div class="group">
                                 <label for="signup-password" class="label">Password</label>
 
-                                @Html.TextBoxFor(m => m.Password, new { @id = "signup-password", @type = "password", @class = "input", @onkeyup = "check()", @required = "required" })
+                                @Html.TextBoxFor(m => m.SignupModel.Password, new { @id = "signup-password", @type = "password", @class="input", @onkeyup = "check()",@required="required" })
                                 @*<input id="signup-password" name="Password" type="password" class="input" data-type="password"  required>*@
-                                @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger " })
+                                @Html.ValidationMessageFor(m => m.SignupModel.Password, "", new { @class = "text-danger " })
                             </div>
                             <div class="group">
                                 <label for="signup-repassword" class="label">Repeat Password</label>
-                                @Html.TextBoxFor(m => m.Password, new { @id = "signup-repassword", @type = "password", @class = "input", @onkeyup = "check()", @required = "required" })
+                                @Html.TextBoxFor(m => m.SignupModel.Password, new { @id = "signup-repassword", @type = "password", @class = "input", @onkeyup = "check()", @required = "required" })
                                 @*<input id="signup-repassword" name="Repassword" type="password" class="input" data-type="password" onkeyup="check()" required>*@
-                                @Html.ValidationMessageFor(m => m.ConfirmPassword, "", new { @class = "text-danger " })
+                                @Html.ValidationMessageFor(m => m.SignupModel.ConfirmPassword, "", new { @class = "text-danger " })
                                 <span id='confirmpassword-message' class="message"></span>
                             </div>
                             <div class="group">
                                 <label for="signup-mail" class="label">Email Address</label>
-                                @Html.TextBoxFor(m => m.Email, new { @id = "signup-mail", @type = "email", @class = "input", @required = "required" })
+                                @Html.TextBoxFor(m => m.SignupModel.Email, new { @id = "signup-mail", @type = "email", @class = "input", @required = "required" })
                                 @*<input id="signup-mail" name="Email" type="email" class="input" required>*@
-                                @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger " })
+                                @Html.ValidationMessageFor(m => m.SignupModel.Email, "", new { @class = "text-danger " })
                             </div>
 
                             <div class="group">

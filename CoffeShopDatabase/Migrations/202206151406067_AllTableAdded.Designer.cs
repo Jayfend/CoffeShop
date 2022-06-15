@@ -13,7 +13,7 @@ namespace CoffeShopDatabase.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202205050635166_AllTableAdded"; }
+            get { return "202206151406067_AllTableAdded"; }
         }
         
         string IMigrationMetadata.Source

@@ -19,9 +19,18 @@ namespace CoffeShop.Controllers
         {
             ViewBag.IsLogin = true;
 
-            var account = new AccountViewModel
+            var login = new LoginViewModel
             {
                 ReturnUrl = returnUrl
+            };
+            var signup = new SignupViewModel
+            {
+                ReturnUrl = returnUrl
+            };
+            var account = new AccountViewModel
+            {
+                LoginModel = login,
+                SignupModel = signup
             };
             return View(account);
           
@@ -29,7 +38,7 @@ namespace CoffeShop.Controllers
         
         [HttpPost]
        
-        public ActionResult Register(AccountViewModel account)
+        public ActionResult Register(SignupViewModel account)
         {   SignUp signup = new SignUp();
             if (ModelState.IsValid)
             {
