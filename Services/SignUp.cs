@@ -18,7 +18,7 @@ namespace Services
            
             _Database = new CoffeShopDbContext();
         }
-        public  bool Register(AccountViewModel user)
+        public  bool Register(SignupViewModel user)
         {  
             var check=_Database.Accounts.FirstOrDefault(s=>s.UserName== user.UserName || s.Email==user.Email);
             if (check == null)

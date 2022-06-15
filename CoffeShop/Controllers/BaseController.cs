@@ -44,11 +44,10 @@ namespace CoffeShop.Controllers
             //Filter specific claim    
             var AccountID = claims?.FirstOrDefault(x => x.Type.Equals(ClaimTypes.NameIdentifier, StringComparison.OrdinalIgnoreCase))?.Value;
             CartService cartService = new CartService();
-            
+            cartService.DeleteCartItem(OrderItemId,int.Parse(AccountID));
                 ViewBag.Cart = cartService.GetCart(int.Parse(AccountID));
                 return PartialView("_Cart");
                
-            
 
            
         }

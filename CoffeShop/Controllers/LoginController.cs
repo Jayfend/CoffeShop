@@ -19,16 +19,26 @@ namespace CoffeShop.Controllers
         {
             ViewBag.IsLogin = true;
 
-            var account = new AccountViewModel
+            var login = new LoginViewModel
             {
                 ReturnUrl = returnUrl
+            };
+            var signup = new SignupViewModel
+            {
+                ReturnUrl = returnUrl
+            };
+            var account = new AccountViewModel
+            {
+                LoginModel = login,
+                SignupModel = signup
             };
             return View(account);
           
         }
         
         [HttpPost]
-        public ActionResult Register(AccountViewModel account)
+       
+        public ActionResult Register(SignupViewModel account)
         {   SignUp signup = new SignUp();
             if (ModelState.IsValid)
             {
@@ -46,16 +56,16 @@ namespace CoffeShop.Controllers
                 }
                
             }
-            return View("Index");
+            return View();
         }
        
         [HttpPost]
-        public ActionResult Login(AccountViewModel account)
+        public ActionResult Login(LoginViewModel account)
         {
             Login login =  new Login();
             if (!ModelState.IsValid)
             {
-                return View("Index");
+                return Json(new { result = false, message="This account is valid !" }, JsonRequestBehavior.AllowGet);
             }
             if (ModelState.IsValid)
             { var response = login.UserLogin(account);
@@ -74,14 +84,17 @@ namespace CoffeShop.Controllers
                     var authManager = ctx.Authentication;
 
                     authManager.SignIn(identity);
-                  
-                    return Redirect(GetRedirectUrl(account.ReturnUrl));
-                  
-                }         
-              
+                    return Json(new { result = true, message = GetRedirectUrl(account.ReturnUrl) }, JsonRequestBehavior.AllowGet);
+                    
+
+                }
+                else
+                {
+                    return Json(new { result = false, message ="User name or password is not correct" }, JsonRequestBehavior.AllowGet);
+
+                }
             }
             
-            ModelState.AddModelError("", "Invalid password");
             return View("Index");
         }
         private string GetRedirectUrl(string returnUrl)

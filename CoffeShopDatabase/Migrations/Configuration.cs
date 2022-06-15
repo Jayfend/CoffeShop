@@ -31,7 +31,7 @@
         private void SeedAccount(CoffeShopDbContext context)
         {
             IList<Account> AccountList = new List<Account>();
-            AccountList.Add(new Account() { AccountID = 1, UserName = "Admin", Password = Encryptor.MD5Hash("conga"), Email = "Admin@gmail.com", UserType="Admin"});
+            AccountList.Add(new Account() { AccountID = 1, UserName = "Admin", Password = Encryptor.MD5Hash("Luan01011995"), Email = "Admin@gmail.com", UserType="Admin"});
             context.Accounts.AddRange(AccountList);
         }
         private void SeedProduct(CoffeShopDbContext context)

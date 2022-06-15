@@ -1,4 +1,5 @@
-﻿@model ViewModel.AccountViewModel
+﻿@model   ViewModel.AccountViewModel
+
 @{
     Layout = null;
 }
@@ -10,26 +11,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="~/Assets/css/Login.css">
+    
     <title>Document</title>
 </head>
 <body>
     <div class="container">
         <div class="login-wrap">
             <div class="login-html">
-                <input id="tab-1" type="radio" name="tab" class="sign-in" @(ViewBag.IsLogin ? "checked" : "")><label for="tab-1" class="tab">Sign In</label>
-                <input id="tab-2" type="radio" name="tab" class="sign-up" @(!ViewBag.IsLogin ? "checked" : "")><label for="tab-2" class="tab">Sign Up</label>
+                <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
+                <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
                 <div class="login-form">
                     <div class="sign-in-htm">
-                        @using (Html.BeginForm("Login", "Login", FormMethod.Post))
-                        {
+                        <form id="signinForm">
+                            @Html.AntiForgeryToken()
                             <div class="group">
-                                <label for="user" class="label">Username</label>
-                                @Html.TextBoxFor(m => m.UserName, new { @class = "input", @required = "required" })
+                                <label for="signin-user" class="label">Username</label>
+                                @Html.TextBoxFor(m => m.LoginModel.UserName, new { @id = "signin-user", @class = "input", @required = "required" })
+                                @Html.ValidationMessageFor(m => m.LoginModel.UserName, "", new { @class = "text-danger" })
                                 @*<input id="user" type="text" class="input">*@
                             </div>
                             <div class="group">
-                                <label for="pass" class="label">Password</label>
-                                @Html.TextBoxFor(m => m.Password, new { @class = "input", @type = "password", @required = "required" })
+                                <label for="signin-password" class="label">Password</label>
+                                @Html.TextBoxFor(m => m.LoginModel.Password, new { @id = "signin-password", @class = "input", @type = "password", @required = "required" })
+                                @Html.ValidationMessageFor(m => m.LoginModel.Password, "", new { @class = "text-danger " })
                                 @*<input id="pass" type="password" class="input" data-type="password">*@
                             </div>
                             <div class="group">
@@ -37,42 +41,51 @@
                                 <label for="check"><span class="icon"></span> Keep me Signed in</label>
                             </div>
                             <div class="group">
-                                <input type="submit" class="button" value="Sign In">
+                                <button type="submit" class="button" onclick="SignIn()">Sign In</button>
                             </div>
-                        }
+                        </form>
                         <div class="hr"></div>
                         <div class="foot-lnk">
                             <a href="#forgot">Forgot Password?</a>
                         </div>
                     </div>
                     <div class="sign-up-htm">
-                        
-                        <div class="group">
-                            <label for="signup-user" class="label">Username</label>
-                          
-                            <input id="signup-user" type="text" class="input">
-                        </div>
-                        <div class="group">
-                            <label for="signup-password" class="label">Password</label>
-                          
-                            <input id="signup-password" type="password" class="input" data-type="password" onkeyup="check()">
-                        </div>
-                        <div class="group">
-                            <label for="signup-repassword" class="label">Repeat Password</label>
-                           
-                            <input id="signup-repassword" type="password" class="input" data-type="password" onkeyup="check()">
-                            <span id='confirmpassword-message' class="message"></span>
-                        </div>
-                        <div class="group">
-                            <label for="signup-mail" class="label">Email Address</label>
-                           
-                            <input id="signup-mail" type="text" class="input">
-                        </div>
-                      
-                        <div class="group">
-                            <button id="SignUpBtn" type="submit" class="button" onclick="SignUp()">Sign Up</button>
-                        </div>
-                     
+                        <form id="signupForm">
+
+                            @Html.AntiForgeryToken()
+
+
+                            <div class="group">
+                                <label for="signup-user" class="label">Username</label>
+                                @Html.TextBoxFor(m => m.SignupModel.UserName, new { @id = "signup-user", @type = "text", @class = "input", @required="required"})
+                                @*<input id="signup-user" name="Username" type="text" class="input" required>*@
+                                @Html.ValidationMessageFor(m => m.SignupModel.UserName, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="group">
+                                <label for="signup-password" class="label">Password</label>
+
+                                @Html.TextBoxFor(m => m.SignupModel.Password, new { @id = "signup-password", @type = "password", @class="input", @onkeyup = "check()",@required="required" })
+                                @*<input id="signup-password" name="Password" type="password" class="input" data-type="password"  required>*@
+                                @Html.ValidationMessageFor(m => m.SignupModel.Password, "", new { @class = "text-danger " })
+                            </div>
+                            <div class="group">
+                                <label for="signup-repassword" class="label">Repeat Password</label>
+                                @Html.TextBoxFor(m => m.SignupModel.Password, new { @id = "signup-repassword", @type = "password", @class = "input", @onkeyup = "check()", @required = "required" })
+                                @*<input id="signup-repassword" name="Repassword" type="password" class="input" data-type="password" onkeyup="check()" required>*@
+                                @Html.ValidationMessageFor(m => m.SignupModel.ConfirmPassword, "", new { @class = "text-danger " })
+                                <span id='confirmpassword-message' class="message"></span>
+                            </div>
+                            <div class="group">
+                                <label for="signup-mail" class="label">Email Address</label>
+                                @Html.TextBoxFor(m => m.SignupModel.Email, new { @id = "signup-mail", @type = "email", @class = "input", @required = "required" })
+                                @*<input id="signup-mail" name="Email" type="email" class="input" required>*@
+                                @Html.ValidationMessageFor(m => m.SignupModel.Email, "", new { @class = "text-danger " })
+                            </div>
+
+                            <div class="group">
+                                <button id="SignUpBtn" class="button" onclick="SignUp()">Sign Up</button>
+                            </div>
+                        </form>
                         <div class="hr"></div>
                         <div class="foot-lnk">
                             <label for="tab-1"><a>Already Member?</a> </label>
@@ -82,8 +95,11 @@
             </div>
         </div>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
     <script type="text/javascript" src="~/Assets/js/MycustomJs.js"></script>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
 </body>
 
 </html>

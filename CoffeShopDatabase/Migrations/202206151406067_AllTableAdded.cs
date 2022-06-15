@@ -48,6 +48,18 @@
                 .Index(t => t.AccountID);
             
             CreateTable(
+                "dbo.Contacts",
+                c => new
+                    {
+                        ContactId = c.Int(nullable: false, identity: true),
+                        Name = c.String(nullable: false, maxLength: 100),
+                        Email = c.String(nullable: false, maxLength: 255),
+                        Subject = c.String(nullable: false, maxLength: 100),
+                        Message = c.String(nullable: false, maxLength: 1000),
+                    })
+                .PrimaryKey(t => t.ContactId);
+            
+            CreateTable(
                 "dbo.OrderItems",
                 c => new
                     {
@@ -91,6 +103,7 @@
             DropIndex("dbo.Bills", new[] { "OrderId" });
             DropTable("dbo.Products");
             DropTable("dbo.OrderItems");
+            DropTable("dbo.Contacts");
             DropTable("dbo.Orders");
             DropTable("dbo.Bills");
             DropTable("dbo.Accounts");

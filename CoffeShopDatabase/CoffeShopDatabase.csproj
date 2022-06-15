@@ -55,9 +55,10 @@
   <ItemGroup>
     <Compile Include="Account.cs" />
     <Compile Include="Bill.cs" />
-    <Compile Include="Migrations\202205050635166_AllTableAdded.cs" />
-    <Compile Include="Migrations\202205050635166_AllTableAdded.designer.cs">
-      <DependentUpon>202205050635166_AllTableAdded.cs</DependentUpon>
+    <Compile Include="Contact.cs" />
+    <Compile Include="Migrations\202206151406067_AllTableAdded.cs" />
+    <Compile Include="Migrations\202206151406067_AllTableAdded.designer.cs">
+      <DependentUpon>202206151406067_AllTableAdded.cs</DependentUpon>
     </Compile>
     <Compile Include="Order.cs" />
     <Compile Include="OrderItem.cs" />
@@ -77,8 +78,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202205050635166_AllTableAdded.resx">
-      <DependentUpon>202205050635166_AllTableAdded.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202206151406067_AllTableAdded.resx">
+      <DependentUpon>202206151406067_AllTableAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

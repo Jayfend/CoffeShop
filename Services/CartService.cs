@@ -120,7 +120,7 @@ namespace Services
         }
         public bool DeleteCartItem(int OrderItemId,int AccountId)
         {
-            var orderitem = _Database.OrderItems.FirstOrDefault(s => s.OrderItemId == OrderItemId&&s.Order.AccountID==AccountId);
+            var orderitem = _Database.OrderItems.FirstOrDefault(s => s.OrderItemId == OrderItemId && s.Order.AccountID==AccountId);
             if(orderitem != null)
             {
                 _Database.OrderItems.Remove(orderitem);
