@@ -32,12 +32,15 @@ namespace CoffeShop.Controllers
                 updatetocart.UpdateCart(ProductId, int.Parse(AccountID));
                 
                     ViewBag.Cart = updatetocart.GetCart(int.Parse(AccountID));
-                    return PartialView("_Cart");
-                
+
+            return PartialView("_Cart");
             
-            //First get user claims    
-           
         }
-       
+
+
+        //First get user claims    
+
     }
+       
+    
 }

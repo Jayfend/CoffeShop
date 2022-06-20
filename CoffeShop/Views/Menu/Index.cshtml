@@ -81,17 +81,18 @@
                                 <h3 class="tm-product-title">@item.ProductName</h3>
                                 <p class="tm-product-description">@item.Description</p>
                             </div>
-                            <div class="tm-product-price">
+                            
                                 @if (User.Identity.IsAuthenticated)
-                                {   
+                                {   <div class="tm-product-price">
                                     <a onclick="AddCart(@item.ProductId)" class="tm-product-price-link tm-handwriting-font"><span class="tm-product-price-currency">₫</span>@item.Price</a>
+                                    </div>
                                 }
                                 else
-                                {
+                                {   <div class="tm-product-price">
                                     <a href="/Login/Index" class="tm-product-price-link tm-handwriting-font"><span class="tm-product-price-currency">₫</span>@item.Price</a>
-                                }
+                                     </div>     }
 
-                            </div>
+
                         </div>
 
                     }
