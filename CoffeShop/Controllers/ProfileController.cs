@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace CoffeShop.Controllers
 {
+    [Authorize]
     public class ProfileController : BaseController
     {
         // GET: Profile

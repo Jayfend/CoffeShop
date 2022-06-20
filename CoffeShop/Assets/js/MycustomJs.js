@@ -20,11 +20,9 @@
     var oneitemnotdiscount = parseFloat(document.getElementById('totalnotdiscountforone_' + i).value);
     var CurrentNotdiscountTotal = parseFloat(document.getElementById('totalnotdiscount').innerHTML);
     var newitemnotdiscount = itemPrice * itemquantity;
-    console.log("oldtotal", CurrentNotdiscountTotal);
+   
     CurrentNotdiscountTotal = (CurrentNotdiscountTotal - oneitemnotdiscount) + newitemnotdiscount;
-    console.log("old",oneitemnotdiscount);
-    console.log("new", newitemnotdiscount);
-    console.log("Newtotal", CurrentNotdiscountTotal);
+   
     
 
     document.getElementById('totalnotdiscount').innerHTML = CurrentNotdiscountTotal.toString() ;
@@ -127,6 +125,7 @@ $("#SaveBtn").click(function () {
                 console.log(data);
                 if (data.Result == true) {
                     alert(data.Message);
+                    location.reload();
                 }
                 else {
                     alert(data.Message);
