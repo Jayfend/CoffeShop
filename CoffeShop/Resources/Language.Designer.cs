@@ -19,7 +19,7 @@ namespace CoffeShop.Resources {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class Language {
@@ -57,6 +57,24 @@ namespace CoffeShop.Resources {
             }
             set {
                 resourceCulture = value;
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The Cafe House will be a place where people come together, promoting the value of connecting people and sharing friendship with cups of coffee, tea cups, inspiring the modern lifestyle..
+        /// </summary>
+        public static string AboutUs_Content0 {
+            get {
+                return ResourceManager.GetString("AboutUs_Content0", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About Us.
+        /// </summary>
+        public static string AboutUs_Title {
+            get {
+                return ResourceManager.GetString("AboutUs_Title", resourceCulture);
             }
         }
         

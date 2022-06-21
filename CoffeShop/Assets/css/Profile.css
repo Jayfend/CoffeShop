@@ -7,3 +7,11 @@ body {
     width: 200px;
     height: 200px;
 }
+
+#title {
+    margin: 32px 0px;
+}
+
+.spacing {
+    margin: 64px;
+}
