@@ -342,8 +342,7 @@ ul {
 .margin-top-60 { margin-top: 60px; }
 .margin-top-15 { margin-top: 15px; }
 .copyright-text {
-  margin-top: 30px;
-  margin-bottom: 30px;
+  margin-top: 24px;
 }
 .tm-social-icon {
   background-color: #505050;
@@ -666,8 +665,9 @@ ol li:before {
     right: 16px;
 }
 .form-control {
-  border-color: #c79c60;
-  border-radius: 10px;
+    /*border-color: #c79c60;*/
+    border-color: #fff;
+    border-radius: 4px;
 }
 .form-control:focus { 
   border-color: rgb(136, 93, 33); 

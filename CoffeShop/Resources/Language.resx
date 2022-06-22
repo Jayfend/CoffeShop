@@ -117,6 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AboutUs_Content0" xml:space="preserve">
+    <value>The Cafe House will be a place where people come together, promoting the value of connecting people and sharing friendship with cups of coffee, tea cups, inspiring the modern lifestyle.</value>
+    <comment>The Cafe House sẽ là nơi mọi người xích lại gần nhau, đề cao giá trị kết nối con người và sẻ chia thân tình bên những tách cà phê, ly trà đượm hương, truyền cảm hứng về lối sống hiện đại.</comment>
+  </data>
+  <data name="AboutUs_Title" xml:space="preserve">
+    <value>About Us</value>
+    <comment>Về chúng tôi</comment>
+  </data>
   <data name="AddedProducts" xml:space="preserve">
     <value>Added Products</value>
   </data>
