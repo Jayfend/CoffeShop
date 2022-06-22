@@ -143,6 +143,7 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AdminHomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\BasicElementController.cs" />
+    <Compile Include="Areas\Admin\Controllers\TableController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
@@ -2621,8 +2622,10 @@
     <Content Include="Assets\img\tm-brown-button.png" />
     <Content Include="Assets\img\tstranchau.jpg" />
     <Content Include="Assets\img\vertical-menu-bg.png" />
+    <Content Include="Assets\js\CartJs.js" />
     <Content Include="Assets\js\jquery-1.11.2.min.js" />
     <Content Include="Assets\js\MycustomJs.js" />
+    <Content Include="Assets\js\NotiJs.js" />
     <Content Include="Assets\js\templatemo-script.js" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
@@ -2841,6 +2844,7 @@
     <Content Include="Scripts\bootstrap.esm.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Areas\Admin\Views\Table\Index.cshtml" />
     <None Include="Scripts\jquery-3.6.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.6.0.js" />
     <Content Include="Scripts\jquery-3.6.0.min.js" />

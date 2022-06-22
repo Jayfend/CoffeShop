@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class AllTableAdded : DbMigration
+    public partial class AllTable : DbMigration
     {
         public override void Up()
         {
@@ -16,6 +16,7 @@
                         UserName = c.String(nullable: false, maxLength: 40),
                         Password = c.String(nullable: false, maxLength: 255),
                         Email = c.String(nullable: false, maxLength: 255),
+                        CreatedDate = c.DateTime(nullable: false),
                     })
                 .PrimaryKey(t => t.AccountID);
             
@@ -56,6 +57,7 @@
                         Email = c.String(nullable: false, maxLength: 255),
                         Subject = c.String(nullable: false, maxLength: 100),
                         Message = c.String(nullable: false, maxLength: 1000),
+                        CreatedDate = c.DateTime(nullable: false),
                     })
                 .PrimaryKey(t => t.ContactId);
             
@@ -89,18 +91,36 @@
                     })
                 .PrimaryKey(t => t.ProductId);
             
+            CreateTable(
+                "dbo.Profiles",
+                c => new
+                    {
+                        UserId = c.Int(nullable: false, identity: true),
+                        FullName = c.String(nullable: false),
+                        Address = c.String(nullable: false, maxLength: 100),
+                        PhoneNumber = c.Int(nullable: false),
+                        Image = c.Binary(),
+                        AccountId = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.UserId)
+                .ForeignKey("dbo.Accounts", t => t.AccountId, cascadeDelete: true)
+                .Index(t => t.AccountId);
+            
         }
         
         public override void Down()
         {
+            DropForeignKey("dbo.Profiles", "AccountId", "dbo.Accounts");
             DropForeignKey("dbo.OrderItems", "ProductId", "dbo.Products");
             DropForeignKey("dbo.OrderItems", "OrderId", "dbo.Orders");
             DropForeignKey("dbo.Bills", "OrderId", "dbo.Orders");
             DropForeignKey("dbo.Orders", "AccountID", "dbo.Accounts");
+            DropIndex("dbo.Profiles", new[] { "AccountId" });
             DropIndex("dbo.OrderItems", new[] { "ProductId" });
             DropIndex("dbo.OrderItems", new[] { "OrderId" });
             DropIndex("dbo.Orders", new[] { "AccountID" });
             DropIndex("dbo.Bills", new[] { "OrderId" });
+            DropTable("dbo.Profiles");
             DropTable("dbo.Products");
             DropTable("dbo.OrderItems");
             DropTable("dbo.Contacts");

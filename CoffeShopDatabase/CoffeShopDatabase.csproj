@@ -56,15 +56,16 @@
     <Compile Include="Account.cs" />
     <Compile Include="Bill.cs" />
     <Compile Include="Contact.cs" />
-    <Compile Include="Migrations\202206151406067_AllTableAdded.cs" />
-    <Compile Include="Migrations\202206151406067_AllTableAdded.designer.cs">
-      <DependentUpon>202206151406067_AllTableAdded.cs</DependentUpon>
+    <Compile Include="Migrations\202206220525390_AllTable.cs" />
+    <Compile Include="Migrations\202206220525390_AllTable.designer.cs">
+      <DependentUpon>202206220525390_AllTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Order.cs" />
     <Compile Include="OrderItem.cs" />
     <Compile Include="CoffeShopDbContext.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Product.cs" />
+    <Compile Include="Profile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -78,8 +79,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202206151406067_AllTableAdded.resx">
-      <DependentUpon>202206151406067_AllTableAdded.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202206220525390_AllTable.resx">
+      <DependentUpon>202206220525390_AllTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

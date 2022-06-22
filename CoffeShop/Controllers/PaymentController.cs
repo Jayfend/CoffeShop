@@ -8,7 +8,7 @@ using System.Web.Mvc;
 using ViewModel;
 
 namespace CoffeShop.Controllers
-{
+{   
     public class PaymentController : BaseController
     {
         // GET: Payment

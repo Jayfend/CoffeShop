@@ -24,5 +24,6 @@ namespace CoffeShopDatabase
         [Required]
         [MaxLength(1000)]
         public string Message { get; set; }
+        public DateTime CreatedDate { get; set; }
     }
 }

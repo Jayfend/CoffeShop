@@ -6,13 +6,12 @@ using System.Web.Mvc;
 
 namespace CoffeShop.Areas.Admin.Controllers
 {
-    [Authorize(Roles ="Admin")]
-    public class AdminHomeController : Controller
+    public class TableController : Controller
     {
-        // GET: Admin/AdminHome
+        // GET: Admin/Table
         public ActionResult Index()
         {
-            ViewBag.Home= "active";
+            ViewBag.Table = "active";
             return View();
         }
     }

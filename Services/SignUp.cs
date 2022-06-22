@@ -28,8 +28,19 @@ namespace Services
                     UserName = user.UserName,
                     Password = Encryptor.MD5Hash(user.Password),
                     Email = user.Email,
-                    UserType = "Guest"
+                    UserType = "Guest",
+                    CreatedDate = DateTime.Now
                 };
+                 byte[] imgdata = System.IO.File.ReadAllBytes(@"C:\Users\Admin\source\repos\CoffeShop\CoffeShop\Assets\img\Avatar.jpg");
+                Profile profile = new Profile()
+                {
+                    FullName = "",
+                    Address = "",
+                    PhoneNumber = 0,
+                    AccountId = account.AccountID,
+                    Image = imgdata
+                };
+                _Database.Profiles.Add(profile);
                 _Database.Accounts.Add(account);
                 _Database.SaveChanges();
                 return true;

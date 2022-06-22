@@ -15,6 +15,7 @@ namespace CoffeShop.Areas.Admin.Controllers
         [HttpGet]
         public ActionResult Index()
         {
+            ViewBag.ProductMG = "active";
             return View();
         }
         [HttpPost]
