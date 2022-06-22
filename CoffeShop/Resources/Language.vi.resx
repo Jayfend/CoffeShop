@@ -118,163 +118,123 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AboutUs_Content0" xml:space="preserve">
-    <value>The Cafe House will be a place where people come together, promoting the value of connecting people and sharing friendship with cups of coffee, tea cups, inspiring the modern lifestyle.</value>
-    <comment>The Cafe House sẽ là nơi mọi người xích lại gần nhau, đề cao giá trị kết nối con người và sẻ chia thân tình bên những tách cà phê, ly trà đượm hương, truyền cảm hứng về lối sống hiện đại.</comment>
+    <value>The Cafe House sẽ là nơi mọi người xích lại gần nhau, đề cao giá trị kết nối con người và sẻ chia thân tình bên những tách cà phê, ly trà đượm hương, truyền cảm hứng về lối sống hiện đại.</value>
   </data>
   <data name="AboutUs_Content1" xml:space="preserve">
-    <value>Thank you for all !</value>
-    <comment>Cảm ơn vì tất cả!</comment>
+    <value>Cảm ơn vì tất cả!</value>
   </data>
   <data name="AboutUs_Title" xml:space="preserve">
-    <value>About Us</value>
-    <comment>Về chúng tôi</comment>
+    <value>Về chúng tôi</value>
   </data>
   <data name="AddedProducts" xml:space="preserve">
-    <value>Added Products</value>
-    <comment>Sản phẩm đã thêm</comment>
+    <value>Sản phẩm đã thêm</value>
   </data>
   <data name="Cart" xml:space="preserve">
-    <value>Shopping Cart</value>
-    <comment>Giỏ Hàng</comment>
+    <value>Giỏ Hàng</value>
   </data>
   <data name="Category" xml:space="preserve">
-    <value>Category</value>
-    <comment>Danh mục</comment>
+    <value>Danh mục</value>
   </data>
   <data name="Checkcart" xml:space="preserve">
-    <value>Check Cart</value>
-    <comment>Xem Giỏ hàng</comment>
+    <value>Xem Giỏ hàng</value>
   </data>
   <data name="Contact" xml:space="preserve">
-    <value>Contact</value>
-    <comment>Liên hệ</comment>
+    <value>Liên hệ</value>
   </data>
   <data name="Contact_Detail0" xml:space="preserve">
-    <value>Address: 16/3A, My Hoa 1, Trung Chanh, Hoc Mon, HCM city</value>
-    <comment>Địa chỉ: 16/3A, My Hòa 1, Trung Chánh, Hóc Môn, TP HCM</comment>
+    <value>Địa chỉ: 16/3A, My Hoa 1, Trung Chanh, Hoc Mon, HCM city</value>
   </data>
   <data name="Contact_Detail1" xml:space="preserve">
-    <value>Phone/Fax: +84969819201</value>
-    <comment>SĐT/Fax: +84969819201</comment>
+    <value>SĐT/Fax: +84969819201</value>
   </data>
   <data name="Contact_Info" xml:space="preserve">
-    <value>Contact Infomation</value>
-    <comment>Thông tin liên lạc</comment>
+    <value>Thông tin liên lạc</value>
   </data>
   <data name="Contact_Title" xml:space="preserve">
-    <value>Send us a message</value>
-    <comment>Phản hồi với chúng tôi</comment>
+    <value>Phản hồi với chúng tôi</value>
   </data>
   <data name="Delete" xml:space="preserve">
-    <value>Delete</value>
-    <comment>Xóa</comment>
+    <value>Xóa</value>
   </data>
   <data name="Detail" xml:space="preserve">
-    <value>Detail</value>
-    <comment>Chi tiết</comment>
+    <value>Chi tiết</value>
   </data>
   <data name="EmptyCart" xml:space="preserve">
-    <value>There is no product</value>
-    <comment>Không có sản phẩm</comment>
+    <value>Không có sản phẩm</value>
   </data>
   <data name="English" xml:space="preserve">
-    <value>English</value>
-    <comment>Tiếng Anh</comment>
+    <value>Tiếng Anh</value>
   </data>
   <data name="GetSocial" xml:space="preserve">
-    <value>Get Social</value>
-    <comment>Mạng Xã hội</comment>
+    <value>Mạng Xã hội</value>
   </data>
   <data name="Home" xml:space="preserve">
-    <value>Home</value>
-    <comment>Trang chủ</comment>
+    <value>Trang chủ</value>
   </data>
   <data name="Home_Content0" xml:space="preserve">
-    <value>Hello Friend. Have a nice day!</value>
-    <comment>Chào bạn. Chúc bạn một ngày tốt lành.</comment>
+    <value>Chào bạn. Chúc bạn một ngày tốt lành.</value>
   </data>
   <data name="Home_Title0" xml:space="preserve">
-    <value>Popular Items</value>
-    <comment>Phổ biến</comment>
+    <value>Phổ biến</value>
   </data>
   <data name="Home_Title1" xml:space="preserve">
-    <value>Today's Specials</value>
-    <comment>Hot hôm nay</comment>
+    <value>Hot hôm nay</value>
   </data>
   <data name="Home_Title2" xml:space="preserve">
-    <value>Daily Menu</value>
-    <comment>Thực đơn ngày</comment>
+    <value>Thực đơn ngày</value>
   </data>
   <data name="Lang" xml:space="preserve">
-    <value>Language</value>
-    <comment>Ngôn ngữ</comment>
+    <value>Ngôn ngữ</value>
   </data>
   <data name="Login" xml:space="preserve">
-    <value>Log In</value>
-    <comment>Đăng nhập</comment>
+    <value>Đăng nhập</value>
   </data>
   <data name="Logout" xml:space="preserve">
-    <value>Logout</value>
-    <comment>Đăng xuất</comment>
+    <value>Đăng xuất</value>
   </data>
   <data name="Menu" xml:space="preserve">
     <value>Menu</value>
-    <comment>Menu</comment>
   </data>
   <data name="Menu_Content" xml:space="preserve">
-    <value>Cafe House has so many kind of drink.</value>
-    <comment>Cafe House có rất nhiều loại đồ uống</comment>
+    <value>Cafe House có rất nhiều loại đồ uống cho các bạn thoải mái lựa chọn.</value>
   </data>
   <data name="Menu_Title0" xml:space="preserve">
-    <value>Variety of Menu</value>
-    <comment>Menu đa dạng</comment>
+    <value>Menu đa dạng</value>
   </data>
   <data name="Menu_Title1" xml:space="preserve">
-    <value>Our Menu</value>
-    <comment>Menu</comment>
+    <value>Menu</value>
   </data>
   <data name="MessageUs" xml:space="preserve">
-    <value>MESSAGE US</value>
-    <comment>Phản hồi</comment>
+    <value>PHẢN HỒI</value>
   </data>
   <data name="MyProfile" xml:space="preserve">
-    <value>My Profile</value>
-    <comment>Hồ sơ của tôi</comment>
+    <value>Hồ sơ của tôi</value>
   </data>
   <data name="Navigation" xml:space="preserve">
-    <value>Navigation</value>
-    <comment>Điều hướng</comment>
+    <value>Điều hướng</value>
   </data>
   <data name="Ordernow" xml:space="preserve">
-    <value>Order Now</value>
-    <comment>Đặt ngay</comment>
+    <value>Đặt ngay</value>
   </data>
   <data name="Orders" xml:space="preserve">
-    <value>Orders</value>
-    <comment>Đặt hàng</comment>
+    <value>Đặt hàng</value>
   </data>
   <data name="Readmore" xml:space="preserve">
-    <value>READ MORE</value>
-    <comment>Xem thêm</comment>
+    <value>Xem thêm</value>
   </data>
   <data name="SendMessage" xml:space="preserve">
-    <value>SEND MESSAGE</value>
-    <comment>Gửi</comment>
+    <value>Gửi Phản hồi</value>
   </data>
   <data name="Special_Title0" xml:space="preserve">
-    <value>Special Items</value>
-    <comment>Sản phẩm HOT</comment>
+    <value>Sản phẩm HOT</value>
   </data>
   <data name="TodaySpecials" xml:space="preserve">
-    <value>Today Specials</value>
-    <comment>Hot hôm nay</comment>
+    <value>Hot hôm nay</value>
   </data>
   <data name="Vietnamese" xml:space="preserve">
-    <value>Vietnamese</value>
-    <comment>Tiếng Việt</comment>
+    <value>Tiếng Việt</value>
   </data>
   <data name="View_Menu" xml:space="preserve">
-    <value>View Menu</value>
-    <comment>Xem Menu</comment>
+    <value>Xem Menu</value>
   </data>
 </root>
