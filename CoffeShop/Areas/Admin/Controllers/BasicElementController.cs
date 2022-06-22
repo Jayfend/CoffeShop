@@ -52,7 +52,7 @@ namespace CoffeShop.Areas.Admin.Controllers
             {
                 return RedirectToAction("Index");
             }
-            return View();
+            
         }
         public byte[] ConvertToBytes(HttpPostedFileBase image)
         {
