@@ -161,9 +161,10 @@ COLOR CODES
 /* end Preloader */
 
 body { overflow-x: hidden; }
-ul { 
-  margin: 0; 
+ul {
+  margin: 0;
   padding: 0;
+  list-style: none;
 }
 * { font-family: 'Open Sans', sans-serif; }
 .container { max-width: 960px; }
@@ -569,7 +570,6 @@ ol li:before {
 }
 .tm-side-menu li {
     list-style: none;
- 
 }
 .tm-side-menu li a {
   color: #7c6a51;
