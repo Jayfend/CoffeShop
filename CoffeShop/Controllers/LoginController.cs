@@ -37,14 +37,13 @@ namespace CoffeShop.Controllers
         }
         
         [HttpPost]
-       
         public ActionResult Register(SignupViewModel account)
         {   SignUp signup = new SignUp();
             if (ModelState.IsValid)
             {
                 if (signup.Register(account))
                 {
-                    ViewBag.IsLogin = true;
+                    
                     return Json(new { result = true }, JsonRequestBehavior.AllowGet);
 
                 }
