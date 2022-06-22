@@ -70,6 +70,15 @@ namespace CoffeShop.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Thank you for all !.
+        /// </summary>
+        public static string AboutUs_Content1 {
+            get {
+                return ResourceManager.GetString("AboutUs_Content1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to About Us.
         /// </summary>
         public static string AboutUs_Title {
@@ -84,6 +93,15 @@ namespace CoffeShop.Resources {
         public static string AddedProducts {
             get {
                 return ResourceManager.GetString("AddedProducts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Shopping Cart.
+        /// </summary>
+        public static string Cart {
+            get {
+                return ResourceManager.GetString("Cart", resourceCulture);
             }
         }
         
@@ -111,6 +129,33 @@ namespace CoffeShop.Resources {
         public static string Contact {
             get {
                 return ResourceManager.GetString("Contact", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Address: 16/3A, My Hoa 1, Trung Chanh, Hoc Mon, HCM city.
+        /// </summary>
+        public static string Contact_Detail0 {
+            get {
+                return ResourceManager.GetString("Contact_Detail0", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Phone/Fax: +84969819201.
+        /// </summary>
+        public static string Contact_Detail1 {
+            get {
+                return ResourceManager.GetString("Contact_Detail1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Contact Infomation.
+        /// </summary>
+        public static string Contact_Info {
+            get {
+                return ResourceManager.GetString("Contact_Info", resourceCulture);
             }
         }
         
