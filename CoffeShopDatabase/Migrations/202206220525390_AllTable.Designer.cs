@@ -7,13 +7,13 @@ namespace CoffeShopDatabase.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class AllTableAdded : IMigrationMetadata
+    public sealed partial class AllTable : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AllTableAdded));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AllTable));
         
         string IMigrationMetadata.Id
         {
-            get { return "202206151406067_AllTableAdded"; }
+            get { return "202206220525390_AllTable"; }
         }
         
         string IMigrationMetadata.Source

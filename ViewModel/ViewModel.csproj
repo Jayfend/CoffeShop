@@ -49,6 +49,7 @@
     <Compile Include="LoginViewModel.cs" />
     <Compile Include="OrderItemResponse.cs" />
     <Compile Include="ProductViewModel.cs" />
+    <Compile Include="ProfileViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SignupViewModel.cs" />
     <Compile Include="UserResponse.cs" />
