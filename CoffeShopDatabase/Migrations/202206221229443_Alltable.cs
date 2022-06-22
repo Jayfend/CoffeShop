@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class AllTable : DbMigration
+    public partial class Alltable : DbMigration
     {
         public override void Up()
         {
@@ -17,6 +17,7 @@
                         Password = c.String(nullable: false, maxLength: 255),
                         Email = c.String(nullable: false, maxLength: 255),
                         CreatedDate = c.DateTime(nullable: false),
+                        Image = c.Binary(),
                     })
                 .PrimaryKey(t => t.AccountID);
             
@@ -98,8 +99,7 @@
                         UserId = c.Int(nullable: false, identity: true),
                         FullName = c.String(nullable: false),
                         Address = c.String(nullable: false, maxLength: 100),
-                        PhoneNumber = c.Int(nullable: false),
-                        Image = c.Binary(),
+                        PhoneNumber = c.String(nullable: false),
                         AccountId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.UserId)

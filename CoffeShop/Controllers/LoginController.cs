@@ -32,6 +32,7 @@ namespace CoffeShop.Controllers
                 LoginModel = login,
                 SignupModel = signup
             };
+           
             return View(account);
           
         }
@@ -75,14 +76,13 @@ namespace CoffeShop.Controllers
                     new Claim(ClaimTypes.Name, response.UserName),
                     new Claim(ClaimTypes.NameIdentifier, response.AccountID.ToString()),
                     new Claim(ClaimTypes.Role,response.UserType)
-                  
-                    
+
                     },
             "ApplicationCookie");
                     var ctx = Request.GetOwinContext();
                     var authManager = ctx.Authentication;
-
-                    authManager.SignIn(identity);
+                    
+                   authManager.SignIn(identity);
                     return Json(new { result = true, message = GetRedirectUrl(account.ReturnUrl) }, JsonRequestBehavior.AllowGet);
                     
 
@@ -93,7 +93,7 @@ namespace CoffeShop.Controllers
 
                 }
             }
-            
+           
             return View("Index");
         }
         private string GetRedirectUrl(string returnUrl)

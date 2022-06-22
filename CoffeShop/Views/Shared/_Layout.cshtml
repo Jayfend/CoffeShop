@@ -60,16 +60,17 @@
                             <li><a href="/Menu/Index" class="@ViewBag.Menu" id="Menu">@CoffeShop.Resources.Language.Menu</a></li>
                             <li><a href="/Contact/Index" class="@ViewBag.Contact" id="Contact">@CoffeShop.Resources.Language.Contact</a></li>
                             <div class="header__cart-wrap" id="Cart">
-                            @{Html.RenderPartial("_Cart");}
+
+                                @{Html.RenderPartial("_Cart");}
                             </div>
                         </ul>
                     </nav>
                     @if (User.Identity.IsAuthenticated)
                     {
 
+                        string base64String = Convert.ToBase64String(ViewBag.avatar, 0, ViewBag.avatar.Length);
                         <div class="header__navbar-item header__navbar-user">
-                            <img src="https://thuthuatnhanh.com/wp-content/uploads/2021/02/Anh-avatar-bua-cute-dep-390x390.jpg"
-                                 alt="" class="header__navbar-user-img">
+                            <img src="data:image/jpg;base64,@base64String" alt="" class="header__navbar-user-img">
                             <span class="header__navbar-user-name">@User.Identity.Name</span>
                             <ul class="header__navbar-user-menu">
                                 <li class="header__navbar-user-item">
@@ -106,62 +107,86 @@
         </div>
     </div>
     @RenderBody()
-    
-        @{Html.RenderPartial("_Notification");}
-       
-        <footer>
-            <div class="tm-black-bg">
-                <div class="container">
-                    <div class="row margin-bottom-60">
-                        <nav class="col-lg-3 col-md-3 tm-footer-nav tm-footer-div">
-                            <h3 class="tm-footer-div-title">Main Menu</h3>
-                            <ul>
-                                <li><a href="#">@CoffeShop.Resources.Language.Home</a></li>
-                                <li><a href="#">@CoffeShop.Resources.Language.TodaySpecials</a></li>
-                                <li><a href="#">@CoffeShop.Resources.Language.Menu</a></li>
-                                <li><a href="#">@CoffeShop.Resources.Language.Contact</a></li>
-                                <li><a href="#">@CoffeShop.Resources.Language.Cart</a></li>
-                            </ul>
-                        </nav>
-                        <div class="col-lg-5 col-md-5 tm-footer-div">
-                            <h3 class="tm-footer-div-title">@CoffeShop.Resources.Language.AboutUs_Title</h3>
-                            <p class="margin-top-15 text-justify">@CoffeShop.Resources.Language.AboutUs_Content0</p>
-                            <p class="margin-top-15 text-justify">@CoffeShop.Resources.Language.AboutUs_Content1</p>
-                        </div>
-                        <div class="col-lg-4 col-md-4 tm-footer-div">
-                            <h3 class="tm-footer-div-title">@CoffeShop.Resources.Language.Contact_Info</h3>
-                            <ul class="ms-3">
-                                <li><p>@CoffeShop.Resources.Language.Contact_Detail0</p></li>
-                                <li><p>@CoffeShop.Resources.Language.Contact_Detail1</p></li>
-                            </ul>
-                            <h3 class="tm-footer-div-title">Get Social</h3>
-                            <div class="tm-social-icons-container">
-                                <a href="#" class="tm-social-icon"><i class="fa fa-facebook"></i></a>
-                                <a href="#" class="tm-social-icon"><i class="fa fa-twitter"></i></a>
-                                <a href="#" class="tm-social-icon"><i class="fa fa-linkedin"></i></a>
-                                <a href="#" class="tm-social-icon"><i class="fa fa-youtube"></i></a>
-                                @*<a href="#" class="tm-social-icon"><i class="fa fa-behance"></i></a>*@
-                            </div>
+
+    <div class="toast">
+        <div class="toast-content">
+            <i class="fas fa-solid fa-check check"></i>
+
+            <div class="message">
+                <span class="text text-1">Success</span>
+                <span class="text text-2">Your drink has been added</span>
+            </div>
+        </div>
+        <i class="fa-solid fa-xmark close"></i>
+
+        <div class="progress"></div>
+    </div>
+
+
+    <footer>
+        <div class="tm-black-bg">
+            <div class="container">
+                <div class="row margin-bottom-60">
+                    <nav class="col-lg-3 col-md-3 tm-footer-nav tm-footer-div">
+                        <h3 class="tm-footer-div-title">Main Menu</h3>
+                        <ul>
+                            <li><a href="#">@CoffeShop.Resources.Language.Home</a></li>
+                            <li><a href="#">@CoffeShop.Resources.Language.TodaySpecials</a></li>
+                            <li><a href="#">@CoffeShop.Resources.Language.Menu</a></li>
+                            <li><a href="#">@CoffeShop.Resources.Language.Contact</a></li>
+                            <li><a href="#">@CoffeShop.Resources.Language.Cart</a></li>
+                        </ul>
+                    </nav>
+                    <div class="col-lg-5 col-md-5 tm-footer-div">
+                        <h3 class="tm-footer-div-title">@CoffeShop.Resources.Language.AboutUs_Title</h3>
+                        <p class="margin-top-15 text-justify">@CoffeShop.Resources.Language.AboutUs_Content0</p>
+                        <p class="margin-top-15 text-justify">@CoffeShop.Resources.Language.AboutUs_Content1</p>
+                    </div>
+                    <div class="col-lg-4 col-md-4 tm-footer-div">
+                        <h3 class="tm-footer-div-title">@CoffeShop.Resources.Language.Contact_Info</h3>
+                        <ul class="ms-3">
+                            <li><p>@CoffeShop.Resources.Language.Contact_Detail0</p></li>
+                            <li><p>@CoffeShop.Resources.Language.Contact_Detail1</p></li>
+                        </ul>
+                        <h3 class="tm-footer-div-title">Get Social</h3>
+                        <div class="tm-social-icons-container">
+                            <a href="#" class="tm-social-icon"><i class="fa fa-facebook"></i></a>
+                            <a href="#" class="tm-social-icon"><i class="fa fa-twitter"></i></a>
+                            <a href="#" class="tm-social-icon"><i class="fa fa-linkedin"></i></a>
+                            <a href="#" class="tm-social-icon"><i class="fa fa-youtube"></i></a>
+                            @*<a href="#" class="tm-social-icon"><i class="fa fa-behance"></i></a>*@
                         </div>
                     </div>
                 </div>
             </div>
-            <div>
-                <div class="container">
-                    <div class="row tm-copyright">
-                        <p class="col-lg-12 small copyright-text text-center">Copyright &copy; 2022 Cafe House</p>
-                    </div>
+        </div>
+        <div>
+            <div class="container">
+                <div class="row tm-copyright">
+                    <p class="col-lg-12 small copyright-text text-center">Copyright &copy; 2022 Cafe House</p>
                 </div>
             </div>
-        </footer> <!-- Footer content-->
-        <!-- JS -->
-        <script type="text/javascript" src="/Assets/js/jquery-1.11.2.min.js"></script>
-        <script type="text/javascript" src="/Assets/js/templatemo-script.js"></script>
-        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-        <script src="~/Scripts/jquery.validate.min.js"></script>
-        <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
-        <script type="text/javascript" src="/Assets/js/MycustomJs.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script><!-- Templatemo Script -->
-        @RenderSection("scripts", required: false);
+        </div>
+    </footer> <!-- Footer content-->
+    <!-- JS -->
+    <script type="text/javascript" src="/Assets/js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="/Assets/js/templatemo-script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <script type="text/javascript" src="/Assets/js/MycustomJs.js"></script>
+    <script type="text/javascript" src="~/Assets/js/NotiJs.js"></script>
+    <script type="text/javascript" src="~/Assets/js/CartJs.js"></script>
+    <script type="text/javascript" src="~/Assets/js/ProfileJs.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            console.log("@ViewBag.Success");
+            if ("@ViewBag.Success") {
+                ShowSuccess();
+            }
+        });
+    </script>
+    @RenderSection("scripts", required: false);
 </body>
 </html>

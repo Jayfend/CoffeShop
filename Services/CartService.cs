@@ -72,7 +72,10 @@ namespace Services
 
         }
         public bool Checkoutupdate(List<CheckOutViewModel> listitem)
-        {   if (listitem.Count > 0 )
+        {
+            
+            
+            if (listitem.Count > 0 )
             {
                 foreach (var item in listitem)
                 {
