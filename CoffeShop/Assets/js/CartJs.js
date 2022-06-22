@@ -11,8 +11,7 @@ function AddCart(Id) {
 
                 $("#Cart").html(data);
 
-                toast.classList.add("active");
-                progress.classList.add("active");
+                ShowSuccess();
 
 
 
@@ -32,8 +31,7 @@ function AddCartTS(Id) {
             success: function (data) {
 
                 $("#Cart").html(data);
-                toast.classList.add("active");
-                progress.classList.add("active");
+                ShowSuccess();
             }
 
         });

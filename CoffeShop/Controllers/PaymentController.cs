@@ -22,6 +22,11 @@ namespace CoffeShop.Controllers
                 //Filter specific claim    
                 var AccountID = claims?.FirstOrDefault(x => x.Type.Equals(ClaimTypes.NameIdentifier, StringComparison.OrdinalIgnoreCase))?.Value;
                 CartService cartService = new CartService();
+                ProfileService ProfileService = new ProfileService();
+                ViewBag.FullName = ProfileService.GetFullName(int.Parse(AccountID));
+                ViewBag.Address = ProfileService.GetAddress(int.Parse(AccountID));
+                ViewBag.Phone = ProfileService.GetPhone(int.Parse(AccountID));
+
                 ViewBag.Cart = cartService.GetCart(int.Parse(AccountID));
                 return View();
             }

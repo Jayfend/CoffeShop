@@ -18,10 +18,7 @@ namespace CoffeShopDatabase
         [StringLength(100)]
         public string Address { get; set; }
         [Required]
-        public int PhoneNumber { get; set; }
-       
-        public byte[] Image { get; set; }
-       
+        public string PhoneNumber { get; set; }
         public int AccountId { get; set; }
         [ForeignKey("AccountId")]
         public Account Account { get; set; }

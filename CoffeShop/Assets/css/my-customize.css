@@ -266,6 +266,7 @@
     height: 22px;
     border-radius: 50%;
     border: 2px solid rgb(199,156,96,.9);
+    object-fit: cover;
 }
 
 .header__navbar-user-name {

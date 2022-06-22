@@ -27,6 +27,8 @@ namespace CoffeShopDatabase
         public string Email { get; set; }
         public DateTime CreatedDate { get; set; }
 
+        public byte[] Image { get; set; }
+
 
     }
 }
