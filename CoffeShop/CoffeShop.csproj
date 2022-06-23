@@ -2634,6 +2634,7 @@
     <Content Include="Assets\js\jquery-1.11.2.min.js" />
     <Content Include="Assets\js\MycustomJs.js" />
     <Content Include="Assets\js\NotiJs.js" />
+    <Content Include="Assets\js\NotiLoginJs.js" />
     <Content Include="Assets\js\ProfileJs.js" />
     <Content Include="Assets\js\templatemo-script.js" />
     <Content Include="Content\bootstrap-grid.css" />

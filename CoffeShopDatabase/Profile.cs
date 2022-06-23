@@ -5,19 +5,22 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.Entity;
 
 namespace CoffeShopDatabase
 {
+       
     public class Profile
     {
+
         [Key]
         public int UserId { get; set; }
-        [Required]
+         
         public string FullName { get; set; }
-        [Required]
-        [StringLength(100)]
+        
+      
         public string Address { get; set; }
-        [Required]
+      
         public string PhoneNumber { get; set; }
         public int AccountId { get; set; }
         [ForeignKey("AccountId")]

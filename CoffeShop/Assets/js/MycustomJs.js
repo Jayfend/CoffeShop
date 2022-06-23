@@ -82,11 +82,11 @@ $("#ProceedBtn").click(function () {
             if (data) {
                 console.log(data);
                 if (data.Result == true) {
-                    ShowError("Something went wrong!");
+                    ShowNoti(true, "Thank you for buying!");
                     /*ShowSuccess("Thank you for buying!");*/
                 }
                 else {
-                    ShowError("Something went wrong!");
+                    ShowNoti(false, "Something went wrong!");
                 }
             }
         });
@@ -208,11 +208,11 @@ function SignUp() {
             console.log(data);
 
             if (data.result === true) {
-                alert("Register Successfully");
+                ShowNoti(true, "Register Successfully");
 
             }
             else {
-                alert("Email or UserName already existed");
+                ShowNoti(false, "Email or Username already Existed");
             }
         },
     });
@@ -259,7 +259,7 @@ function SignIn() {
 
             }
             else {
-                alert(data.message);
+                ShowNoti(false, "Username or Password not correct");
             }
         },
     });

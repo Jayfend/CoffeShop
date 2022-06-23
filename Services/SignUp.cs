@@ -37,10 +37,16 @@ namespace Services
                         Image = imgdata
 
                     };
-               
-              
+                Profile profile = new Profile()
+                {
+                    Address = "",
+                    PhoneNumber = "",
+                    FullName = "",
+                    Account = account,
+                };
 
                 _Database.Accounts.Add(account);
+                _Database.Profiles.Add(profile);
               
                     _Database.SaveChanges();
 

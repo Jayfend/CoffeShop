@@ -45,8 +45,7 @@ namespace CoffeShop.Controllers
                 int accountid = signup.Register(account);
                 if (accountid>0)
                 {
-                    ProfileService service = new ProfileService();
-                    service.CreateNewProfile(accountid);
+                    
                     return Json(new { result = true }, JsonRequestBehavior.AllowGet);
 
                 }

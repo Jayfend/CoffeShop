@@ -118,28 +118,33 @@ namespace Services
         {
             var response = _Database.Profiles.Include(s => s.Account).FirstOrDefault(s => s.AccountId == AccountId);
             ProfileViewModel profile = new ProfileViewModel();
-            profile.Address = response.Address;
-            profile.PhoneNumber=response.PhoneNumber;
-            profile.FullName = response.FullName;
+            if (!string.IsNullOrEmpty(response.Address))
+            {
+                profile.Address = response.Address;
+            }
+            else
+            {
+                profile.Address = "";
+            }
+            if (!String.IsNullOrEmpty(response.PhoneNumber))
+            {
+                profile.PhoneNumber = response.PhoneNumber;
+            }
+            else
+            {
+                profile.PhoneNumber = "";
+            }
+            if (!String.IsNullOrEmpty(response.FullName))
+            {
+                profile.FullName = response.FullName;
+            }
+            else
+            {
+                profile.FullName = "";
+            }
+            
             return profile;
         }
-        public void CreateNewProfile(int AccountId)
-        {
-            var account = _Database.Accounts.Where(s => s.AccountID == AccountId).FirstOrDefault();
-
-            
-            Profile profile = new Profile()
-            {
-                FullName = "",
-                PhoneNumber = "",
-                Address = "",
-                Account = account
-
-
-            };
-
-            _Database.Profiles.Add(profile);
-            _Database.SaveChanges();
-        }
+       
     }
 }
