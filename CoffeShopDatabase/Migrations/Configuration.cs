@@ -38,7 +38,7 @@
         private void SeedProduct(CoffeShopDbContext context)
         {
             IList<Product> ProductList = new List<Product>();
-            byte[] imgdata = System.IO.File.ReadAllBytes(@"C:\Users\Admin\OneDrive\Máy tính\Img\Chocolate-Avocado-Smoothie-Topped-with-Affogato-683x1024.jpg");
+            byte[] imgdata = System.IO.File.ReadAllBytes(@"C:\Users\DINH LOC\Downloads\Img\Chocolate-Avocado-Smoothie-Topped-with-Affogato-683x1024.jpg");
             ProductList.Add(new Product()
             {
                 ProductName = "Affogato on Avocado Smoothie",
@@ -49,7 +49,7 @@
                 Image = imgdata,
                 CreatedDate = DateTime.Now
             });
-            imgdata = System.IO.File.ReadAllBytes(@"C:\Users\Admin\OneDrive\Máy tính\Img\Affogato-coffee-3.jpg");
+            imgdata = System.IO.File.ReadAllBytes(@"C:\Users\DINH LOC\Downloads\Img\Affogato-coffee-3.jpg");
             ProductList.Add(new Product()
             {
                 ProductName = "Coffee Affogato",
@@ -60,7 +60,7 @@
                 Image = imgdata,
                 CreatedDate = DateTime.Now
             });
-            imgdata = System.IO.File.ReadAllBytes(@"C:\Users\Admin\OneDrive\Máy tính\Img\coconutaffogato.jpg");
+            imgdata = System.IO.File.ReadAllBytes(@"C:\Users\DINH LOC\Downloads\Img\coconutaffogato.jpg");
             ProductList.Add(new Product()
             {
                 ProductName = "Coconut Affogato",
@@ -71,7 +71,7 @@
                 Image = imgdata,
                 CreatedDate = DateTime.Now
             });
-            imgdata = System.IO.File.ReadAllBytes(@"C:\Users\Admin\OneDrive\Máy tính\Img\img_6768.jpg");
+            imgdata = System.IO.File.ReadAllBytes(@"C:\Users\DINH LOC\Downloads\Img\img_6768.jpg");
             ProductList.Add(new Product()
             {
                 ProductName = "Oreo Affogato Dessert",
@@ -82,7 +82,7 @@
                 Image = imgdata,
                 CreatedDate = DateTime.Now
             });
-            imgdata = System.IO.File.ReadAllBytes(@"C:\Users\Admin\OneDrive\Máy tính\Img\Affogato Like Pudding with Egg Whites.jpg");
+            imgdata = System.IO.File.ReadAllBytes(@"C:\Users\DINH LOC\Downloads\Img\Affogato Like Pudding with Egg Whites.jpg");
             ProductList.Add(new Product()
             {
                 ProductName = "Affogato Like Pudding with Egg Whites",
@@ -93,7 +93,7 @@
                 Image = imgdata,
                 CreatedDate = DateTime.Now
             });
-             imgdata = System.IO.File.ReadAllBytes(@"C:\Users\Admin\OneDrive\Máy tính\Img\coconutaffogato.jpg");
+             imgdata = System.IO.File.ReadAllBytes(@"C:\Users\DINH LOC\Downloads\Img\coconutaffogato.jpg");
             ProductList.Add(new Product()
             {
                 ProductName = "Tea Affogato",

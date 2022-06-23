@@ -46,7 +46,7 @@
         <div class="container">
             <div class="row">
                 <div class="tm-top-header-inner">
-                    <a href="/Home/Index" class="tm-logo-container">
+                    <a href="/" class="tm-logo-container">
                         <img src="/Assets/img/logo.png" alt="Logo" class="tm-site-logo">
                         <h1 class="tm-site-name tm-handwriting-font">Cafe House</h1>
                     </a>
@@ -55,12 +55,11 @@
                     </div>
                     <nav class="tm-nav">
                         <ul id="tm-top-header-button">
-                            <li><a href="/Home/Index" class="@ViewBag.Home" id="Home">@CoffeShop.Resources.Language.Home</a></li>
-                            <li><a href="/TodaySpecials/Index" class="@ViewBag.TodaySpecials" id="Special">@CoffeShop.Resources.Language.TodaySpecials</a></li>
-                            <li><a href="/Menu/Index" class="@ViewBag.Menu" id="Menu">@CoffeShop.Resources.Language.Menu</a></li>
-                            <li><a href="/Contact/Index" class="@ViewBag.Contact" id="Contact">@CoffeShop.Resources.Language.Contact</a></li>
+                            <li><a href="/" class="@ViewBag.Home" id="Home">@CoffeShop.Resources.Language.Home</a></li>
+                            <li><a href="/TodaySpecials" class="@ViewBag.TodaySpecials" id="Special">@CoffeShop.Resources.Language.TodaySpecials</a></li>
+                            <li><a href="/Menu" class="@ViewBag.Menu" id="Menu">@CoffeShop.Resources.Language.Menu</a></li>
+                            <li><a href="/Contact" class="@ViewBag.Contact" id="Contact">@CoffeShop.Resources.Language.Contact</a></li>
                             <div class="header__cart-wrap" id="Cart">
-
                                 @{Html.RenderPartial("_Cart");}
                             </div>
                         </ul>
@@ -74,11 +73,11 @@
                             <span class="header__navbar-user-name">@User.Identity.Name</span>
                             <ul class="header__navbar-user-menu">
                                 <li class="header__navbar-user-item">
-                                    <a href="/Profile/Index">@CoffeShop.Resources.Language.MyProfile</a>
+                                    <a href="/Profile">@CoffeShop.Resources.Language.MyProfile</a>
                                 </li>
 
                                 <li class="header__navbar-user-item">
-                                    <a href="/Cart/Index">@CoffeShop.Resources.Language.Orders</a>
+                                    <a href="/Cart">@CoffeShop.Resources.Language.Orders</a>
                                 </li>
                                 <li class="header__navbar-user-item header__navbar-user-item--separate">
                                     <a href="/Login/Logout">@CoffeShop.Resources.Language.Logout</a>
@@ -91,7 +90,7 @@
                         <div class="header__navbar-item header__navbar-user">
                             <img src="https://banner2.cleanpng.com/20180402/bje/kisspng-computer-icons-avatar-login-user-avatar-5ac207e69ecd41.2588125315226654466505.jpg"
                                  alt="" class="header__navbar-user-img">
-                            <a href="/Login/Index" class="header__navbar-user-name">@CoffeShop.Resources.Language.Login</a>
+                            <a href="/Login" class="header__navbar-user-name">@CoffeShop.Resources.Language.Login</a>
                         </div>
                     }
 
@@ -128,7 +127,7 @@
             <div class="container">
                 <div class="row margin-bottom-60">
                     <nav class="col-lg-3 col-md-3 tm-footer-nav tm-footer-div">
-                        <h3 class="tm-footer-div-title">Main Menu</h3>
+                        <h3 class="tm-footer-div-title">@CoffeShop.Resources.Language.Navigation</h3>
                         <ul>
                             <li><a href="#">@CoffeShop.Resources.Language.Home</a></li>
                             <li><a href="#">@CoffeShop.Resources.Language.TodaySpecials</a></li>
@@ -148,7 +147,7 @@
                             <li><p>@CoffeShop.Resources.Language.Contact_Detail0</p></li>
                             <li><p>@CoffeShop.Resources.Language.Contact_Detail1</p></li>
                         </ul>
-                        <h3 class="tm-footer-div-title">Get Social</h3>
+                        <h3 class="tm-footer-div-title">@CoffeShop.Resources.Language.GetSocial</h3>
                         <div class="tm-social-icons-container">
                             <a href="#" class="tm-social-icon"><i class="fa fa-facebook"></i></a>
                             <a href="#" class="tm-social-icon"><i class="fa fa-twitter"></i></a>

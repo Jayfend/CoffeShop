@@ -160,11 +160,11 @@ namespace CoffeShop.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Daily Menu.
+        ///   Looks up a localized string similar to Send us a message.
         /// </summary>
-        public static string DailyMenu {
+        public static string Contact_Title {
             get {
-                return ResourceManager.GetString("DailyMenu", resourceCulture);
+                return ResourceManager.GetString("Contact_Title", resourceCulture);
             }
         }
         
@@ -174,6 +174,15 @@ namespace CoffeShop.Resources {
         public static string Delete {
             get {
                 return ResourceManager.GetString("Delete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Detail.
+        /// </summary>
+        public static string Detail {
+            get {
+                return ResourceManager.GetString("Detail", resourceCulture);
             }
         }
         
@@ -196,11 +205,56 @@ namespace CoffeShop.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Get Social.
+        /// </summary>
+        public static string GetSocial {
+            get {
+                return ResourceManager.GetString("GetSocial", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Home.
         /// </summary>
         public static string Home {
             get {
                 return ResourceManager.GetString("Home", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hello Friend. Have a nice day!.
+        /// </summary>
+        public static string Home_Content0 {
+            get {
+                return ResourceManager.GetString("Home_Content0", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Popular Items.
+        /// </summary>
+        public static string Home_Title0 {
+            get {
+                return ResourceManager.GetString("Home_Title0", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Today&apos;s Specials.
+        /// </summary>
+        public static string Home_Title1 {
+            get {
+                return ResourceManager.GetString("Home_Title1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Daily Menu.
+        /// </summary>
+        public static string Home_Title2 {
+            get {
+                return ResourceManager.GetString("Home_Title2", resourceCulture);
             }
         }
         
@@ -241,11 +295,56 @@ namespace CoffeShop.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cafe House has so many kind of drink..
+        /// </summary>
+        public static string Menu_Content {
+            get {
+                return ResourceManager.GetString("Menu_Content", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Variety of Menu.
+        /// </summary>
+        public static string Menu_Title0 {
+            get {
+                return ResourceManager.GetString("Menu_Title0", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Our Menu.
+        /// </summary>
+        public static string Menu_Title1 {
+            get {
+                return ResourceManager.GetString("Menu_Title1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to MESSAGE US.
+        /// </summary>
+        public static string MessageUs {
+            get {
+                return ResourceManager.GetString("MessageUs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to My Profile.
         /// </summary>
         public static string MyProfile {
             get {
                 return ResourceManager.GetString("MyProfile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Navigation.
+        /// </summary>
+        public static string Navigation {
+            get {
+                return ResourceManager.GetString("Navigation", resourceCulture);
             }
         }
         
@@ -268,15 +367,6 @@ namespace CoffeShop.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Popular Items.
-        /// </summary>
-        public static string Popular {
-            get {
-                return ResourceManager.GetString("Popular", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to READ MORE.
         /// </summary>
         public static string Readmore {
@@ -286,11 +376,20 @@ namespace CoffeShop.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Today&apos;s Specials.
+        ///   Looks up a localized string similar to SEND MESSAGE.
         /// </summary>
-        public static string Specials {
+        public static string SendMessage {
             get {
-                return ResourceManager.GetString("Specials", resourceCulture);
+                return ResourceManager.GetString("SendMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Special Items.
+        /// </summary>
+        public static string Special_Title0 {
+            get {
+                return ResourceManager.GetString("Special_Title0", resourceCulture);
             }
         }
         
@@ -309,6 +408,15 @@ namespace CoffeShop.Resources {
         public static string Vietnamese {
             get {
                 return ResourceManager.GetString("Vietnamese", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to View Menu.
+        /// </summary>
+        public static string View_Menu {
+            get {
+                return ResourceManager.GetString("View_Menu", resourceCulture);
             }
         }
     }
