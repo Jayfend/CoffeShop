@@ -12,11 +12,11 @@ namespace CoffeShop.Controllers
     public class MenuController : BaseController
     {
         // GET: Menu
-        public ActionResult Index(int categoryID = 1)
+        public ActionResult Index(int categoryId = 1)
         {
             ProductService getproduct = new ProductService();
             ViewBag.Menu = "active";
-            var ProductList = getproduct.GetProductViewModel(categoryID);
+            var ProductList = getproduct.GetProductViewModel(categoryId);
             return View(ProductList);
         }
         [Authorize]

@@ -19,7 +19,6 @@ namespace CoffeShop
                 defaults: new { controller = "Base", action = "Change" }
             );
 
-
             routes.MapRoute(
                 name: "Login_default",
                 url: "Login",
@@ -58,8 +57,14 @@ namespace CoffeShop
 
             routes.MapRoute(
                 name: "Menu",
-                url: "Menu/{categoryID}",
+                url: "Menu/{action}",
                 defaults: new { controller = "Menu", action = "Index"}
+            );
+
+            routes.MapRoute(
+                name: "Menu_wCategory",
+                url: "Menu/{categoryId}",
+                defaults: new { controller = "Menu", action = "Index" }
             );
 
             routes.MapRoute(
