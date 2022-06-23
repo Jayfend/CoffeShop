@@ -51,12 +51,13 @@ namespace Services
                 }
                 else
                 {
+                    var getaccount = _Database.Accounts.FirstOrDefault(s => s.AccountID == AccountID);
                     Profile newprofile = new Profile()
                     {
                         FullName = profile.FullName,
                         PhoneNumber = profile.PhoneNumber,
                         Address = profile.Address,
-                        
+                        Account= getaccount,
 
                     };
                     _Database.Profiles.Add(newprofile);
@@ -122,20 +123,23 @@ namespace Services
             profile.FullName = response.FullName;
             return profile;
         }
-        //public void CreateNewProfile (int AccountId)
-        //{
-        //    Profile profile = new Profile()
-        //    {
-        //        FullName = "",
-        //        PhoneNumber = "",
-        //        Address = "",
-        //        AccountId = AccountId
+        public void CreateNewProfile(int AccountId)
+        {
+            var account = _Database.Accounts.Where(s => s.AccountID == AccountId).FirstOrDefault();
+
+            
+            Profile profile = new Profile()
+            {
+                FullName = "",
+                PhoneNumber = "",
+                Address = "",
+                Account = account
 
 
-        //    };
+            };
 
-        //    _Database.Profiles.Add(profile);
-        //    _Database.SaveChanges();
-        //}
+            _Database.Profiles.Add(profile);
+            _Database.SaveChanges();
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,8 +12,12 @@ namespace CoffeShop.Areas.Admin.Controllers
         // GET: Admin/Table
         public ActionResult Index()
         {
+            BillService billservice = new BillService();
+            Login Login = new Login();
+            var billlist = billservice.GetBill();
             ViewBag.Table = "active";
-            return View();
+            ViewBag.AccountList = Login.getinfo();
+            return View(billlist);
         }
     }
 }

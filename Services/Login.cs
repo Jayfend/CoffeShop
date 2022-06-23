@@ -55,5 +55,14 @@ namespace Services
             return response.Email;
 
         }
+        public List<AccountAdminViewModel> getinfo()
+        {
+            return _Database.Accounts.Select(x => new AccountAdminViewModel()
+            {
+               UserName = x.UserName,
+               Email = x.Email,
+               CreatedDate = x.CreatedDate,
+            }).ToList();
+        }
     }
 }

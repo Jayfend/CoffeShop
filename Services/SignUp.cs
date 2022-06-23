@@ -20,7 +20,7 @@ namespace Services
            
             _Database = new CoffeShopDbContext();
         }
-        public bool Register(SignupViewModel user)
+        public int Register(SignupViewModel user)
         {  
             var check=_Database.Accounts.FirstOrDefault(s=>s.UserName== user.UserName || s.Email==user.Email);
             if (check == null)
@@ -35,8 +35,13 @@ namespace Services
                         UserType = "Guest",
                         CreatedDate = DateTime.Now,
                         Image = imgdata
+
                     };
-                    _Database.Accounts.Add(account);
+               
+              
+
+                _Database.Accounts.Add(account);
+              
                     _Database.SaveChanges();
 
                 //   ProfileService profileservice = new ProfileService();
@@ -45,11 +50,11 @@ namespace Services
 
 
 
-                return true;
+                return account.AccountID;
             }
             else
             {
-                return false;
+                return 0;
             }
            
         }

@@ -60,6 +60,11 @@ $("#SubmitBtn").click(function () {
     }
 
 });
+$(function () {
+    $('#ProceedBtn').submit(function (e) {
+        e.preventDefault();
+    });
+})
 $("#ProceedBtn").click(function () {
     console.log("click");
     var totalPrice = parseFloat(document.getElementById('totalPrice').innerHTML);
@@ -77,10 +82,11 @@ $("#ProceedBtn").click(function () {
             if (data) {
                 console.log(data);
                 if (data.Result == true) {
-                    alert(data.Message);
+                    ShowError("Something went wrong!");
+                    /*ShowSuccess("Thank you for buying!");*/
                 }
                 else {
-                    alert(data.Message);
+                    ShowError("Something went wrong!");
                 }
             }
         });
@@ -147,8 +153,9 @@ function LanguageGet(LanguageAbbrevation) {
             data: { LanguageAbbrevation },
             dataType: "text",
             success: function (data) {
-                console.log(data);
+               
                 var a = JSON.parse(data);
+                console.log(a);
                 if (a.result === true) {
                     console.log(data);
                     location.reload();
@@ -211,6 +218,7 @@ function SignUp() {
     });
 
 }
+
 
 $(function () {
     $('#signupForm').submit(function (e) {

@@ -1,0 +1,7 @@
+﻿body {
+}
+.scrollbar{
+    max-height:500px;
+    overflow-y: auto;
+
+}

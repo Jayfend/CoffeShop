@@ -42,9 +42,11 @@ namespace CoffeShop.Controllers
         {   SignUp signup = new SignUp();
             if (ModelState.IsValid)
             {
-                if (signup.Register(account))
+                int accountid = signup.Register(account);
+                if (accountid>0)
                 {
-                    
+                    ProfileService service = new ProfileService();
+                    service.CreateNewProfile(accountid);
                     return Json(new { result = true }, JsonRequestBehavior.AllowGet);
 
                 }

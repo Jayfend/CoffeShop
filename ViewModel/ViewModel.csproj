@@ -42,7 +42,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccountAdminViewModel.cs" />
     <Compile Include="AccountViewModel.cs" />
+    <Compile Include="BillAdminViewModel.cs" />
     <Compile Include="BillViewModel.cs" />
     <Compile Include="CheckOutViewModel.cs" />
     <Compile Include="ContactViewModel.cs" />

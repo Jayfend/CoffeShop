@@ -15,7 +15,8 @@ closeIcon.addEventListener("click", () => {
     clearTimeout(timer2);
 
 });
-function ShowSuccess() {
+function ShowSuccess(message) {
+    document.querySelector(".text-2").innerHTML = message;
     toast.classList.add("active");
     progress.classList.add("active");
     timer1 = setTimeout(() => {
@@ -28,4 +29,23 @@ function ShowSuccess() {
 
         progress.classList.remove("active");
     }, 3000);
+    
+}
+function ShowError(message) {
+    document.querySelector(".text-1") = "Error"
+    document.querySelector(".text-2").innerHTML = message;
+    document.getElementById("progress").style.color = red;
+    toast.classList.add("active");
+    progress.classList.add("active");
+    timer1 = setTimeout(() => {
+
+        toast.classList.remove("active");
+
+    }, 3000);
+
+    timer2 = setTimeout(() => {
+
+        progress.classList.remove("active");
+    }, 3000);
+   
 }

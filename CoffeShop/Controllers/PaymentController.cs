@@ -63,8 +63,8 @@ namespace CoffeShop.Controllers
                         {
                             Data = new
                             {
-                                Result = true,
-                                Message = "There is no product!"
+                                Result = false,
+                              
                             }
                         };
                     }

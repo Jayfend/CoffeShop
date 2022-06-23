@@ -55,5 +55,17 @@ namespace Services
             }
 
         }
+        public List<BillAdminViewModel> GetBill()
+        {
+            return _Database.Bills.Select(x => new BillAdminViewModel()
+            {
+                BillID = x.BillID,
+                Address = x.Address,
+                PhoneNumber = x.PhoneNumber,
+                Name = x.Name,
+                TotalPrice= x.TotalPrice,
+                Purchasedate= DateTime.Now,
+            }).ToList();
+        }
     }
 }
