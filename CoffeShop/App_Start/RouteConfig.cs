@@ -14,6 +14,12 @@ namespace CoffeShop
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                name: "Base",
+                url: "Base",
+                defaults: new { controller = "Base", action = "Change" }
+            );
+
+            routes.MapRoute(
                 name: "Login_default",
                 url: "Login",
                 defaults: new { controller = "Login", action = "Index" }
@@ -51,8 +57,14 @@ namespace CoffeShop
 
             routes.MapRoute(
                 name: "Menu",
-                url: "Menu/{categoryID}",
+                url: "Menu/{action}",
                 defaults: new { controller = "Menu", action = "Index"}
+            );
+
+            routes.MapRoute(
+                name: "Menu_wCategory",
+                url: "Menu/{categoryId}",
+                defaults: new { controller = "Menu", action = "Index" }
             );
 
             routes.MapRoute(
