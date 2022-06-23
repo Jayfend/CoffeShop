@@ -53,7 +53,7 @@ namespace CoffeShop.Controllers
                             Data = new
                             {
                                 Result = true,
-                                Message = " Thank you for buying, your order will be delivered soon!"
+                               
                             }
                         };
                     }

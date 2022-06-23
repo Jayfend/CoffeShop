@@ -23,10 +23,22 @@ namespace Services
                 Email = review.Email,
                 Subject = review.Subject,
                 Message = review.Message,
+                CreatedDate=DateTime.Now,
             };
             _Database.Contacts.Add(contact);
             _Database.SaveChanges();
             return true;
+        }
+        public List<ContactViewModel> getReviews()
+        {
+            return _Database.Contacts.Select(x => new ContactViewModel()
+            {
+               Name=x.Name,
+               Email=x.Email,
+               Subject=x.Subject,
+               Message=x.Message,
+               CreateDate=x.CreatedDate,
+            }).ToList();
         }
     
     }
