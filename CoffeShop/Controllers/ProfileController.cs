@@ -49,7 +49,7 @@ namespace CoffeShop.Controllers
                 var AccountID = claims?.FirstOrDefault(x => x.Type.Equals(ClaimTypes.NameIdentifier, StringComparison.OrdinalIgnoreCase))?.Value;
                 ProfileService profileService = new ProfileService();
                 profileService.ProfileChanges(profile, int.Parse(AccountID));
-               TempData["Success"] = true;
+                TempData["Success"] = true;
                 ModelState.Clear();
                 return RedirectToAction("Index", "Profile");
             }

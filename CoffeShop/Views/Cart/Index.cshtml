@@ -15,7 +15,7 @@
     <section class="shopping-cart dark">
         <div class="container">
             <div class="block-heading">
-                <h2>Giỏ hàng</h2>
+                <h2>@CoffeShop.Resources.Language.Cart</h2>
             </div>
             <div class="content">
                 
@@ -97,18 +97,18 @@
                         <input type="hidden" id="OrderItemId_@i" value="@item.OrderItemId"/>
                             i++;
                         }
-                        <button type="button" id="SaveBtn" class="btn btn--primary save-btn">Save</button>
+                    <button type="button" id="SaveBtn" class="btn btn--primary save-btn">@CoffeShop.Resources.Language.Save</button>
 
                         <input type="hidden" id="totalitem" value="@i" />
                     </div>
                     <div class="col-md-12 col-lg-4">
                         <div class="summary">
-                            <h3>Summary</h3>
-                            <div class="summary-item"><span class="text">Total</span><span id="totalnotdiscount" class="price">@totalnotdiscount</span></div>
-                            <div class="summary-item"><span class="text">Discount</span><span id="totaldiscount" class="price">@totaldiscount</span></div>
-                            <div class="summary-item"><span class="text">Shipping</span><span class="price">Free</span></div>
-                            <div class="summary-item"><span class="text">Total</span><span id="total" class="price">@total</span></div>
-                            <button id="SubmitBtn" class="btn btn--primary btn-lg btn-block">Checkout</button>
+                            <h3>@CoffeShop.Resources.Language.Summary</h3>
+                            <div class="summary-item"><span class="text">@CoffeShop.Resources.Language.Total</span><span id="totalnotdiscount" class="price">@totalnotdiscount</span></div>
+                            <div class="summary-item"><span class="text">@CoffeShop.Resources.Language.Discount</span><span id="totaldiscount" class="price">@totaldiscount</span></div>
+                            <div class="summary-item"><span class="text">@CoffeShop.Resources.Language.Shipping</span><span class="price">@CoffeShop.Resources.Language.Free</span></div>
+                            <div class="summary-item"><span class="text">@CoffeShop.Resources.Language.Total</span><span id="total" class="price">@total</span></div>
+                            <button id="SubmitBtn" class="btn btn--primary btn-lg btn-block">@CoffeShop.Resources.Language.Checkout</button>
                         </div>
                     </div>
                 </div>

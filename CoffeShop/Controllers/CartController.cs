@@ -42,7 +42,7 @@ namespace CoffeShop.Controllers
                         Data = new
                         {
                             Result = true,
-                            ReturnURL = "/Payment/Index"
+                            ReturnURL = "/Payment"
                         }
                     };
                 }

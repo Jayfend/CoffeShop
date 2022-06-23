@@ -47,24 +47,18 @@ namespace CoffeShop.Controllers
                 BillService billService = new BillService();
                 if (ModelState.IsValid)
                 {
-                    if (billService.CreateBill(bill, int.Parse(AccountID))){
-                        return new JsonResult()
-                        {
-                            Data = new
-                            {
-                                Result = true,
-                                Message = " Thank you for buying, your order will be delivered soon!"
-                            }
-                        };
+                    if (billService.CreateBill(bill, int.Parse(AccountID)))
+                    {
+                        return Json(new { result = true }, JsonRequestBehavior.AllowGet);
                     }
+
                     else
                     {
                         return new JsonResult()
                         {
                             Data = new
                             {
-                                Result = false,
-                              
+                                Result = false
                             }
                         };
                     }
@@ -76,13 +70,10 @@ namespace CoffeShop.Controllers
                     {
                         Data = new
                         {
-                            Result = false,
-                            Message = "Something is wrong, please check the information "
+                            Result = false
                         }
                     };
                 }
-
-               
             }
             else
             {

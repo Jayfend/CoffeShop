@@ -172,6 +172,9 @@ ul {
 .tm-top-header {
   background: black;
   color: white;
+  position: sticky;
+  top: 0;
+  z-index: 5;
 }
 .tm-site-logo,
  .tm-site-name {

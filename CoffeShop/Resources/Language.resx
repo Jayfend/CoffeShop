@@ -133,6 +133,12 @@
     <value>Added Products</value>
     <comment>Sản phẩm đã thêm</comment>
   </data>
+  <data name="Address" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
   <data name="Cart" xml:space="preserve">
     <value>Shopping Cart</value>
     <comment>Giỏ Hàng</comment>
@@ -144,6 +150,9 @@
   <data name="Checkcart" xml:space="preserve">
     <value>Check Cart</value>
     <comment>Xem Giỏ hàng</comment>
+  </data>
+  <data name="Checkout" xml:space="preserve">
+    <value>Check out</value>
   </data>
   <data name="Contact" xml:space="preserve">
     <value>Contact</value>
@@ -165,6 +174,9 @@
     <value>Send us a message</value>
     <comment>Phản hồi với chúng tôi</comment>
   </data>
+  <data name="CustomerInfo" xml:space="preserve">
+    <value>Customer Information</value>
+  </data>
   <data name="Delete" xml:space="preserve">
     <value>Delete</value>
     <comment>Xóa</comment>
@@ -173,6 +185,9 @@
     <value>Detail</value>
     <comment>Chi tiết</comment>
   </data>
+  <data name="Discount" xml:space="preserve">
+    <value>Discount</value>
+  </data>
   <data name="EmptyCart" xml:space="preserve">
     <value>There is no product</value>
     <comment>Không có sản phẩm</comment>
@@ -180,6 +195,12 @@
   <data name="English" xml:space="preserve">
     <value>English</value>
     <comment>Tiếng Anh</comment>
+  </data>
+  <data name="Fname" xml:space="preserve">
+    <value>Full Name</value>
+  </data>
+  <data name="Free" xml:space="preserve">
+    <value>Free</value>
   </data>
   <data name="GetSocial" xml:space="preserve">
     <value>Get Social</value>
@@ -237,6 +258,9 @@
     <value>MESSAGE US</value>
     <comment>Phản hồi</comment>
   </data>
+  <data name="Msg" xml:space="preserve">
+    <value>Message</value>
+  </data>
   <data name="MyProfile" xml:space="preserve">
     <value>My Profile</value>
     <comment>Hồ sơ của tôi</comment>
@@ -253,21 +277,54 @@
     <value>Orders</value>
     <comment>Đặt hàng</comment>
   </data>
+  <data name="Payment" xml:space="preserve">
+    <value>Payment</value>
+  </data>
+  <data name="Personal_info" xml:space="preserve">
+    <value>Personal Information</value>
+  </data>
+  <data name="Phone" xml:space="preserve">
+    <value>Phone Number</value>
+  </data>
+  <data name="Quantity" xml:space="preserve">
+    <value>Quantity</value>
+  </data>
   <data name="Readmore" xml:space="preserve">
     <value>READ MORE</value>
     <comment>Xem thêm</comment>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Save</value>
   </data>
   <data name="SendMessage" xml:space="preserve">
     <value>SEND MESSAGE</value>
     <comment>Gửi</comment>
   </data>
+  <data name="Shipping" xml:space="preserve">
+    <value>Shipping fee</value>
+  </data>
   <data name="Special_Title0" xml:space="preserve">
     <value>Special Items</value>
     <comment>Sản phẩm HOT</comment>
   </data>
+  <data name="Subject" xml:space="preserve">
+    <value>Subject</value>
+  </data>
+  <data name="Summary" xml:space="preserve">
+    <value>Summary</value>
+  </data>
   <data name="TodaySpecials" xml:space="preserve">
     <value>Today Specials</value>
     <comment>Hot hôm nay</comment>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="Uname" xml:space="preserve">
+    <value>User Name</value>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>Update</value>
   </data>
   <data name="Vietnamese" xml:space="preserve">
     <value>Vietnamese</value>

@@ -5,7 +5,7 @@
 }
 
 <div class="container container-profile">
-    <h1 class="text-primary" id="title">Personal Profile</h1>
+    <h1 class="text-primary" id="title">@CoffeShop.Resources.Language.Personal_info</h1>
     <br />
     <div class="row">
         <!-- left column -->
@@ -33,13 +33,13 @@
 
 
             <div class="form-group">
-                <label class="col-lg-3 control-label">User Name:</label>
+                <label class="col-lg-3 control-label">@CoffeShop.Resources.Language.Uname</label>
                 <div class="col-md-5">
                     <input class="form-control" id="username" type="text" value="@ViewBag.UserName" disabled="disabled">
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-lg-3 control-label">Full Name:</label>
+                <label class="col-lg-3 control-label">@CoffeShop.Resources.Language.Fname</label>
                 <div class="col-md-5">
                     @Html.TextBoxFor(m => m.FullName, new { @id = "fname", @class = "form-control", @type = "text", @required = "required"})
                     @*<input class="form-control" id="fname" type="text" value="Bui Dinh Loc">*@
@@ -47,7 +47,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-lg-3 control-label">Address:</label>
+                <label class="col-lg-3 control-label">@CoffeShop.Resources.Language.Address</label>
                 <div class="col-lg-8">
                     @Html.TextAreaFor(m => m.Address, new { @id = "address", @class = "form-control", @rows = "2", @style = "resize: none;" })
                     @*<textarea class="form-control" id="address" rows="2" style="resize: none;">Trung Chanh, Hoc Mon, TP Ho Chi Minh</textarea>*@
@@ -55,13 +55,13 @@
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-lg-3 control-label">Email:</label>
+                <label class="col-lg-3 control-label">Email</label>
                 <div class="col-md-6">
                     <input class="form-control" id="email" type="text" value="@ViewBag.Email" disabled>
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-lg-3 control-label">Phone Number:</label>
+                <label class="col-lg-3 control-label">@CoffeShop.Resources.Language.Phone</label>
                 <div class="col-md-4">
                     @Html.TextBoxFor(m => m.PhoneNumber, new { @id = "phone", @class = "form-control", @type = "text", @required = "required" })
                     @*<input class="form-control" id="phone" type="text" value="+84969819201">*@
@@ -71,8 +71,8 @@
 
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                 <div class="text-right">
-                    <button type="button" class="btn ">Cancel</button>
-                    <input type="submit" class="btn btn--primary" id="ProfileChange" value="Update" />
+                    <button type="button" class="btn" onclick="timeRefresh(1000)">@CoffeShop.Resources.Language.Cancel</button>
+                    <input type="submit" class="btn btn--primary" id="ProfileChange" value="@CoffeShop.Resources.Language.Update" />
                 </div>
             </div>
 

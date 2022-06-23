@@ -23,11 +23,8 @@
 
     CurrentNotdiscountTotal = (CurrentNotdiscountTotal - oneitemnotdiscount) + newitemnotdiscount;
 
-
-
     document.getElementById('totalnotdiscount').innerHTML = CurrentNotdiscountTotal.toString();
     document.getElementById('totalnotdiscountforone_' + i).value = newitemnotdiscount.toString();
-
 }
 
 
@@ -50,51 +47,17 @@ $("#SubmitBtn").click(function () {
                     window.location.href = data.ReturnURL;
                 }
                 else {
-                    alert("Checkout Failed, please try again");
+                    ShowNoti(false, "Checkout Failed, please try again");
                 }
             }
         });
     }
     else {
-        alert("Your cart is empty");
+        ShowNoti(false, "Your cart is empty");
     }
 
 });
-$(function () {
-    $('#ProceedBtn').submit(function (e) {
-        e.preventDefault();
-    });
-})
-$("#ProceedBtn").click(function () {
-    console.log("click");
-    var totalPrice = parseFloat(document.getElementById('totalPrice').innerHTML);
-    var PhoneNumber = document.getElementById('Phone-Number').value;
-    var Address = document.getElementById('Address').value;
-    var Name = document.getElementById('Full-Name').value;
 
-    var listData = { TotalPrice: totalPrice, PhoneNumber: PhoneNumber, Address: Address, Name: Name };
-    console.log(listData);
-    if (totalPrice == 0 || PhoneNumber.length === 0 || Address.length === 0 || Name.length === 0) {
-        alert("Please fill all information");
-    }
-    else {
-        $.post("/Payment/CreateBill", { bill: listData }, function (data) {
-            if (data) {
-                console.log(data);
-                if (data.Result == true) {
-                    ShowNoti(true, "Thank you for buying!");
-                    /*ShowSuccess("Thank you for buying!");*/
-                }
-                else {
-                    ShowNoti(false, "Something went wrong!");
-                }
-            }
-        });
-    }
-
-
-
-});
 function check() {
     var password = document.getElementById('signup-password').value;
     var repassword = document.getElementById('signup-repassword').value;
@@ -110,8 +73,6 @@ function check() {
         document.getElementById('confirmpassword-message').innerHTML = 'Password not match';
         document.getElementById('SignUpBtn').disabled = true;
     }
-
-
 }
 
 $("#SaveBtn").click(function () {
@@ -130,17 +91,17 @@ $("#SaveBtn").click(function () {
             if (data) {
                 console.log(data);
                 if (data.Result == true) {
-                    alert(data.Message);
-                    location.reload();
+                    ShowNoti(true, "Save Successfully!");
+                    /*location.reload();*/
                 }
                 else {
-                    alert(data.Message);
+                    ShowNoti(false, "Save Failed!");
                 }
             }
         });
     }
     else {
-        alert("Your cart is empty");
+        ShowNoti(false, "Your cart is empty");
     }
 
 });
@@ -159,11 +120,8 @@ function LanguageGet(LanguageAbbrevation) {
                 if (a.result === true) {
                     console.log(data);
                     location.reload();
-
                 }
-
             }
-
         });
 }
 function CartDelete(Id) {
@@ -174,15 +132,8 @@ function CartDelete(Id) {
             data: { OrderItemId: Id },
             dataType: "text",
             success: function (data) {
-                console.log(data);
-
-
                 $("#Cart").html(data);
-
-
-
             }
-
         });
 }
 
@@ -205,11 +156,9 @@ function SignUp() {
         url: "/Login/Register",
         data: { account: accountviewmodel },
         success: function (data) {
-            console.log(data);
-
             if (data.result === true) {
                 ShowNoti(true, "Register Successfully");
-
+                timeRefresh_Login(2000);
             }
             else {
                 ShowNoti(false, "Email or Username already Existed");
@@ -218,7 +167,6 @@ function SignUp() {
     });
 
 }
-
 
 $(function () {
     $('#signupForm').submit(function (e) {
@@ -256,7 +204,6 @@ function SignIn() {
 
             if (data.result === true) {
                 window.location.href = data.message;
-
             }
             else {
                 ShowNoti(false, "Username or Password not correct");
@@ -270,13 +217,11 @@ function ContactSend() {
     if (!$('#contactform').valid()) {
         return;
     }
-    console.log("click");
     var name = document.getElementById('contact_name').value;
     var subject = document.getElementById('contact_subject').value;
     var text = document.getElementById('contact_message').value;
     var email = document.getElementById('contact_email').value;
     var contactviewmodel = { Name: name, Email: email, Subject: subject, Message: text };
-    console.log(contactviewmodel);
 
     $.ajax({
         type: "POST",
@@ -284,15 +229,22 @@ function ContactSend() {
         data: { review: contactviewmodel },
         success: function (data) {
             if (data.Result == true) {
-                console.log("True");
-
-                alert("Your review has been sent");
-
+                ShowNoti(true, "Your review has been sent");
+                timeRefresh(1000);
             }
             else {
-                alert("Couldn't send your review");
+                ShowNoti(false, "Couldn't send your review");
             }
         },
     });
 
 }
+
+function timeRefresh(time) {
+    setTimeout("location.reload(true);", time);
+}
+
+function timeRefresh_Login(time) {
+    setTimeout("window.location.assign('/Login')", time);
+}
+
