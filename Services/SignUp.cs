@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.ModelBinding;
+using System.Data.Entity;
 using Utilities;
 using ViewModel;
 
@@ -15,30 +16,35 @@ namespace Services
         private CoffeShopDbContext _Database = null;
         public SignUp()
         {
+
            
             _Database = new CoffeShopDbContext();
         }
-        public  bool Register(SignupViewModel user)
+        public bool Register(SignupViewModel user)
         {  
             var check=_Database.Accounts.FirstOrDefault(s=>s.UserName== user.UserName || s.Email==user.Email);
             if (check == null)
             {
                 byte[] imgdata = System.IO.File.ReadAllBytes(@"C:\Users\Admin\source\repos\CoffeShop\CoffeShop\Assets\img\Avatar.jpg");
-                Account account = new Account()
-                {
-                    UserName = user.UserName,
-                    Password = Encryptor.MD5Hash(user.Password),
-                    Email = user.Email,
-                    UserType = "Guest",
-                    CreatedDate = DateTime.Now,
-                    Image=imgdata
-                };
-                
-                
-                _Database.Accounts.Add(account);
-                _Database.SaveChanges();
-               
-                
+              
+                    Account account = new Account()
+                    {
+                        UserName = user.UserName,
+                        Password = Encryptor.MD5Hash(user.Password),
+                        Email = user.Email,
+                        UserType = "Guest",
+                        CreatedDate = DateTime.Now,
+                        Image = imgdata
+                    };
+                    _Database.Accounts.Add(account);
+                    _Database.SaveChanges();
+
+                //   ProfileService profileservice = new ProfileService();
+                //profileservice.CreateNewProfile(account.AccountID);
+        
+
+
+
                 return true;
             }
             else

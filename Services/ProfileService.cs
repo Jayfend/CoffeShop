@@ -71,32 +71,71 @@ namespace Services
         public string GetFullName(int AccountId)
         {
             var response = _Database.Profiles.Where(s => s.AccountId == AccountId).FirstOrDefault();
-
-            return response.FullName;
+            if (response.FullName != null)
+            {
+                return response.FullName;
+            }
+            else
+            {
+                response.FullName ="";
+                return response.FullName;
+            }
+          
 
         }
         public string GetAddress(int AccountId)
         {
             var response = _Database.Profiles.Where(s => s.AccountId == AccountId).FirstOrDefault();
 
-            return response.Address;
+            if (response.Address != null)
+            {
+                return response.Address;
+            }
+            else
+            {
+                response.Address = "";
+                return response.Address;
+            }
 
         }
         public string GetPhone(int AccountId)
         {
             var response = _Database.Profiles.Where(s => s.AccountId == AccountId).FirstOrDefault();
 
-            return response.PhoneNumber;
+            if (response.PhoneNumber != null)
+            {
+                return response.PhoneNumber;
+            }
+            else
+            {
+                response.PhoneNumber = "";
+                return response.Address;
+            }
 
         }
         public ProfileViewModel getProfile(int AccountId)
         {
-            var response = _Database.Profiles.Where(s => s.AccountId == AccountId).FirstOrDefault();
+            var response = _Database.Profiles.Include(s => s.Account).FirstOrDefault(s => s.AccountId == AccountId);
             ProfileViewModel profile = new ProfileViewModel();
             profile.Address = response.Address;
             profile.PhoneNumber=response.PhoneNumber;
             profile.FullName = response.FullName;
             return profile;
         }
+        //public void CreateNewProfile (int AccountId)
+        //{
+        //    Profile profile = new Profile()
+        //    {
+        //        FullName = "",
+        //        PhoneNumber = "",
+        //        Address = "",
+        //        AccountId = AccountId
+
+
+        //    };
+
+        //    _Database.Profiles.Add(profile);
+        //    _Database.SaveChanges();
+        //}
     }
 }
