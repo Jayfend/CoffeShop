@@ -14,6 +14,7 @@ namespace Services
    public class SignUp
     {
         private CoffeShopDbContext _Database = null;
+        string AvatarPath = @"C:\Users\DINH LOC\source\repos\CoffeShop\CoffeShop\Assets\img\";
         public SignUp()
         {
 
@@ -25,7 +26,7 @@ namespace Services
             var check=_Database.Accounts.FirstOrDefault(s=>s.UserName== user.UserName || s.Email==user.Email);
             if (check == null)
             {
-                byte[] imgdata = System.IO.File.ReadAllBytes(@"C:\Users\Admin\source\repos\CoffeShop\CoffeShop\Assets\img\Avatar.jpg");
+                byte[] imgdata = System.IO.File.ReadAllBytes(AvatarPath + "Avatar.jpg");
               
                     Account account = new Account()
                     {
