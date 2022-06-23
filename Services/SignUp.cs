@@ -31,7 +31,7 @@ namespace Services
                     UserType = "Guest",
                     CreatedDate = DateTime.Now
                 };
-                 byte[] imgdata = System.IO.File.ReadAllBytes(@"C:\Users\Admin\source\repos\CoffeShop\CoffeShop\Assets\img\Avatar.jpg");
+                 //byte[] imgdata = System.IO.File.ReadAllBytes(@"C:\Users\DINH LOC\source\repos\CoffeShop\CoffeShop\Assets\img\Avatar.jpg");
                 
                 _Database.Accounts.Add(account);
                 _Database.SaveChanges();

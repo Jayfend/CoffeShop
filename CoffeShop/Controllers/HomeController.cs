@@ -14,8 +14,6 @@ namespace CoffeShop.Controllers
         {  
                 ViewBag.Home = "active";
                 return View();
-            
-            
         }
      
 

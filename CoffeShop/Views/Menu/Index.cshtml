@@ -1,6 +1,6 @@
 ﻿@model  List<ViewModel.ProductViewModel> 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Menu";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -20,7 +20,7 @@
         <div class="row tm-welcome-content">
             <h2 class="white-text tm-handwriting-font tm-welcome-header"><img src="/Assets/img/header-line.png" alt="Line" class="tm-header-line">&nbsp;Our Menu&nbsp;&nbsp;<img src="/Assets/img/header-line.png" alt="Line" class="tm-header-line"></h2>
             <h2 class="gold-text tm-welcome-header-2">Cafe House</h2>
-            <a href="#main" class="tm-more-button tm-more-button-welcome">Read More</a>
+            <a href="#main" class="tm-more-button tm-more-button-welcome">@CoffeShop.Resources.Language.View_Menu</a>
         </div>
         <img src="/Assets/img/table-set.png" alt="Table Set" class="tm-table-set img-responsive">
     </div>
@@ -29,10 +29,8 @@
     <div class="container" id="main">
         <section class="tm-section row">
             <div class="col-lg-9 col-md-9 col-sm-8">
-                <h2 class="tm-section-header gold-text tm-handwriting-font">Variety of Menu</h2>
-                @*<h2>Cafe House</h2>*@
-                <p class="tm-welcome-description">Cafe House has so many kind of coffee.</p>
-                @*<a href="#" class="tm-more-button margin-top-30">Read More</a>*@
+                <h2 class="tm-section-header gold-text tm-handwriting-font">@CoffeShop.Resources.Language.Menu_Title0</h2>
+                <p class="tm-welcome-description">@CoffeShop.Resources.Language.Menu_Content</p>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-4 tm-welcome-img-container">
                 <div class="inline-block shadow-img">
@@ -42,7 +40,7 @@
         </section>
         <section class="tm-section row">
             <div class="col-lg-12 tm-section-header-container margin-bottom-30">
-                <h2 class="tm-section-header gold-text tm-handwriting-font"><img src="/Assets/img/logo.png" alt="Logo" class="tm-site-logo"> Our Menus</h2>
+                <h2 class="tm-section-header gold-text tm-handwriting-font"><img src="/Assets/img/logo.png" alt="Logo" class="tm-site-logo">@CoffeShop.Resources.Language.Menu_Title1</h2>
                 <div class="tm-hr-container"><hr class="tm-hr"></div>
             </div>
             <div>
@@ -69,7 +67,7 @@
                 <div class="tm-menu-product-content col-lg-9 col-md-9">
                     <!-- menu content -->
                     @foreach (var item in Model)
-                    {
+                     {
                         string base64String = Convert.ToBase64String(item.Image, 0, item.Image.Length);
                         <div class="tm-product">
                             
@@ -81,25 +79,20 @@
                                 <p class="tm-product-description">@item.Description</p>
                             </div>
                             
-                                @if (User.Identity.IsAuthenticated)
+                               @if (User.Identity.IsAuthenticated)
                                 {   <div class="tm-product-price">
-                                    <a onclick="AddCart(@item.ProductId)" class="tm-product-price-link tm-handwriting-font"><span class="tm-product-price-currency">₫</span>@item.Price</a>
+                                        <a onclick="AddCart(@item.ProductId)" class="tm-product-price-link tm-handwriting-font"><span class="tm-product-price-currency">₫</span>@item.Price</a>
                                     </div>
                                 }
                                 else
                                 {   <div class="tm-product-price">
-                                    <a href="/Login/Index" class="tm-product-price-link tm-handwriting-font"><span class="tm-product-price-currency">₫</span>@item.Price</a>
-                                     </div>     }
-
-
+                                        <a href="/Login/Index" class="tm-product-price-link tm-handwriting-font"><span class="tm-product-price-currency">₫</span>@item.Price</a>
+                                    </div>     
+                                }
                         </div>
+                     }
 
-                    }
-
-                </div>
-                   
-               
-               
+                </div>  
             </div>
 
         </section>
