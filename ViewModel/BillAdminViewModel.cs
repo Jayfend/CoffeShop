@@ -9,17 +9,19 @@ namespace ViewModel
 {
     public class BillAdminViewModel
     {
-        [Required]
         public int BillID { get; set; }
-        [Required]
+
         public double TotalPrice { get; set; }
-        [Required]
+
+        public int OrderId { get; set; }
+
+
         public DateTime Purchasedate { get; set; }
-        [Required]
+
         public string PhoneNumber { get; set; }
-        [Required]
+
         public string Address { get; set; }
-        [Required]
+
         public string Name { get; set; }
     }
 }
