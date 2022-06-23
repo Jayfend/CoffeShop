@@ -2600,6 +2600,7 @@
     <Content Include="Assets\css\templatemo-style.css" />
     <Content Include="Assets\fonts\fontawesome-webfont.svg" />
     <Content Include="Assets\img\1.jpg" />
+    <Content Include="Assets\img\Avatar.jpg" />
     <Content Include="Assets\img\favicon.ico" />
     <Content Include="Assets\img\header-line.png" />
     <Content Include="Assets\img\image.jpg" />

@@ -14,6 +14,13 @@ namespace CoffeShop
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                name: "Base",
+                url: "Base",
+                defaults: new { controller = "Base", action = "Change" }
+            );
+
+
+            routes.MapRoute(
                 name: "Login_default",
                 url: "Login",
                 defaults: new { controller = "Login", action = "Index" }
