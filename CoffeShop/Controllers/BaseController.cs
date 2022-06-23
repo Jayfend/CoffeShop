@@ -25,6 +25,8 @@ namespace CoffeShop.Controllers
                 var AccountID = claims?.FirstOrDefault(x => x.Type.Equals(ClaimTypes.NameIdentifier, StringComparison.OrdinalIgnoreCase))?.Value;
                 CartService cartService = new CartService();
                 ViewBag.Cart = cartService.GetCart(int.Parse(AccountID));
+                Services.Login LoginService = new Services.Login();
+                ViewBag.avatar = LoginService.GetAvatar(int.Parse(AccountID));
                 //ViewBag.CartCount = ViewBag.Cart.Count; 
             }
             else

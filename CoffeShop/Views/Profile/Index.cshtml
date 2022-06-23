@@ -1,4 +1,4 @@
-﻿
+﻿@model ViewModel.ProfileViewModel
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -9,11 +9,15 @@
     <br />
     <div class="row">
         <!-- left column -->
+        @using (Html.BeginForm("Index", "Profile", FormMethod.Post, new { enctype = "multipart/form-data", @class = "form-horizontal" }))
+        {@Html.AntiForgeryToken()
         <div class="col-md-3">
             <div class="text-center">
-                <img src="https://bootdey.com/img/Content/avatar/avatar7.png" class="avatar img-circle img-thumbnail" alt="avatar">
+                @{string base64String = Convert.ToBase64String(ViewBag.avatar, 0, ViewBag.avatar.Length); }
+                <img src="data:image/jpg;base64,@base64String" class="avatar img-circle img-thumbnail" alt="avatar">
                 <h6>Upload a different photo...</h6>
-                <input type="file" class="form-control">
+                <input type="file" class="form-control" name="ImageData" id="ImageData" onchange="fileCheck(this);">
+
             </div>
         </div>
 
@@ -22,49 +26,59 @@
             <div class="alert alert-info alert-dismissable"></div>
 
             @*<div class="text-center">
-                    <h3 class="text-uppercase">Personal info</h3>
-                </div>*@
+                <h3 class="text-uppercase">Personal info</h3>
+            </div>*@
             <br />
-            <form class="form-horizontal" role="form">
-                <div class="form-group">
-                    <label class="col-lg-3 control-label">User Name:</label>
-                    <div class="col-md-5">
-                        <input class="form-control" id="username" type="text" value="dinhlocpisces">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-lg-3 control-label">Full Name:</label>
-                    <div class="col-md-5">
-                        <input class="form-control" id="fname" type="text" value="Bui Dinh Loc">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-lg-3 control-label">Address:</label>
-                    <div class="col-lg-8">
-                        <textarea class="form-control" id="address" rows="2" style="resize: none;">Trung Chanh, Hoc Mon, TP Ho Chi Minh</textarea>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-lg-3 control-label">Email:</label>
-                    <div class="col-md-6">
-                        <input class="form-control" id="email" type="text" value="dinhloc334@gmail.com">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-lg-3 control-label">Phone Number:</label>
-                    <div class="col-md-4">
-                        <input class="form-control" id="phone" type="text" value="+84969819201">
-                    </div>
-                </div>
+            @*<form class="form-horizontal" role="form">*@
 
-                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                    <div class="text-right">
-                        <button type="button" id="submit" name="submit" class="btn ">Cancel</button>
-                        <button type="button" id="submit" name="submit" class="btn btn--primary ">Update</button>
-                    </div>
+
+            <div class="form-group">
+                <label class="col-lg-3 control-label">User Name:</label>
+                <div class="col-md-5">
+                    <input class="form-control" id="username" type="text" value="@ViewBag.UserName" disabled="disabled">
                 </div>
-            </form>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-3 control-label">Full Name:</label>
+                <div class="col-md-5">
+                    @Html.TextBoxFor(m => m.FullName, new { @id = "fname", @class = "form-control", @type = "text", @required = "required"})
+                    @*<input class="form-control" id="fname" type="text" value="Bui Dinh Loc">*@
+                    @Html.ValidationMessageFor(m => m.FullName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-3 control-label">Address:</label>
+                <div class="col-lg-8">
+                    @Html.TextAreaFor(m => m.Address, new { @id = "address", @class = "form-control", @rows = "2", @style = "resize: none;" })
+                    @*<textarea class="form-control" id="address" rows="2" style="resize: none;">Trung Chanh, Hoc Mon, TP Ho Chi Minh</textarea>*@
+                    @Html.ValidationMessageFor(m => m.Address, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-3 control-label">Email:</label>
+                <div class="col-md-6">
+                    <input class="form-control" id="email" type="text" value="@ViewBag.Email" disabled>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-3 control-label">Phone Number:</label>
+                <div class="col-md-4">
+                    @Html.TextBoxFor(m => m.PhoneNumber, new { @id = "phone", @class = "form-control", @type = "text", @required = "required" })
+                    @*<input class="form-control" id="phone" type="text" value="+84969819201">*@
+                    @Html.ValidationMessageFor(m => m.PhoneNumber, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="text-right">
+                    <button type="button" class="btn ">Cancel</button>
+                    <input type="submit" class="btn btn--primary" id="ProfileChange" value="Update" />
+                </div>
+            </div>
+
+            @*</form>*@
         </div>
+    }
     </div>
     <br />
     <div class="spacing"></div>

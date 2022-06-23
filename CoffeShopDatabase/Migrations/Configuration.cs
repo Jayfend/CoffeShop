@@ -30,8 +30,9 @@
 
         private void SeedAccount(CoffeShopDbContext context)
         {
+            byte[] imgdata = System.IO.File.ReadAllBytes(@"C:\Users\Admin\source\repos\CoffeShop\CoffeShop\Assets\img\Avatar.jpg");
             IList<Account> AccountList = new List<Account>();
-            AccountList.Add(new Account() { AccountID = 1, UserName = "Admin", Password = Encryptor.MD5Hash("Luan01011995"), Email = "Admin@gmail.com", UserType="Admin",CreatedDate=DateTime.Now});
+            AccountList.Add(new Account() { AccountID = 1, UserName = "Admin", Password = Encryptor.MD5Hash("Luan01011995"), Email = "Admin@gmail.com", UserType="Admin",CreatedDate=DateTime.Now,Image=imgdata});
             context.Accounts.AddRange(AccountList);
         }
         private void SeedProduct(CoffeShopDbContext context)

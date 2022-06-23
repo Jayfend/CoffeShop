@@ -24,7 +24,8 @@ namespace Services
                .Select(s => new UserResponse()
                { UserName = s.UserName,
                    UserType = s.UserType,
-                   AccountID=s.AccountID
+                   AccountID=s.AccountID,
+                   
                })
                .FirstOrDefault();
             
@@ -32,6 +33,27 @@ namespace Services
            
            
             
+        }
+        public byte[] GetAvatar(int AccountId)
+        {
+            var response = _Database.Accounts.Where(s => s.AccountID == AccountId).FirstOrDefault();
+           
+                return response.Image;
+               
+        }
+        public string GetUserName(int AccountId)
+        {
+            var response = _Database.Accounts.Where(s => s.AccountID == AccountId).FirstOrDefault();
+
+            return response.UserName;
+
+        }
+        public string GetEmail(int AccountId)
+        {
+            var response = _Database.Accounts.Where(s => s.AccountID == AccountId).FirstOrDefault();
+
+            return response.Email;
+
         }
     }
 }

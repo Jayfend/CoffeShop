@@ -67,9 +67,9 @@
                     @if (User.Identity.IsAuthenticated)
                     {
 
+                        string base64String = Convert.ToBase64String(ViewBag.avatar, 0, ViewBag.avatar.Length);
                         <div class="header__navbar-item header__navbar-user">
-                            <img src="https://thuthuatnhanh.com/wp-content/uploads/2021/02/Anh-avatar-bua-cute-dep-390x390.jpg"
-                                 alt="" class="header__navbar-user-img">
+                            <img src="data:image/jpg;base64,@base64String" alt="" class="header__navbar-user-img">
                             <span class="header__navbar-user-name">@User.Identity.Name</span>
                             <ul class="header__navbar-user-menu">
                                 <li class="header__navbar-user-item">
@@ -107,7 +107,20 @@
     </div>
     @RenderBody()
 
-    @{Html.RenderPartial("_Notification");}
+    <div class="toast">
+        <div class="toast-content">
+            <i class="fas fa-solid fa-check check"></i>
+
+            <div class="message">
+                <span class="text text-1">Success</span>
+                <span class="text text-2">Your drink has been added</span>
+            </div>
+        </div>
+        <i class="fa-solid fa-xmark close"></i>
+
+        <div class="progress"></div>
+    </div>
+
 
     <footer>
         <div class="tm-black-bg">
@@ -161,9 +174,18 @@
     <script src="~/Scripts/jquery.validate.min.js"></script>
     <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
     <script type="text/javascript" src="/Assets/js/MycustomJs.js"></script>
-    <script type="text/javascript" src="/Assets/js/NotiJs.js"></script>
-    <script type="text/javascript" src="/Assets/js/CartJs.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script><!-- Templatemo Script -->
+    <script type="text/javascript" src="~/Assets/js/NotiJs.js"></script>
+    <script type="text/javascript" src="~/Assets/js/CartJs.js"></script>
+    <script type="text/javascript" src="~/Assets/js/ProfileJs.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            console.log("@ViewBag.Success");
+            if ("@ViewBag.Success") {
+                ShowSuccess();
+            }
+        });
+    </script>
     @RenderSection("scripts", required: false);
 </body>
 </html>
