@@ -29,8 +29,8 @@
         <!-- partial:partials/_sidebar.html -->
         <nav class="sidebar sidebar-offcanvas" id="sidebar">
             <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
-                <a class="sidebar-brand brand-logo" href="index.html"><img src="/Areas/Admin/Assets/images/logo.svg" alt="logo" /></a>
-                <a class="sidebar-brand brand-logo-mini" href="index.html"><img src="/Areas/Admin/Assets/images/logo-mini.svg" alt="logo" /></a>
+                <a class="sidebar-brand brand-logo" href="/"><img src="/Areas/Admin/Assets/images/logo.svg" alt="logo" /></a>
+                @*<a class="sidebar-brand brand-logo-mini" href=""><img src="/Areas/Admin/Assets/images/logo-mini.svg" alt="logo" /></a>*@
             </div>
             <ul class="nav">
                 <li class="nav-item profile">
@@ -41,11 +41,11 @@
                                 <span class="count bg-success"></span>
                             </div>
                             <div class="profile-name">
-                                <h5 class="mb-0 font-weight-normal">Henry Klein</h5>
-                                <span>Gold Member</span>
+                                <h5 class="mb-0 font-weight-normal">Đình Lộc</h5>
+                                <span>Admin</span>
                             </div>
                         </div>
-                        <a href="#" id="profile-dropdown" data-toggle="dropdown"><i class="mdi mdi-dots-vertical"></i></a>
+                        @*<a href="#" id="profile-dropdown" data-toggle="dropdown"><i class="mdi mdi-dots-vertical"></i></a>
                         <div class="dropdown-menu dropdown-menu-right sidebar-dropdown preview-list" aria-labelledby="profile-dropdown">
                             <a href="#" class="dropdown-item preview-item">
                                 <div class="preview-thumbnail">
@@ -79,21 +79,22 @@
                                     <p class="preview-subject ellipsis mb-1 text-small">To-do list</p>
                                 </div>
                             </a>
-                        </div>
+                        </div>*@
                     </div>
                 </li>
                 <li class="nav-item nav-category">
-                    <span class="nav-link">Navigation</span>
+                    <span class="nav-link">Quản Lý</span>
                 </li>
-                <li class="nav-item menu-items @ViewBag.Home">
-                    <a class="nav-link" href="/Admin/AdminHome/Index">
-                        <span class="menu-icon">
-                            <i class="mdi mdi-speedometer"></i>
-                        </span>
-                        <span class="menu-title">Dashboard</span>
-                    </a>
-                </li>
-                @*<li class="nav-item menu-items">
+                @* --------------- Sider nav --------------------------------------- *@
+                @*<li class="nav-item menu-items @ViewBag.Home">
+                <a class="nav-link" href="/Admin/AdminHome/Index">
+                    <span class="menu-icon">
+                        <i class="mdi mdi-speedometer"></i>
+                    </span>
+                    <span class="menu-title">Dashboard</span>
+                </a>
+                </li>*@
+                        @*<li class="nav-item menu-items">
                     <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
                         <span class="menu-icon">
                             <i class="mdi mdi-laptop"></i>
@@ -117,15 +118,47 @@
                         <span class="menu-title">Product Management</span>
                     </a>
                 </li>
+                <li class="nav-item menu-items">
+                    <a class="nav-link" href="">
+                        <span class="menu-icon">
+                            <i class="mdi mdi-playlist-play"></i>
+                        </span>
+                        <span class="menu-title">Category Management</span>
+                    </a>
+                </li>
+                <li class="nav-item menu-items">
+                    <a class="nav-link" href="">
+                        <span class="menu-icon">
+                            <i class="mdi mdi-playlist-play"></i>
+                        </span>
+                        <span class="menu-title">User Management</span>
+                    </a>
+                </li>
+                <li class="nav-item menu-items">
+                    <a class="nav-link" href="">
+                        <span class="menu-icon">
+                            <i class="mdi mdi-playlist-play"></i>
+                        </span>
+                        <span class="menu-title">Order Management</span>
+                    </a>
+                </li>
+                <li class="nav-item menu-items">
+                    <a class="nav-link" href="">
+                        <span class="menu-icon">
+                            <i class="mdi mdi-playlist-play"></i>
+                        </span>
+                        <span class="menu-title">Feedback Management</span>
+                    </a>
+                </li>
                 <li class="nav-item menu-items @ViewBag.Table">
-                    <a class="nav-link" href="/Admin/Table/Index">
+                    <a class="nav-link" href="">
                         <span class="menu-icon">
                             <i class="mdi mdi-table-large"></i>
                         </span>
                         <span class="menu-title">Tables</span>
                     </a>
                 </li>
-                <li class="nav-item menu-items">
+                @*<li class="nav-item menu-items">
                     <a class="nav-link" href="pages/charts/chartjs.html">
                         <span class="menu-icon">
                             <i class="mdi mdi-chart-bar"></i>
@@ -166,7 +199,7 @@
                         </span>
                         <span class="menu-title">Documentation</span>
                     </a>
-                </li>
+                </li>*@
             </ul>
         </nav>
         <!-- partial -->
@@ -177,18 +210,20 @@
                     <a class="navbar-brand brand-logo-mini" href="index.html"><img src="/Areas/Admin/Assets/images/logo-mini.svg" alt="logo" /></a>
                 </div>
                 <div class="navbar-menu-wrapper flex-grow d-flex align-items-stretch">
-                    <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+                    @* ------------------ Nav Item -------------------------------------------------- *@
+
+                    @*<button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
                         <span class="mdi mdi-menu"></span>
-                    </button>
+                    </button>*@
                     <ul class="navbar-nav w-100">
                         <li class="nav-item w-100">
                             <form class="nav-link mt-2 mt-md-0 d-none d-lg-flex search">
-                                <input type="text" class="form-control" placeholder="Search products">
+                                <input type="text" class="form-control" placeholder="...">
                             </form>
                         </li>
                     </ul>
                     <ul class="navbar-nav navbar-nav-right">
-                        <li class="nav-item dropdown d-none d-lg-block">
+                        @*<li class="nav-item dropdown d-none d-lg-block">
                             <a class="nav-link btn btn-success create-new-button" id="createbuttonDropdown" data-toggle="dropdown" aria-expanded="false" href="#">+ Create New Project</a>
                             <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="createbuttonDropdown">
                                 <h6 class="p-3 mb-0">Projects</h6>
@@ -321,18 +356,17 @@
                                 <div class="dropdown-divider"></div>
                                 <p class="p-3 mb-0 text-center">See all notifications</p>
                             </div>
-                        </li>
+                        </li>*@
                         <li class="nav-item dropdown">
                             <a class="nav-link" id="profileDropdown" href="#" data-toggle="dropdown">
                                 <div class="navbar-profile">
                                     <img class="img-xs rounded-circle" src="/Areas/Admin/Assets/images/faces/face15.jpg" alt="">
-                                    <p class="mb-0 d-none d-sm-block navbar-profile-name">Henry Klein</p>
+                                    <p class="mb-0 d-none d-sm-block navbar-profile-name">Đình Lộc</p>
                                     <i class="mdi mdi-menu-down d-none d-sm-block"></i>
                                 </div>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="profileDropdown">
-                                <h6 class="p-3 mb-0">Profile</h6>
-                                <div class="dropdown-divider"></div>
+                                @*<div class="dropdown-divider"></div>
                                 <a class="dropdown-item preview-item">
                                     <div class="preview-thumbnail">
                                         <div class="preview-icon bg-dark rounded-circle">
@@ -342,7 +376,7 @@
                                     <div class="preview-item-content">
                                         <p class="preview-subject mb-1">Settings</p>
                                     </div>
-                                </a>
+                                </a>*@
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item preview-item">
                                     <div class="preview-thumbnail">
@@ -355,7 +389,6 @@
                                     </div>
                                 </a>
                                 <div class="dropdown-divider"></div>
-                                <p class="p-3 mb-0 text-center">Advanced settings</p>
                             </div>
                         </li>
                     </ul>

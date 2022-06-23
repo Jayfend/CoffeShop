@@ -665,9 +665,9 @@ ol li:before {
     right: 16px;
 }
 .form-control {
-    /*border-color: #c79c60;*/
-    border-color: #fff;
-    border-radius: 4px;
+    border-color: #c79c60;
+    /*border-color: #fff;*/
+    border-radius: 8px;
 }
 .form-control:focus { 
   border-color: rgb(136, 93, 33); 
