@@ -60,6 +60,11 @@ $("#SubmitBtn").click(function () {
     }
 
 });
+$(function () {
+    $('#ProceedBtn').submit(function (e) {
+        e.preventDefault();
+    });
+})
 $("#ProceedBtn").click(function () {
     console.log("click");
     var totalPrice = parseFloat(document.getElementById('totalPrice').innerHTML);
@@ -77,10 +82,11 @@ $("#ProceedBtn").click(function () {
             if (data) {
                 console.log(data);
                 if (data.Result == true) {
-                    alert(data.Message);
+                    ShowNoti(true, "Thank you for buying!");
+                    /*ShowSuccess("Thank you for buying!");*/
                 }
                 else {
-                    alert(data.Message);
+                    ShowNoti(false, "Something went wrong!");
                 }
             }
         });
@@ -147,8 +153,9 @@ function LanguageGet(LanguageAbbrevation) {
             data: { LanguageAbbrevation },
             dataType: "text",
             success: function (data) {
-                console.log(data);
+               
                 var a = JSON.parse(data);
+                console.log(a);
                 if (a.result === true) {
                     console.log(data);
                     location.reload();
@@ -201,16 +208,17 @@ function SignUp() {
             console.log(data);
 
             if (data.result === true) {
-                alert("Register Successfully");
+                ShowNoti(true, "Register Successfully");
 
             }
             else {
-                alert("Email or UserName already existed");
+                ShowNoti(false, "Email or Username already Existed");
             }
         },
     });
 
 }
+
 
 $(function () {
     $('#signupForm').submit(function (e) {
@@ -251,7 +259,7 @@ function SignIn() {
 
             }
             else {
-                alert(data.message);
+                ShowNoti(false, "Username or Password not correct");
             }
         },
     });

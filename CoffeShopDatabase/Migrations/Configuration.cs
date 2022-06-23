@@ -11,8 +11,8 @@
 
     internal sealed class Configuration : DbMigrationsConfiguration<CoffeShopDatabase.CoffeShopDbContext>
     {
-        string path = @"C:\Users\DINH LOC\Downloads\Img\";
-        string Avatarpath = @"C:\Users\DINH LOC\source\repos\CoffeShop\CoffeShop\Assets\img\";
+        string path = @"C:\Users\Admin\OneDrive\Máy tính\Img\";
+        string Avatarpath = @"C:\Users\Admin\source\repos\CoffeShop\CoffeShop\Assets\img\";
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
@@ -34,7 +34,10 @@
             byte[] imgdata = System.IO.File.ReadAllBytes(Avatarpath + "Avatar.jpg");
             IList<Account> AccountList = new List<Account>();
             AccountList.Add(new Account() { AccountID = 1, UserName = "Admin", Password = Encryptor.MD5Hash("123456"), Email = "Admin@gmail.com", UserType="Admin",CreatedDate=DateTime.Now,Image=imgdata});
+            IList<Profile> ProfileList = new List<Profile>();
+            ProfileList.Add(new Profile() { FullName = "", Address = "", PhoneNumber = "", AccountId = 1 });
             context.Accounts.AddRange(AccountList);
+            context.Profiles.AddRange(ProfileList);
         }
         private void SeedProduct(CoffeShopDbContext context)
         {

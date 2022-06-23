@@ -97,9 +97,9 @@
                 c => new
                     {
                         UserId = c.Int(nullable: false, identity: true),
-                        FullName = c.String(nullable: false),
-                        Address = c.String(nullable: false, maxLength: 100),
-                        PhoneNumber = c.String(nullable: false),
+                        FullName = c.String(),
+                        Address = c.String(),
+                        PhoneNumber = c.String(),
                         AccountId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.UserId)

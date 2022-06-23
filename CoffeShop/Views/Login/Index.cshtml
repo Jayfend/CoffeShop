@@ -57,14 +57,14 @@
 
                             <div class="group">
                                 <label for="signup-user" class="label">Username</label>
-                                @Html.TextBoxFor(m => m.SignupModel.UserName, new { @id = "signup-user", @type = "text", @class = "input", @required="required"})
+                                @Html.TextBoxFor(m => m.SignupModel.UserName, new { @id = "signup-user", @type = "text", @class = "input", @required = "required" })
                                 @*<input id="signup-user" name="Username" type="text" class="input" required>*@
                                 @Html.ValidationMessageFor(m => m.SignupModel.UserName, "", new { @class = "text-danger" })
                             </div>
                             <div class="group">
                                 <label for="signup-password" class="label">Password</label>
 
-                                @Html.TextBoxFor(m => m.SignupModel.Password, new { @id = "signup-password", @type = "password", @class="input", @onkeyup = "check()",@required="required" })
+                                @Html.TextBoxFor(m => m.SignupModel.Password, new { @id = "signup-password", @type = "password", @class = "input", @onkeyup = "check()", @required = "required" })
                                 @*<input id="signup-password" name="Password" type="password" class="input" data-type="password"  required>*@
                                 @Html.ValidationMessageFor(m => m.SignupModel.Password, "", new { @class = "text-danger " })
                             </div>
@@ -95,11 +95,23 @@
             </div>
         </div>
     </div>
+    <div class="toast" id="toast">
+        <div class="toast-content">
+            <i class="fas fa-solid fa-check check" id="check"></i>
+            <div class="message">
+                <span class="text text-1"></span>
+                <span class="text text-2"></span>
+            </div>
+        </div>
+        <i class="fa-solid fa-xmark close"></i>
 
+        <div class="progress" id="progress"></div>
+    </div>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="~/Scripts/jquery.validate.min.js"></script>
     <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
     <script type="text/javascript" src="~/Assets/js/MycustomJs.js"></script>
+    <script type="text/javascript" src="~/Assets/js/NotiLoginJs.js"></script>
 </body>
 
 </html>

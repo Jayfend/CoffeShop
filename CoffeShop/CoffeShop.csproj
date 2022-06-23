@@ -174,6 +174,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Areas\Admin\Assets\css\Custom.css" />
     <Content Include="Areas\Admin\Assets\css\style.css" />
     <Content Include="Areas\Admin\Assets\images\auth\lockscreen-bg.jpg" />
     <Content Include="Areas\Admin\Assets\images\auth\login-bg.jpg" />
@@ -2633,6 +2634,7 @@
     <Content Include="Assets\js\jquery-1.11.2.min.js" />
     <Content Include="Assets\js\MycustomJs.js" />
     <Content Include="Assets\js\NotiJs.js" />
+    <Content Include="Assets\js\NotiLoginJs.js" />
     <Content Include="Assets\js\ProfileJs.js" />
     <Content Include="Assets\js\templatemo-script.js" />
     <Content Include="Content\bootstrap-grid.css" />

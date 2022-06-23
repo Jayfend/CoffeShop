@@ -56,9 +56,9 @@
     <Compile Include="Account.cs" />
     <Compile Include="Bill.cs" />
     <Compile Include="Contact.cs" />
-    <Compile Include="Migrations\202206221229443_Alltable.cs" />
-    <Compile Include="Migrations\202206221229443_Alltable.designer.cs">
-      <DependentUpon>202206221229443_Alltable.cs</DependentUpon>
+    <Compile Include="Migrations\202206230840431_Alltable.cs" />
+    <Compile Include="Migrations\202206230840431_Alltable.designer.cs">
+      <DependentUpon>202206230840431_Alltable.cs</DependentUpon>
     </Compile>
     <Compile Include="Order.cs" />
     <Compile Include="OrderItem.cs" />
@@ -79,8 +79,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202206221229443_Alltable.resx">
-      <DependentUpon>202206221229443_Alltable.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202206230840431_Alltable.resx">
+      <DependentUpon>202206230840431_Alltable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

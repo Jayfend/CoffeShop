@@ -51,12 +51,13 @@ namespace Services
                 }
                 else
                 {
+                    var getaccount = _Database.Accounts.FirstOrDefault(s => s.AccountID == AccountID);
                     Profile newprofile = new Profile()
                     {
                         FullName = profile.FullName,
                         PhoneNumber = profile.PhoneNumber,
                         Address = profile.Address,
-                        
+                        Account= getaccount,
 
                     };
                     _Database.Profiles.Add(newprofile);
@@ -117,25 +118,33 @@ namespace Services
         {
             var response = _Database.Profiles.Include(s => s.Account).FirstOrDefault(s => s.AccountId == AccountId);
             ProfileViewModel profile = new ProfileViewModel();
-            profile.Address = response.Address;
-            profile.PhoneNumber=response.PhoneNumber;
-            profile.FullName = response.FullName;
+            if (!string.IsNullOrEmpty(response.Address))
+            {
+                profile.Address = response.Address;
+            }
+            else
+            {
+                profile.Address = "";
+            }
+            if (!String.IsNullOrEmpty(response.PhoneNumber))
+            {
+                profile.PhoneNumber = response.PhoneNumber;
+            }
+            else
+            {
+                profile.PhoneNumber = "";
+            }
+            if (!String.IsNullOrEmpty(response.FullName))
+            {
+                profile.FullName = response.FullName;
+            }
+            else
+            {
+                profile.FullName = "";
+            }
+            
             return profile;
         }
-        //public void CreateNewProfile (int AccountId)
-        //{
-        //    Profile profile = new Profile()
-        //    {
-        //        FullName = "",
-        //        PhoneNumber = "",
-        //        Address = "",
-        //        AccountId = AccountId
-
-
-        //    };
-
-        //    _Database.Profiles.Add(profile);
-        //    _Database.SaveChanges();
-        //}
+       
     }
 }

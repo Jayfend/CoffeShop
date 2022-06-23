@@ -107,18 +107,17 @@
     </div>
     @RenderBody()
 
-    <div class="toast">
+    <div class="toast" id="toast">
         <div class="toast-content">
-            <i class="fas fa-solid fa-check check"></i>
-
+            <i class="fas fa-solid fa-check check" id="check"></i>
             <div class="message">
-                <span class="text text-1">Success</span>
-                <span class="text text-2">Your drink has been added</span>
+                <span class="text text-1"></span>
+                <span class="text text-2"></span>
             </div>
         </div>
         <i class="fa-solid fa-xmark close"></i>
 
-        <div class="progress"></div>
+        <div class="progress" id="progress"></div>
     </div>
 
 
@@ -182,7 +181,7 @@
         $(document).ready(function () {
             console.log("@ViewBag.Success");
             if ("@ViewBag.Success") {
-                ShowSuccess();
+                ShowSuccess("Your changes has been saved!");
             }
         });
     </script>

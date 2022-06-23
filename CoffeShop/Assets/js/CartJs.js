@@ -11,7 +11,7 @@ function AddCart(Id) {
 
                 $("#Cart").html(data);
 
-                ShowSuccess();
+                ShowNoti(false, "Your Drink has been added!");
 
 
 
