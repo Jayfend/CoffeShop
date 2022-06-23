@@ -17,7 +17,6 @@ function AddCart(Id) {
 
 
             }
-
         });
 }
 function AddCartTS(Id) {

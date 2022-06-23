@@ -11,7 +11,8 @@
 
     internal sealed class Configuration : DbMigrationsConfiguration<CoffeShopDatabase.CoffeShopDbContext>
     {
-
+        string path = @"C:\Users\DINH LOC\Downloads\Img\";
+        string Avatarpath = @"C:\Users\DINH LOC\source\repos\CoffeShop\CoffeShop\Assets\img\";
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
@@ -27,18 +28,18 @@
             SeedProduct(context);
             base.Seed(context);
         }
-
+        
         private void SeedAccount(CoffeShopDbContext context)
         {
-            byte[] imgdata = System.IO.File.ReadAllBytes(@"C:\Users\Admin\source\repos\CoffeShop\CoffeShop\Assets\img\Avatar.jpg");
+            byte[] imgdata = System.IO.File.ReadAllBytes(Avatarpath + "Avatar.jpg");
             IList<Account> AccountList = new List<Account>();
-            AccountList.Add(new Account() { AccountID = 1, UserName = "Admin", Password = Encryptor.MD5Hash("Luan01011995"), Email = "Admin@gmail.com", UserType="Admin",CreatedDate=DateTime.Now,Image=imgdata});
+            AccountList.Add(new Account() { AccountID = 1, UserName = "Admin", Password = Encryptor.MD5Hash("123456"), Email = "Admin@gmail.com", UserType="Admin",CreatedDate=DateTime.Now,Image=imgdata});
             context.Accounts.AddRange(AccountList);
         }
         private void SeedProduct(CoffeShopDbContext context)
         {
             IList<Product> ProductList = new List<Product>();
-            byte[] imgdata = System.IO.File.ReadAllBytes(@"C:\Users\DINH LOC\Downloads\Img\Chocolate-Avocado-Smoothie-Topped-with-Affogato-683x1024.jpg");
+            byte[] imgdata = System.IO.File.ReadAllBytes(path + "Chocolate-Avocado-Smoothie-Topped-with-Affogato-683x1024.jpg");
             ProductList.Add(new Product()
             {
                 ProductName = "Affogato on Avocado Smoothie",
@@ -49,7 +50,7 @@
                 Image = imgdata,
                 CreatedDate = DateTime.Now
             });
-            imgdata = System.IO.File.ReadAllBytes(@"C:\Users\DINH LOC\Downloads\Img\Affogato-coffee-3.jpg");
+            imgdata = System.IO.File.ReadAllBytes(path + "Affogato-coffee-3.jpg");
             ProductList.Add(new Product()
             {
                 ProductName = "Coffee Affogato",
@@ -60,7 +61,7 @@
                 Image = imgdata,
                 CreatedDate = DateTime.Now
             });
-            imgdata = System.IO.File.ReadAllBytes(@"C:\Users\DINH LOC\Downloads\Img\coconutaffogato.jpg");
+            imgdata = System.IO.File.ReadAllBytes(path + "coconutaffogato.jpg");
             ProductList.Add(new Product()
             {
                 ProductName = "Coconut Affogato",
@@ -71,7 +72,7 @@
                 Image = imgdata,
                 CreatedDate = DateTime.Now
             });
-            imgdata = System.IO.File.ReadAllBytes(@"C:\Users\DINH LOC\Downloads\Img\img_6768.jpg");
+            imgdata = System.IO.File.ReadAllBytes(path + "img_6768.jpg");
             ProductList.Add(new Product()
             {
                 ProductName = "Oreo Affogato Dessert",
@@ -82,7 +83,7 @@
                 Image = imgdata,
                 CreatedDate = DateTime.Now
             });
-            imgdata = System.IO.File.ReadAllBytes(@"C:\Users\DINH LOC\Downloads\Img\Affogato Like Pudding with Egg Whites.jpg");
+            imgdata = System.IO.File.ReadAllBytes(path + "Affogato Like Pudding with Egg Whites.jpg");
             ProductList.Add(new Product()
             {
                 ProductName = "Affogato Like Pudding with Egg Whites",
@@ -93,7 +94,7 @@
                 Image = imgdata,
                 CreatedDate = DateTime.Now
             });
-             imgdata = System.IO.File.ReadAllBytes(@"C:\Users\DINH LOC\Downloads\Img\coconutaffogato.jpg");
+             imgdata = System.IO.File.ReadAllBytes(path + "coconutaffogato.jpg");
             ProductList.Add(new Product()
             {
                 ProductName = "Tea Affogato",
