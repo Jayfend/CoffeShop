@@ -7,7 +7,8 @@ using System.Web.Mvc;
 using ViewModel;
 
 namespace CoffeShop.Controllers
-{
+{   
+    [AllowAnonymous]
     public class ContactController : BaseController
     {
         // GET: Contact

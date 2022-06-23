@@ -10,12 +10,7 @@ function AddCart(Id) {
             success: function (data) {
 
                 $("#Cart").html(data);
-
                 ShowNoti(true, "Your Drink has been added!");
-
-
-
-
             }
         });
 }
@@ -30,7 +25,7 @@ function AddCartTS(Id) {
             success: function (data) {
 
                 $("#Cart").html(data);
-                ShowSuccess();
+                ShowNoti(true, "Your Drink has been added!");
             }
 
         });

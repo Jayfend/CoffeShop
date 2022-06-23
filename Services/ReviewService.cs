@@ -23,7 +23,7 @@ namespace Services
                 Email = review.Email,
                 Subject = review.Subject,
                 Message = review.Message,
-                CreatedDate=DateTime.Now,
+                CreatedDate = DateTime.Now
             };
             _Database.Contacts.Add(contact);
             _Database.SaveChanges();

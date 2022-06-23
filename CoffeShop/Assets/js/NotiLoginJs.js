@@ -15,15 +15,11 @@ closeIcon.addEventListener("click", () => {
     clearTimeout(timer2);
 
 });
-
 function ShowNoti(Case, message) {
-
     document.querySelector(".text-2").innerHTML = message;
     if (Case == true) {
-        console.log("success");
-        
         document.querySelector(".text-1").innerHTML = "Success";
-        document.getElementById("check").style.backgroundColor = 'green';
+        document.getElementById("checkNoti").style.backgroundColor = 'green';
         document.getElementById("progress").style.backgroundColor = 'green';
         document.getElementById("toast").style.borderColor = "green";
         toast.classList.add("active");
@@ -31,14 +27,12 @@ function ShowNoti(Case, message) {
 
     }
     else if (Case === false) {
-        
         document.querySelector(".text-1").innerHTML = "Error";
-        document.getElementById("check").style.backgroundColor = 'red';
+        document.getElementById("checkNoti").style.backgroundColor = 'red';
         document.getElementById("progress").style.backgroundColor = 'red';
         document.getElementById("toast").style.borderColor = "red";
         toast.classList.add("active");
         progress.classList.add("active");
-        
     }
     timer1 = setTimeout(() => {
 

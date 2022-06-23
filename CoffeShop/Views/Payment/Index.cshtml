@@ -10,46 +10,47 @@
     <section class="payment-form dark">
         <div class="container">
             <div class="block-heading">
-                <h2>Thanh toán</h2>
-            <form>
-                <div class="products">
-                    @*<h3 class="title">Checkout</h3>*@
-                    @foreach(var item in ViewBag.Cart){
-                <div class="item">
+                <h2>@CoffeShop.Resources.Language.Payment</h2>
+                <form id="proceedform">
+                    <div class="products">
+                        @*<h3 class="title">Checkout</h3>*@
+                        @foreach(var item in ViewBag.Cart){
+                    <div class="item">
 
-                    <span class="price">@item.Price ₫</span>
-                    <p class="item-name">@item.ProductName</p>
-                    <p class="item-description">Discount: @item.Discount %</p>
-                    <p class="item-description">Quantity: @item.Quantity</p>
-                </div>
-                        total += (item.Price - (item.Price * item.Discount / 100))*item.Quantity;
-                    }
+                        <span class="price">@item.Price ₫</span>
+                        <p class="item-name">@item.ProductName</p>
+                        <p class="item-description">@CoffeShop.Resources.Language.Discount: @item.Discount %</p>
+                        <p class="item-description">@CoffeShop.Resources.Language.Quantity: @item.Quantity</p>
+                    </div>
+                            total += (item.Price - (item.Price * item.Discount / 100))*item.Quantity;
+                        }
 
 
-                    <div class="total">Total<span id="totalPrice" class="price">@total₫</span></div>
-                </div>
-                <div class="card-details">
-                    <h3 class="title">Customer Information</h3>
-                    <div class="row">
-                        <div class="form-group col-sm-8">
-                            <label for="card-number">Full Name</label>
-                            <input id="Full-Name" type="text" class="form-control" placeholder="Full Name" aria-label="Card Holder" aria-describedby="basic-addon1" value="@ViewBag.FullName">
-                        </div>
-                        <div class="form-group col-sm-7">
-                            <label for="card-holder">Phone Number</label>
-                            <input id="Phone-Number" type="text" class="form-control" placeholder="Phone Number" aria-label="Card Holder" aria-describedby="basic-addon1" value="@ViewBag.Phone">
-                        </div>
-                        <div class="form-group col-sm-8">
-                            <label for="card-number">Address</label>
-                            <input id="Address" type="text" class="form-control" placeholder="Address" aria-label="Card Holder" aria-describedby="basic-addon1" value="@ViewBag.Address">
-                        </div>
+                    <div class="total">@CoffeShop.Resources.Language.Total<span id="totalPrice" class="price">@total₫</span></div>
+                    </div>
+                    <div class="card-details">
+                        <h3 class="title">@CoffeShop.Resources.Language.CustomerInfo</h3>
+                        <div class="row">
+                            <div class="form-group col-sm-8">
+                                @*<label for="card-number">Full Name</label>*@
+                                <input id="Full-Name" type="text" class="form-control" placeholder="@CoffeShop.Resources.Language.Fname" aria-label="Card Holder" aria-describedby="basic-addon1" value="@ViewBag.FullName">
+                            </div>
+                            <div class="form-group col-sm-7">
+                                @*<label for="card-holder">Phone Number</label>*@
+                                <input id="Phone-Number" type="text" class="form-control" placeholder="@CoffeShop.Resources.Language.Phone" aria-label="Card Holder" aria-describedby="basic-addon1" value="@ViewBag.Phone">
+                            </div>
+                            <div class="form-group col-sm-8">
+                                @*<label for="card-number">Address</label>*@
+                                <input id="Address" type="text" class="form-control" placeholder="@CoffeShop.Resources.Language.Address" aria-label="Card Holder" aria-describedby="basic-addon1" value="@ViewBag.Address">
+                            </div>
 
-                        <div class="form-group col-sm-12">
-                            <button id="ProceedBtn" class="btn btn--primary btn-block">Proceed</button>
+                            <div class="form-group col-sm-12">
+                                <button id="PayBtn" class="btn btn--primary btn-block">@CoffeShop.Resources.Language.Checkout</button>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </form>
+                </form>
+            </div>
         </div>
     </section>
 </div>
