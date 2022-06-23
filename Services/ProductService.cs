@@ -74,6 +74,21 @@ namespace Services
             }).ToList();
 
         }
+        public List<ProductViewModel> GetProduct()
+        {
+
+            return _Database.Products.Select(x => new ProductViewModel()
+            {
+                ProductId = x.ProductId,
+                ProductName = x.ProductName,
+                ProductCategoryId = x.ProductCategoryId,
+                Price = x.Price,
+                Discount = x.Discount,
+                Description = x.Description,
+                Image = x.Image
+            }).ToList();
+
+        }
         public List<ProductViewModel> GetProductViewModelSpecial()
         {
 
@@ -89,6 +104,22 @@ namespace Services
             }).ToList();
 
         }
+        public List<HotProductViewModel> GetHotProduct() {
+
+
+            return _Database.Products.Select(x => new HotProductViewModel()
+            {
+                ProductId = x.ProductId,
+                ProductName = x.ProductName,
+                ProductCategoryId = x.ProductCategoryId,
+                Price = x.Price,
+                Discount = x.Discount,
+                Description = x.Description,
+                Image = x.Image,
+            }).ToList();
+
+
+        }
         public bool DeleteProduct(int ProductId)
         {
             var Product = _Database.Products.FirstOrDefault(s => s.ProductId==ProductId);
@@ -102,6 +133,21 @@ namespace Services
             {
                 return false;
             }
+        }
+        public int BuyCount(int ProductID)
+        {
+            int amount = 0;
+            BillService billService = new BillService();
+            var ListBill = billService.GetBill();
+            foreach(var item in ListBill)
+            {
+                var orderitems = _Database.OrderItems.Where(s => s.OrderId == item.OrderId && s.ProductId == ProductID).FirstOrDefault();
+                if(orderitems != null)
+                {
+                    amount+= orderitems.Quantity;
+                }
+            }
+            return amount;
         }
     }
 }

@@ -21,28 +21,28 @@
                     <h4 class="card-title">Default form</h4>
                     <p class="card-description"> Basic form layout </p>
                     <form class="forms-sample">
-                        <div class="form-group">
+                        <div class="form-group" id="Signup-Form">
                             <label for="exampleInputUsername1">Username</label>
-                            <input type="text" class="form-control" id="exampleInputUsername1" placeholder="Username">
+                            <input type="text" class="form-control" id="signupadmin-user" placeholder="Username">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Email address</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                            <input type="email" class="form-control" id=" signupadmin-mail" placeholder="Email">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Password</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                            <input type="password" class="form-control" id="signupadmin-password" placeholder="Password">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputConfirmPassword1">Confirm Password</label>
-                            <input type="password" class="form-control" id="exampleInputConfirmPassword1" placeholder="Password">
+                            <input type="password" class="form-control" id="signupadmin-repassword" placeholder="Confirm Password">
                         </div>
                         <div class="form-check form-check-flat form-check-primary">
                             <label class="form-check-label">
                                 <input type="checkbox" class="form-check-input"> Remember me
                             </label>
                         </div>
-                        <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                        <button type="submit" class="btn btn-primary mr-2" onclick="SignUpAdmin()">Submit</button>
                         <button class="btn btn-dark">Cancel</button>
                     </form>
                 </div>
@@ -135,20 +135,26 @@
         <div class="col-md-6 grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Input size</h4>
+                    <h4 class="card-title">Reviews</h4>
                     <p class="card-description"> Add classes like <code>.form-control-lg</code> and <code>.form-control-sm</code>. </p>
                     <div class="form-group">
-                        <label>Large input</label>
-                        <input type="text" class="form-control form-control-lg" placeholder="Username" aria-label="Username">
+                        <label>Name</label>
+                        <input type="text" class="form-control form-control-lg" placeholder="Name" aria-label="Name">
                     </div>
                     <div class="form-group">
-                        <label>Default input</label>
-                        <input type="text" class="form-control" placeholder="Username" aria-label="Username">
+                        <label>Email</label>
+                        <input type="text" class="form-control form-control-lg" placeholder="Email" aria-label="Name">
                     </div>
                     <div class="form-group">
-                        <label>Small input</label>
-                        <input type="text" class="form-control form-control-sm" placeholder="Username" aria-label="Username">
+                        <label>Subject</label>
+                        <input type="text" class="form-control form-control-lg" placeholder="Subject" aria-label="Name">
                     </div>
+                    <div class="form-group">
+                        <label>Content</label>
+                        <textarea class="form-control"  rows="5"></textarea>
+                        @*<textarea type="text" class="form-control form-control-lg" placeholder="Content" aria-label="Name">*@
+                    </div>
+
                 </div>
             </div>
         </div>

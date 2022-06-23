@@ -147,6 +147,7 @@
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\ForgotPasswordController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MenuController.cs" />
@@ -394,6 +395,7 @@
     <Content Include="Areas\Admin\Assets\js\rickshaw.js" />
     <Content Include="Areas\Admin\Assets\js\select2.js" />
     <Content Include="Areas\Admin\Assets\js\settings.js" />
+    <Content Include="Areas\Admin\Assets\js\SignUpjs.js" />
     <Content Include="Areas\Admin\Assets\js\sparkline.js" />
     <Content Include="Areas\Admin\Assets\js\tablesorter.js" />
     <Content Include="Areas\Admin\Assets\js\tabs.js" />
@@ -2631,6 +2633,7 @@
     <Content Include="Assets\img\tstranchau.jpg" />
     <Content Include="Assets\img\vertical-menu-bg.png" />
     <Content Include="Assets\js\CartJs.js" />
+    <Content Include="Assets\js\Checkoutjs.js" />
     <Content Include="Assets\js\jquery-1.11.2.min.js" />
     <Content Include="Assets\js\jquery-3.2.1.min.js" />
     <Content Include="Assets\js\MycustomJs.js" />
@@ -2887,6 +2890,7 @@
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Profile\Index.cshtml" />
     <Content Include="Views\Shared\_Cart.cshtml" />
+    <Content Include="Views\ForgotPassword\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

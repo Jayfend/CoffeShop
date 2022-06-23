@@ -179,12 +179,13 @@
     <script type="text/javascript" src="~/Assets/js/ProfileJs.js"></script>
     <script type="text/javascript" src="~/Assets/js/Payment.js"></script>
 
+    <script type="text/javascript" src="~/Assets/js/Checkoutjs.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
             console.log("@ViewBag.Success");
             if ("@ViewBag.Success") {
-                ShowSuccess("Your changes has been saved!");
+                ShowNoti(true,"Your changes has been saved!");
             }
         });
     </script>

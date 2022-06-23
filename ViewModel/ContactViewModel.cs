@@ -25,5 +25,6 @@ namespace ViewModel
         [Required(ErrorMessage = "Please write your review")]
         [StringLength(1000, ErrorMessage = "Must be between 5 and 255 characters", MinimumLength = 5)]
         public string Message { get; set; }
+        public DateTime CreateDate { get; set; }
     }
 }

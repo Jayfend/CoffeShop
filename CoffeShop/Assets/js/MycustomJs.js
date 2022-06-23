@@ -167,6 +167,41 @@ function SignUp() {
     });
 
 }
+function ChangePassword() {
+    
+    $('#forgotForm').validate();
+    if (!$('#forgotForm').valid()) {
+        return;
+    }
+    console.log("click");
+    var password = document.getElementById('forgot-password').value;
+    var repassword = document.getElementById('forgot-repassword').value;
+    var email = document.getElementById('forgot-mail').value;
+    var forgotpasswordviewmodel = { Email: email, Password: password, ConfirmPassword: repassword };
+    
+
+    $.ajax({
+        type: "POST",
+        url: "/ForgotPassword/ChangePassword",
+        data: { user: forgotpasswordviewmodel },
+        success: function (data) {
+            console.log(data);
+
+            if (data.result === true) {
+                ShowNoti(true, "Register Successfully");
+
+            }
+            else {
+                ShowNoti(false, "Email or Username already Existed");
+            }
+        },
+    });
+}
+$(function () {
+    $('#forgotForm').submit(function (e) {
+        e.preventDefault();
+    });
+})
 
 $(function () {
     $('#signupForm').submit(function (e) {

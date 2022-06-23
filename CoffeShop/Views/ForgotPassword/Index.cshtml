@@ -1,0 +1,65 @@
+﻿
+@model ViewModel.ForgotPasswordViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/Assets/css/Login.css">
+    
+    <title>Forgot Password</title>
+</head>
+<body>
+    <div class="container">
+        <div class="login-wrap">
+            <div class="login-html">
+                <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Forgot Password</label>
+                <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab"></label>
+                <div class="login-form">
+                    <div class="sign-in-htm">
+                        <form id="forgotForm">
+                            @Html.AntiForgeryToken()
+                            <div class="group">
+                                <label for="forgot-mail" class="label">Email</label>
+                                @Html.TextBoxFor(m => m.Email, new { @id = "forgot-mail", @class = "input", @required = "required" })
+                                @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                                @*<input id="user" type="text" class="input">*@
+                            </div>
+                            <div class="group">
+                                <label for="forgot-password" class="label">New Password</label>
+                                @Html.TextBoxFor(m => m.Password, new { @id = "forgot-password", @class = "input", @type = "password", @required = "required" })
+                                @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger " })
+                                @*<input id="pass" type="password" class="input" data-type="password">*@
+                            </div>
+                            <div class="group">
+                                <label for="forgot-repassword" class="label">Confirm Password</label>
+                                @Html.TextBoxFor(m => m.ConfirmPassword, new { @id = "forgot-repassword", @class = "input", @type = "password", @required = "required" })
+                                @Html.ValidationMessageFor(m => m.ConfirmPassword, "", new { @class = "text-danger " })
+                                @*<input id="pass" type="password" class="input" data-type="password">*@
+                            </div>
+
+                            <div class="group">
+                                <button type="submit" class="button" onclick="ChangePassword()">Change Password</button>
+                            </div>
+                        </form>
+                       
+                    </div>
+                  
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <script type="text/javascript" src="~/Assets/js/MycustomJs.js"></script>
+   
+</body>
+
+</html>
