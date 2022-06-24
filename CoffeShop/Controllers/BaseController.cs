@@ -10,7 +10,8 @@ using System.Web.Mvc;
 using ViewModel;
 
 namespace CoffeShop.Controllers
-{ 
+{   
+    [AllowAnonymous]
     public class BaseController : Controller
     {   
         public BaseController()
