@@ -23,9 +23,9 @@ function ShowNoti(Case, message) {
         console.log("success");
         
         document.querySelector(".text-1").innerHTML = "Success";
-        document.getElementById("check").style.backgroundColor = 'green';
-        document.getElementById("progress").style.backgroundColor = 'green';
-        document.getElementById("toast").style.borderColor = "green";
+        document.getElementById("check").style.backgroundColor = '#c79c60';
+        document.getElementById("progress").style.backgroundColor = '#c79c60';
+        document.getElementById("toast").style.borderColor = "#c79c60";
         toast.classList.add("active");
         progress.classList.add("active");
 
@@ -33,9 +33,9 @@ function ShowNoti(Case, message) {
     else if (Case === false) {
         
         document.querySelector(".text-1").innerHTML = "Error";
-        document.getElementById("check").style.backgroundColor = 'red';
-        document.getElementById("progress").style.backgroundColor = 'red';
-        document.getElementById("toast").style.borderColor = "red";
+        document.getElementById("check").style.backgroundColor = '#F15412';
+        document.getElementById("progress").style.backgroundColor = '#F15412';
+        document.getElementById("toast").style.borderColor = "#F15412";
         toast.classList.add("active");
         progress.classList.add("active");
         

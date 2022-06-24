@@ -50,36 +50,21 @@
                     <div class="tm-hr-container"><hr class="tm-hr"></div>
                 </div>
                 <div class="col-lg-12 tm-popular-items-container">
+                    @foreach (var item in @ViewBag.HotProducts)
+                    {
+                        string base64String = Convert.ToBase64String(item.Image, 0, item.Image.Length);
                     <div class="tm-popular-item">
-                        <img src="/Assets/img/popular-1.jpg" alt="Popular" class="tm-popular-item-img">
+                        <img src="data:image/jpg;base64,@base64String" alt="Popular" class="tm-popular-item-img">
                         <div class="tm-popular-item-description">
-                            <h3 class="tm-handwriting-font tm-popular-item-title"><span class="tm-handwriting-font bigger-first-letter">a</span>mericano</h3><hr class="tm-popular-item-hr">
-                            <p>Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque. sed ipsum.</p>
+                            <h3 class="tm-handwriting-font tm-popular-item-title"><span class="tm-handwriting-font bigger-first-letter">@item.ProductName.Substring(0, 1)</span>@item.ProductName.Substring(1, item.ProductName.Length - 1)</h3><hr class="tm-popular-item-hr">
+                            <p>@item.Description</p>
                             <div class="order-now-container">
                                 <a href="/Menu" class="order-now-link tm-handwriting-font">@CoffeShop.Resources.Language.Ordernow</a>
                             </div>
                         </div>
                     </div>
-                    <div class="tm-popular-item">
-                        <img src="/Assets/img/popular-2.jpg" alt="Popular" class="tm-popular-item-img">
-                        <div class="tm-popular-item-description">
-                            <h3 class="tm-handwriting-font tm-popular-item-title"><span class="tm-handwriting-font bigger-first-letter">c</span>appuccino</h3><hr class="tm-popular-item-hr">
-                            <p>Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque. sed ipsum.</p>
-                            <div class="order-now-container">
-                                <a href="/Menu" class="order-now-link tm-handwriting-font">@CoffeShop.Resources.Language.Ordernow</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tm-popular-item">
-                        <img src="/Assets/img/popular-3.jpg" alt="Popular" class="tm-popular-item-img">
-                        <div class="tm-popular-item-description">
-                            <h3 class="tm-handwriting-font tm-popular-item-title"><span class="tm-handwriting-font bigger-first-letter">m</span>ocha</h3><hr class="tm-popular-item-hr">
-                            <p>Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque. sed ipsum.</p>
-                            <div class="order-now-container">
-                                <a href="/Menu" class="order-now-link tm-handwriting-font">@CoffeShop.Resources.Language.Ordernow</a>
-                            </div>
-                        </div>
-                    </div>
+                    }
+                   
                 </div>
             </section>
             <section class="tm-section row">
@@ -88,59 +73,69 @@
                     <div class="tm-hr-container"><hr class="tm-hr"></div>
                 </div>
                 <div class="col-lg-12 tm-special-container margin-top-60">
+                    @{ string base64String1 = Convert.ToBase64String(ViewBag.firstSpecialProduct.Image, 0, ViewBag.firstSpecialProduct.Image.Length);
                     <div class="tm-special-container-left">
                         <!-- left -->
+
                         <div class="tm-special-item">
                             <div class="tm-special-img-container">
-                                <img src="/Assets/img/special-1.jpg" alt="Special" class="tm-special-img img-responsive">
-                                <a href="#">
+                                <img src="data:image/jpg;base64,@base64String1" alt="Special" class="tm-special-img img-responsive image-maxwidth">
+                                <a href="/Menu/Index">
                                     <div class="tm-special-description">
-                                        <h3 class="tm-special-title">Donec pede justo</h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+                                        <h3 class="tm-special-title"> @ViewBag.firstSpecialProduct.ProductName</h3>
+                                        <p> @ViewBag.firstSpecialProduct.Description</p>
                                     </div>
                                 </a>
                             </div>
                         </div>
                     </div>
+                    }
+
+                    @{  string base64String2 = Convert.ToBase64String(ViewBag.secondSpecialProduct.Image, 0, ViewBag.secondSpecialProduct.Image.Length);
                     <div class="tm-special-container-right">
                         <!-- right -->
                         <div>
                             <div class="tm-special-item">
                                 <div class="tm-special-img-container">
-                                    <img src="/Assets/img/special-2.jpg" alt="Special" class="img-responsive">
-                                    <a href="#">
-                                        <div class="tm-special-description">
-                                            <h3 class="tm-special-title">Etiam sit amet</h3>
-                                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+                                    <img src="data:image/jpg;base64,@base64String2" alt="Special" class="img-responsive image-width">
+                                    <a href="/Menu/Index">
+                                        <div class="tm-special-description des-maxheight ">
+                                            <h3 class="tm-special-title limit-title"> @ViewBag.secondSpecialProduct.ProductName</h3>
+                                            <p class="limit-des"></p>
                                         </div>
                                     </a>
                                 </div>
                             </div>
+                            </div>
                         </div>
+                     } 
+                    @{  string base64String3 = Convert.ToBase64String(ViewBag.thirdSpecialProduct.Image, 0, ViewBag.thirdSpecialProduct.Image.Length);
+                        string base64String4 = Convert.ToBase64String(ViewBag.fourthSpecialProduct.Image, 0, ViewBag.fourthSpecialProduct.Image.Length);
                         <div class="tm-special-container-lower">
                             <div class="tm-special-item">
                                 <div class="tm-special-img-container">
-                                    <img src="/Assets/img/special-3.jpg" alt="Special" class="img-responsive">
+                                    <img src="data:image/jpg;base64,@base64String3" alt="Special" class="img-responsive special34-width">
                                     <a href="#">
                                         <div class="tm-special-description">
-                                            <p>Vivamus elementum</p>
+                                            <p>@ViewBag.thirdSpecialProduct.ProductName</p>
                                         </div>
                                     </a>
                                 </div>
                             </div>
                             <div class="tm-special-item">
                                 <div class="tm-special-img-container">
-                                    <img src="/Assets/img/special-4.jpg" alt="Special" class="img-responsive">
+                                    <img src="data:image/jpg;base64,@base64String4" alt="Special" class="img-responsive special34-width">
                                     <a href="#">
                                         <div class="tm-special-description">
-                                            <p>Quisque rutrum.</p>
+                                            <p>@ViewBag.fourthSpecialProduct.ProductName</p>
                                         </div>
                                     </a>
                                 </div>
                             </div>
                         </div>
+                        }
                     </div>
-                </div>
+                
             </section>
             @*<section class="tm-section">
                 <div class="row">

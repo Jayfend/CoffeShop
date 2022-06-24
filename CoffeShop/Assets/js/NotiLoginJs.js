@@ -19,18 +19,18 @@ function ShowNoti(Case, message) {
     document.querySelector(".text-2").innerHTML = message;
     if (Case == true) {
         document.querySelector(".text-1").innerHTML = "Success";
-        document.getElementById("checkNoti").style.backgroundColor = 'green';
-        document.getElementById("progress").style.backgroundColor = 'green';
-        document.getElementById("toast").style.borderColor = "green";
+        document.getElementById("checkNoti").style.backgroundColor = '#c79c60';
+        document.getElementById("progress").style.backgroundColor = '#c79c60';
+        document.getElementById("toast").style.borderColor = "#c79c60";
         toast.classList.add("active");
         progress.classList.add("active");
 
     }
     else if (Case === false) {
         document.querySelector(".text-1").innerHTML = "Error";
-        document.getElementById("checkNoti").style.backgroundColor = 'red';
-        document.getElementById("progress").style.backgroundColor = 'red';
-        document.getElementById("toast").style.borderColor = "red";
+        document.getElementById("checkNoti").style.backgroundColor = '#F15412';
+        document.getElementById("progress").style.backgroundColor = '#F15412';
+        document.getElementById("toast").style.borderColor = "#F15412";
         toast.classList.add("active");
         progress.classList.add("active");
     }

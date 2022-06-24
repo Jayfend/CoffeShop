@@ -11,7 +11,7 @@
 
     internal sealed class Configuration : DbMigrationsConfiguration<CoffeShopDatabase.CoffeShopDbContext>
     {
-        string path = @"C:\Users\Admin\OneDrive\Máy tính\Img\";
+        string path = @"C:\Users\Admin\OneDrive\Máy tính\Img";
         string Avatarpath = @"C:\Users\Admin\source\repos\CoffeShop\CoffeShop\Assets\img\";
         public Configuration()
         {

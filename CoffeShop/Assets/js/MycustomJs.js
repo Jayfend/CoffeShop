@@ -114,11 +114,10 @@ function LanguageGet(LanguageAbbrevation) {
             data: { LanguageAbbrevation },
             dataType: "text",
             success: function (data) {
+                console.log(data);
                
-                var a = JSON.parse(data);
-                console.log(a);
-                if (a.result === true) {
-                    console.log(data);
+                if (data.result === true) {
+                    
                     location.reload();
                 }
             }
@@ -188,11 +187,11 @@ function ChangePassword() {
             console.log(data);
 
             if (data.result === true) {
-                ShowNoti(true, "Register Successfully");
+                ShowNoti(true, "Changepassword successfully");
 
             }
             else {
-                ShowNoti(false, "Email or Username already Existed");
+                ShowNoti(false, "Email is not correct!");
             }
         },
     });
