@@ -9,7 +9,8 @@ using System.Web.Mvc;
 using ViewModel;
 
 namespace CoffeShop.Areas.Admin.Controllers
-{   
+{
+    [Authorize(Roles = "Admin")]
     public class BasicElementController : Controller
     {
         // GET: Admin/BasicElement
@@ -74,6 +75,27 @@ namespace CoffeShop.Areas.Admin.Controllers
             imageBytes = reader.ReadBytes((int)image.ContentLength);
             return imageBytes;
         }
-       
+        [HttpPost]
+        public JsonResult AdminSignUp(SignupViewModel account)
+        {
+            if (ModelState.IsValid)
+            {
+                SignUp signup = new SignUp();
+                if (signup.RegisterAdmin(account))
+                {
+
+                    return Json(new { result = true }, JsonRequestBehavior.AllowGet);
+
+                }
+                else
+                {
+                    
+                    return Json(new { result = false }, JsonRequestBehavior.AllowGet);
+
+                }
+
+            }
+            return Json(new { result = false }, JsonRequestBehavior.AllowGet);
+        }
     }
 }

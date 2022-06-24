@@ -395,7 +395,7 @@
     <Content Include="Areas\Admin\Assets\js\rickshaw.js" />
     <Content Include="Areas\Admin\Assets\js\select2.js" />
     <Content Include="Areas\Admin\Assets\js\settings.js" />
-    <Content Include="Areas\Admin\Assets\js\SignUpjs.js" />
+    <Content Include="Areas\Admin\Assets\js\Myjs\SignUpjs.js" />
     <Content Include="Areas\Admin\Assets\js\sparkline.js" />
     <Content Include="Areas\Admin\Assets\js\tablesorter.js" />
     <Content Include="Areas\Admin\Assets\js\tabs.js" />

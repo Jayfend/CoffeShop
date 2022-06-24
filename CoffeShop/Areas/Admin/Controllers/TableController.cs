@@ -8,6 +8,7 @@ using System.Web.Mvc;
 
 namespace CoffeShop.Areas.Admin.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class TableController : Controller
     {
         // GET: Admin/Table

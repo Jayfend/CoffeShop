@@ -2,26 +2,27 @@
 function SignUpAdmin() {
  
     console.log("click");
-    var username = document.getElementById('signupadmin-user').value;
-    var password = document.getElementById('signupadmin-password').value;
-    var repassword = document.getElementById('signupadmin-repassword').value;
-    var email = document.getElementById('signupadmin-mail').value;
+    var username = document.getElementById("adminname").value;
+    var password = document.getElementById('adminpassword').value;
+    var repassword = document.getElementById('adminrepassword').value;
+    var email = document.getElementById('adminemail').value;
+    
     var accountviewmodel = { UserName: username, Password: password, Email: email, ConfirmPassword: repassword };
     console.log(accountviewmodel);
 
     $.ajax({
         type: "POST",
-        url: "/Login/AdminSignUp",
+        url: "/BasicElement/AdminSignUp",
         data: { account: accountviewmodel },
         success: function (data) {
-            console.log(data);
+            console.log(data.result);
 
             if (data.result === true) {
-                alert("Register Successfully");
+                ShowNoti(true, "Register Successfully");
 
             }
             else {
-                alert("Email or Username already Existed");
+                ShowNoti(false, "Email or Username already Existed");
             }
         },
     });
