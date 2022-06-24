@@ -114,10 +114,11 @@ function LanguageGet(LanguageAbbrevation) {
             data: { LanguageAbbrevation },
             dataType: "text",
             success: function (data) {
-                console.log(data);
-               
-                if (data.result === true) {
-                    
+
+                var a = JSON.parse(data);
+                console.log(a);
+                if (a.result === true) {
+                    console.log(data);
                     location.reload();
                 }
             }

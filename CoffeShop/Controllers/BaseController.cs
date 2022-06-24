@@ -10,7 +10,8 @@ using System.Web.Mvc;
 using ViewModel;
 
 namespace CoffeShop.Controllers
-{ 
+{
+    [AllowAnonymous]
     public class BaseController : Controller
     {   
         public BaseController()
@@ -53,6 +54,7 @@ namespace CoffeShop.Controllers
 
            
         }
+        [HttpGet]
         public virtual ActionResult Change(String LanguageAbbrevation)
         {
             if (!string.IsNullOrEmpty(LanguageAbbrevation))
