@@ -372,3 +372,19 @@
 .click-able{
     cursor: pointer;
 }
+.image-maxwidth{
+    width: 520px;
+    height: 400px;
+    object-fit: cover;
+}
+.image-width {
+    width: 360px;
+    height: 207px;
+    object-fit: cover;
+}
+.special34-width {
+    width: 155px;
+    height: 155px;
+    object-fit: cover;
+}
+

@@ -14,7 +14,7 @@ namespace Services
    public class SignUp
     {
         private CoffeShopDbContext _Database = null;
-        string AvatarPath = @"C:\Users\DINH LOC\source\repos\CoffeShop\CoffeShop\Assets\img\";
+        string AvatarPath = @"C:\Users\Admin\source\repos\CoffeShop\CoffeShop\Assets\img\";
         public SignUp()
         {
 

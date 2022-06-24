@@ -11,7 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="~/Assets/css/Login.css">
-    
+    <link href="~/Assets/css/Noti.css" rel="stylesheet" />
     <title>Forgot Password</title>
 </head>
 <body>
@@ -47,19 +47,31 @@
                                 <button type="submit" class="button" onclick="ChangePassword()">Change Password</button>
                             </div>
                         </form>
-                       
+
                     </div>
-                  
+
                 </div>
             </div>
         </div>
     </div>
-    
+    <div class="toast" id="toast">
+        <div class="toast-content">
+            <i class="fas fa-solid fa-check check" id="checkNoti"></i>
+            <div class="message">
+                <span class="text text-1"></span>
+                <span class="text text-2"></span>
+            </div>
+        </div>
+        <i class="fa-solid fa-xmark close"></i>
+
+        <div class="progress" id="progress"></div>
+    </div>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="~/Scripts/jquery.validate.min.js"></script>
     <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
     <script type="text/javascript" src="~/Assets/js/MycustomJs.js"></script>
-   
+    <script type="text/javascript" src="~/Assets/js/NotiLoginJs.js"></script>
+
 </body>
 
 </html>
