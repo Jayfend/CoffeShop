@@ -145,6 +145,7 @@
     <Compile Include="Areas\Admin\Controllers\BasicElementController.cs" />
     <Compile Include="Areas\Admin\Controllers\TableController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\BillController.cs" />
     <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\ForgotPasswordController.cs" />
@@ -2891,6 +2892,7 @@
     <Content Include="Views\Profile\Index.cshtml" />
     <Content Include="Views\Shared\_Cart.cshtml" />
     <Content Include="Views\ForgotPassword\Index.cshtml" />
+    <Content Include="Views\Bill\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -13,6 +13,11 @@ namespace CoffeShop
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            routes.MapRoute(
+              name: "Bill",
+              url: "Bill",
+              defaults: new { controller = "Bill", action = "index" }
+          );
 
             routes.MapRoute(
                name: "Payment",
