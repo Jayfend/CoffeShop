@@ -59,28 +59,7 @@ namespace CoffeShop.Controllers
             }
             return View();
         }
-        [HttpPost]
-        public ActionResult AdminSignUp(SignupViewModel account)
-        {
-            if (ModelState.IsValid)
-            {
-                SignUp signup = new SignUp();
-                if (signup.RegisterAdmin(account))
-                {
-
-                    return Json(new { result = true }, JsonRequestBehavior.AllowGet);
-
-                }
-                else
-                {
-                    ViewBag.IsLogin = false;
-                    return Json(new { result = false }, JsonRequestBehavior.AllowGet);
-
-                }
-
-            }
-            return View();
-        }
+    
 
 
         [HttpPost]
