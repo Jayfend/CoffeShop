@@ -265,7 +265,7 @@ function ContactSend() {
         success: function (data) {
             if (data.Result == true) {
                 ShowNoti(true, "Your review has been sent");
-                timeRefresh(1000);
+                timeRefresh(3000);
             }
             else {
                 ShowNoti(false, "Couldn't send your review");

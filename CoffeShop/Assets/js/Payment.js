@@ -41,5 +41,5 @@ $(function () {
 //})
 
 function timeRefresh_Payment(time) {
-    setTimeout("window.location.assign('/Bill')", time);
+    setTimeout("window.location.assign('/Bill/Index')", time);
 }
