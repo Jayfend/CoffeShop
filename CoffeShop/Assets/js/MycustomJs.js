@@ -2,6 +2,7 @@
 
     var CurrentTotal = parseFloat(document.getElementById('total').innerHTML);
     var itemquantity = parseFloat(document.getElementById('quantity_' + i).value);
+    
     var oneitemprice = parseFloat(document.getElementById('totalitemforone_' + i).value);
     var itemPrice = parseFloat(document.getElementById('Price_' + i).innerHTML);
     var itemDiscount = parseFloat(document.getElementById('Discount_' + i).innerHTML);

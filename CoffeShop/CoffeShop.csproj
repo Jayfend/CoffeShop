@@ -177,6 +177,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\Admin\Assets\css\Custom.css" />
+    <Content Include="Areas\Admin\Assets\css\Noti.css" />
     <Content Include="Areas\Admin\Assets\css\style.css" />
     <Content Include="Areas\Admin\Assets\images\auth\lockscreen-bg.jpg" />
     <Content Include="Areas\Admin\Assets\images\auth\login-bg.jpg" />
@@ -386,6 +387,7 @@
     <Content Include="Areas\Admin\Assets\js\misc.js" />
     <Content Include="Areas\Admin\Assets\js\modal-demo.js" />
     <Content Include="Areas\Admin\Assets\js\morris.js" />
+    <Content Include="Areas\Admin\Assets\js\Myjs\NotiJs.js" />
     <Content Include="Areas\Admin\Assets\js\no-ui-slider.js" />
     <Content Include="Areas\Admin\Assets\js\off-canvas.js" />
     <Content Include="Areas\Admin\Assets\js\owl-carousel.js" />
