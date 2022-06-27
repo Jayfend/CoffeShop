@@ -29,6 +29,7 @@ namespace CoffeShop.Areas.Admin.Controllers
                 ViewBag.avatar = LoginService.GetAvatar(int.Parse(AccountID));
                 //ViewBag.CartCount = ViewBag.Cart.Count; 
             }
+            ViewBag.Success = TempData["Success"];
             ViewBag.ProductMG = "active";
             return View();
         }
@@ -42,13 +43,18 @@ namespace CoffeShop.Areas.Admin.Controllers
             {
                 if (addnewproduct.AddProductToDb(product))
                 {
-                    ViewBag.success = "Add Product Successful";
-                    return RedirectToAction("Index");
+                    TempData["Success"] = true;
+                    ModelState.Clear();
+                    return RedirectToAction("Index", "BasicElement");
+                    
                 }
                 else
                 {
-                    ViewBag.error = "Add Product Failed";
-                    return View("Index");
+                    TempData["Success"] = false;
+                    ModelState.Clear();
+                    return RedirectToAction("Index", "BasicElement");
+                    
+                    
                 }
                 
                 

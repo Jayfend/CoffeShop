@@ -33,7 +33,7 @@ namespace CoffeShop.Areas.Admin.Controllers
             {
                 item.Amount = productService.BuyCount(item.ProductId);
             }
-            ViewBag.HotProduct = ListHotProduct;
+            ViewBag.HotProduct = ListHotProduct.OrderByDescending(s=>s.Amount);
             ReviewService reviewService = new ReviewService();
             ViewBag.Reviews = reviewService.getReviews();
             BillService billservice = new BillService();
