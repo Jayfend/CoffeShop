@@ -2610,6 +2610,13 @@
     <Content Include="Assets\img\favicon.ico" />
     <Content Include="Assets\img\header-line.png" />
     <Content Include="Assets\img\image.jpg" />
+    <Content Include="Assets\img\photo\Affogato Like Pudding with Egg Whites.jpg" />
+    <Content Include="Assets\img\photo\Affogato-coffee-3.jpg" />
+    <Content Include="Assets\img\photo\BLOG_pour-glasses-500x500.jpg" />
+    <Content Include="Assets\img\photo\Chocolate-Avocado-Smoothie-Topped-with-Affogato-683x1024.jpg" />
+    <Content Include="Assets\img\photo\coconutaffogato.jpg" />
+    <Content Include="Assets\img\photo\img_6768.jpg" />
+    <Content Include="Assets\img\photo\Italian.jpg" />
     <Content Include="Assets\img\light.png" />
     <Content Include="Assets\img\Loginbg.jpg" />
     <Content Include="Assets\img\logo.png" />
