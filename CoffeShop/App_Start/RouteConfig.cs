@@ -16,7 +16,7 @@ namespace CoffeShop
             routes.MapRoute(
               name: "Bill",
               url: "Bill",
-              defaults: new { controller = "Bill", action = "index" }
+              defaults: new { controller = "Bill", action = "Index" }
           );
 
             routes.MapRoute(
@@ -28,7 +28,7 @@ namespace CoffeShop
             routes.MapRoute(
                 name: "Payment_default",
                 url: "Payment",
-                defaults: new { controller = "Payment", action = "index" }
+                defaults: new { controller = "Payment", action = "Index" }
             );
 
             routes.MapRoute(
