@@ -22,7 +22,7 @@
     <!-- endinject -->
     <!-- Layout styles -->
     <link rel="stylesheet" href="/Areas/Admin/Assets/css/style.css">
-    <link rel="stylesheet" href="~/Assets/css/Noti.css">
+    <link rel="stylesheet" href="~/Areas/Admin/Assets/css/Noti.css">
     <!-- End layout styles -->
     <link rel="shortcut icon" href="/Areas/Admin/Assets/images/favicon.png" />
 </head>
@@ -31,7 +31,7 @@
         <!-- partial:partials/_sidebar.html -->
         <nav class="sidebar sidebar-offcanvas" id="sidebar">
             <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
-                <a class="sidebar-brand brand-logo" href="/"><img src="/Areas/Admin/Assets/images/logo.svg" alt="logo" /></a>
+                <a class="sidebar-brand brand-logo" href="/"><img class="logo-size" src="~/Areas/Admin/Assets/images/Logo.png" alt="logo" /></a>
                 @*<a class="sidebar-brand brand-logo-mini" href=""><img src="/Areas/Admin/Assets/images/logo-mini.svg" alt="logo" /></a>*@
             </div>
             <ul class="nav">
@@ -120,7 +120,7 @@
                         <span class="menu-icon">
                             <i class="mdi mdi-playlist-play"></i>
                         </span>
-                        <span class="menu-title">Product Management</span>
+                        <span class="menu-title">Admin Management</span>
                     </a>
                 </li>
                 @*<li class="nav-item menu-items">
@@ -458,9 +458,17 @@
     <script src="/Areas/Admin/Assets/js/select2.js"></script>
     <script type="text/javascript" src="~/Assets/js/jquery-3.2.1.min.js"></script>
     <script src="~/Areas/Admin/Assets/js/Myjs/SignUpjs.js"></script>
-    <script type="text/javascript" src="~/Assets/js/NotiJs.js"></script>
-    <!-- End custom js for this page -->
+    <script type="text/javascript" src="~/Areas/Admin/Assets/js/Myjs/NotiJs.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+    console.log("@ViewBag.Success");
+    if ("@ViewBag.Success") {
+    ShowNoti(true,"Your changes has been saved!");
+    }
+    });
     @RenderSection("scripts", required: false);
+</script>
+  
 </body>
 </html>
 

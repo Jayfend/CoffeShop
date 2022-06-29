@@ -27,12 +27,13 @@ namespace CoffeShop.Areas.Admin.Controllers
                 //ViewBag.CartCount = ViewBag.Cart.Count; 
             }
             ProductService productService = new ProductService();
+            ViewBag.Product = productService.GetProduct();
             var ListHotProduct = productService.GetHotProduct();
             foreach(var item in ListHotProduct)
             {
                 item.Amount = productService.BuyCount(item.ProductId);
             }
-            ViewBag.HotProduct = ListHotProduct;
+            ViewBag.HotProduct = ListHotProduct.OrderByDescending(s=>s.Amount);
             ReviewService reviewService = new ReviewService();
             ViewBag.Reviews = reviewService.getReviews();
             BillService billservice = new BillService();

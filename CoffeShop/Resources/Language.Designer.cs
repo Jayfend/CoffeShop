@@ -19,7 +19,7 @@ namespace CoffeShop.Resources {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class Language {
@@ -286,7 +286,7 @@ namespace CoffeShop.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Hello Friend. Have a nice day!.
+        ///   Looks up a localized string similar to Hello Friend. How are you going to day? This is our website, we selling the best drinks that exist in this world, hope you enjoy it! :).
         /// </summary>
         public static string Home_Content0 {
             get {

@@ -74,7 +74,6 @@ namespace Services
         public bool Checkoutupdate(List<CheckOutViewModel> listitem)
         {
             
-            
             if (listitem.Count > 0 )
             {
                 foreach (var item in listitem)
@@ -88,7 +87,7 @@ namespace Services
                             
                             
                         }
-                        else if (item.Quantity == 0)
+                        else if (item.Quantity <= 0)
                         {
                             _Database.OrderItems.Remove(orderitem);
                             
