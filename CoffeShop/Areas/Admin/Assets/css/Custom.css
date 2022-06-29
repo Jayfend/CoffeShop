@@ -5,3 +5,8 @@
     overflow-y: auto;
 
 }
+.logo-size{
+    object-fit:cover;
+    height: 100px;
+    text-align:center;
+}

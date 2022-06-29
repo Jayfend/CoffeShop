@@ -13,6 +13,7 @@
     {
         string path = @"C:\Users\DINH LOC\source\repos\CoffeShop\CoffeShop\Assets\img\photo";
         string Avatarpath = @"C:\Users\DINH LOC\source\repos\CoffeShop\CoffeShop\Assets\img\";
+
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
@@ -108,7 +109,129 @@
                 Image = imgdata,
                 CreatedDate = DateTime.Now
             });
+            imgdata = System.IO.File.ReadAllBytes(path + "ca-phe-Americano-1.jpg");
+            ProductList.Add(new Product()
+            {
+                ProductName = "Coffe Americano",
+                ProductCategoryId = 2,
+                Price = 40000,
+                Discount = 10,
+                Description = " An Americano is an espresso-based drink designed to resemble coffee brewed in a drip filter, considered popular in the United States of America",
+                Image = imgdata,
+                CreatedDate = DateTime.Now
+            });
+            imgdata = System.IO.File.ReadAllBytes(path + "ca-phe-Americano-1.jpg");
+            ProductList.Add(new Product()
+            {
+                ProductName = "Coffe Americano",
+                ProductCategoryId = 2,
+                Price = 40000,
+                Discount = 10,
+                Description = " An Americano is an espresso-based drink designed to resemble coffee brewed in a drip filter, considered popular in the United States of America",
+                Image = imgdata,
+                CreatedDate = DateTime.Now
+            });
+            imgdata = System.IO.File.ReadAllBytes(path + "lattecafe.jpg");
+            ProductList.Add(new Product()
+            {
+                ProductName = "Latte Coffe",
+                ProductCategoryId = 3,
+                Price = 40000,
+                Discount = 10,
+                Description = "Caffè latte is a coffee-based drink made primarily from espresso and steamed milk. It consists of one-third espresso, two-thirds heated milk and about 1cm of foam",
+                Image = imgdata,
+                CreatedDate = DateTime.Now
+            });
+            imgdata = System.IO.File.ReadAllBytes(path + "itbaleyswebmain.jpg");
+            ProductList.Add(new Product()
+            {
+                ProductName = "Baileys Coffee Latte",
+                ProductCategoryId = 3,
+                Price = 40000,
+                Discount = 10,
+                Description = "Caffè latte is a coffee-based drink made primarily from espresso and steamed milk. It consists of one-third espresso, two-thirds heated milk and about 1cm of foam",
+                Image = imgdata,
+                CreatedDate = DateTime.Now
+            });
+            imgdata = System.IO.File.ReadAllBytes(path + "thanh-pham-1279.jpg");
+            ProductList.Add(new Product()
+            {
+                ProductName = "Dalgona Coffee ",
+                ProductCategoryId = 3,
+                Price = 60000,
+                Discount = 10,
+                Description = "Dalgona coffee is a beverage made by whipping equal parts instant coffee powder, sugar, and hot water until it becomes creamy and then adding it to cold or hot milk",
+                Image = imgdata,
+                CreatedDate = DateTime.Now
+            });
+            imgdata = System.IO.File.ReadAllBytes(path + "vietnamese-egg-coffee-3.jpg");
+            ProductList.Add(new Product()
+            {
+                ProductName = " Egg Latte Coffee",
+                ProductCategoryId = 3,
+                Price = 60000,
+                Discount = 10,
+                Description = "An egg coffee (Vietnamese: Cà phê trứng) is a Vietnamese drink traditionally prepared with egg yolks, sugar, condensed milk and robusta coffee.",
+                Image = imgdata,
+                CreatedDate = DateTime.Now
+            });
+            imgdata = System.IO.File.ReadAllBytes(path + "cafesocola.jpg");
+            ProductList.Add(new Product()
+            {
+                ProductName = "Hot chocolate Coffe",
+                ProductCategoryId = 4,
+                Price = 60000,
+                Discount = 10,
+                Description = "The mixture of coffee and chocolate with cinnamon was very good. It was super easy to prepare and an excellent drink for the cold fall and winter days. I used milk, but you might want to use water if the cocoa mix includes dry milk powder",
+                Image = imgdata,
+                CreatedDate = DateTime.Now
+            });
           
+                imgdata = System.IO.File.ReadAllBytes(path + "capuchino.jpg");
+            ProductList.Add(new Product()
+            {
+                ProductName = "Capuchino",
+                ProductCategoryId = 4,
+                Price = 60000,
+                Discount = 10,
+                Description = "A cappuccino is a coffee-based drink made primarily from espresso and milk. It consists of one-third espresso, one-third heated milk and one-third milk foam and is generally served in a 6 to 8-ounce cup",
+                Image = imgdata,
+                CreatedDate = DateTime.Now
+            }); 
+                 imgdata = System.IO.File.ReadAllBytes(path + "vietnamese-coffee-with-condensed-milk-1.jpg");
+            ProductList.Add(new Product()
+            {
+                ProductName = "Vietnamese iced coffee",
+                ProductCategoryId = 4,
+                Price = 60000,
+                Discount = 10,
+                Description = " At its simplest, cà phê đá is made using medium to coarse ground dark roast Vietnamese-grown coffee with a small metal Vietnamese drip filter",
+                Image = imgdata,
+                CreatedDate = DateTime.Now
+            });
+            imgdata = System.IO.File.ReadAllBytes(path + "cafe-mocha-nong.jpg");
+            ProductList.Add(new Product()
+            {
+                ProductName = "Hot mocha coffe",
+                ProductCategoryId = 10,
+                Price = 60000,
+                Discount = 10,
+                Description = " A caffè mocha  is a chocolate-flavoured warm beverage that is a variant of a café latte",
+                Image = imgdata,
+                CreatedDate = DateTime.Now
+            });
+            imgdata = System.IO.File.ReadAllBytes(path + "mocha-cookie-frozen-coffee-with-coffee-whipped-cream-recipe-main-photo.jpg");
+            ProductList.Add(new Product()
+            {
+                ProductName = "Mocha Cookie Frozen Coffee with Coffee Whipped Cream",
+                ProductCategoryId = 10,
+                Price = 60000,
+                Discount = 10,
+                Description = "Mocha Cookie Frozen Coffee with Coffee Whipped Cream is one of the most well liked of recent trending foods in the world. It’s appreciated by millions every day ",
+                Image = imgdata,
+                CreatedDate = DateTime.Now
+            });
+
             context.Products.AddRange(ProductList);
         }
 

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace ViewModel
 {
     public class ProductViewModel
-    {   [Required]
+    {   
         public int ProductId { get; set; }
         [Required]
         public string ProductName { get; set; }

@@ -2,6 +2,7 @@
 
     var CurrentTotal = parseFloat(document.getElementById('total').innerHTML);
     var itemquantity = parseFloat(document.getElementById('quantity_' + i).value);
+    
     var oneitemprice = parseFloat(document.getElementById('totalitemforone_' + i).value);
     var itemPrice = parseFloat(document.getElementById('Price_' + i).innerHTML);
     var itemDiscount = parseFloat(document.getElementById('Discount_' + i).innerHTML);
@@ -265,7 +266,7 @@ function ContactSend() {
         success: function (data) {
             if (data.Result == true) {
                 ShowNoti(true, "Your review has been sent");
-                timeRefresh(1000);
+                timeRefresh(3000);
             }
             else {
                 ShowNoti(false, "Couldn't send your review");
